@@ -34,6 +34,7 @@
 #define LAU3DVIDEOTCPSERVER_H
 
 #include <QObject>
+#include <qglobal.h>
 #include <QTcpServer>
 #include <QTcpSocket>
 #include "qzeroconf.h"
@@ -65,7 +66,11 @@ public slots:
     void onUpdateBuffer(LAUMemoryObject depth = LAUMemoryObject(), LAUMemoryObject color = LAUMemoryObject(), LAUMemoryObject mapping = LAUMemoryObject());
 
 protected:
+#if defined(Q_OS_MAC) || defined(Q_OS_WIN)
     void incomingConnection(qintptr handle);
+#else
+    void incomingConnection(int handle);
+#endif
 
 private slots:
     void onReadyRead();

@@ -131,7 +131,11 @@ void LAU3DVideoTCPServer::onServiceError(QZeroConf::error_t error)
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
+#if defined(Q_OS_MAC) || defined(Q_OS_WIN)
 void LAU3DVideoTCPServer::incomingConnection(qintptr handle)
+#else
+void LAU3DVideoTCPServer::incomingConnection(int handle)
+#endif
 {
     // SET THE CONNECTED FLAG HIGH
     connected = true;

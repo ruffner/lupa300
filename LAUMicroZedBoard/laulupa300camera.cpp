@@ -320,6 +320,7 @@ void LAULUPA300Camera::onUpdateExposure(int microseconds)
 /****************************************************************************/
 void LAULUPA300Camera::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject color, LAUMemoryObject mapping)
 {
+qDebug() << "entering onUpdateBuffer";
     if (color.isValid()) {
         // SET THE DATA VALUES TO SHOW A CHANGING GRAY LEVEL
         memset(color.constPointer(), 0, color.length());
@@ -352,10 +353,19 @@ void LAULUPA300Camera::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject col
                 } else if (rc == 1280) {
                     ;
                 } else {
+		qDebug() << "didnt read all the bytes rc= " << rc;
                     //nobr += rc;
                     do {
+qDebug() << "  before extra byte read";
+qDebug() << "   calling read(fd, buffer + " << rc << ", 1280 - " << rc << ");";
                         int rf = read(fd, buffer + rc, 1280 - rc);
-                        rc += rf;
+qDebug() << "  after extra byte read";
+                        if( rf<0 ){
+				qDebug() << "read error in frame " << counter+frm;
+			}  else {
+qDebug() << "   read a remaining " << rf << " bytes";
+			rc += rf;
+			}
                     } while (rc < 1280);
                 }
             }
@@ -381,6 +391,7 @@ void LAULUPA300Camera::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject col
 #endif
     }
 
+qDebug() << "leaving onUpdateBuffer. emitting buffer";
     // EMIT THE BUFFERS NOW THAT THEY HAVE BEEN UPDATED WITH NEW DATA
     emit emitBuffer(depth, color, mapping);
 }
