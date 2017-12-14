@@ -11601,7 +11601,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="3.3V_POWER" library="SparkFun-Connectors" deviceset="CONN_05" device=""/>
 <part name="EXPOSURE_CONTROL" library="SparkFun-Connectors" deviceset="CONN_05" device=""/>
 <part name="2.5V_POWER1" library="SparkFun-Connectors" deviceset="CONN_06" device="SILK_FEMALE_PTH"/>
-<part name="J1" library="SparkFun-Connectors" deviceset="CONN_03" device="" value="455-1750-1-ND"/>
+<part name="CLK" library="SparkFun-Connectors" deviceset="CONN_03" device="" value="455-1750-1-ND"/>
 <part name="R7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="M1206" package3d_urn="urn:adsk.eagle:package:26088/1" value="68k"/>
 <part name="R8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="M1206" package3d_urn="urn:adsk.eagle:package:26088/1" value="10k"/>
 <part name="R9" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="M1206" package3d_urn="urn:adsk.eagle:package:26088/1" value="110k"/>
@@ -11610,7 +11610,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="R12" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="M1206" package3d_urn="urn:adsk.eagle:package:26088/1" value="500k"/>
 <part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1uF"/>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1uF"/>
-<part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1uF"/>
+<part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value=".1uF"/>
 <part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1uF"/>
 <part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1uF"/>
 <part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1uF"/>
@@ -11626,7 +11626,7 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="3.3V_POWER" gate="G$1" x="180.34" y="119.38"/>
 <instance part="EXPOSURE_CONTROL" gate="G$1" x="180.34" y="74.93"/>
 <instance part="2.5V_POWER1" gate="G$1" x="182.88" y="8.89"/>
-<instance part="J1" gate="J$1" x="180.34" y="-12.7"/>
+<instance part="CLK" gate="J$1" x="180.34" y="-12.7"/>
 <instance part="R7" gate="G$1" x="6.35" y="173.99" rot="R270"/>
 <instance part="R8" gate="G$1" x="39.37" y="173.99" rot="R270"/>
 <instance part="R9" gate="G$1" x="73.66" y="172.72" rot="R270"/>
@@ -11770,7 +11770,7 @@ Source: AVX .. aphvc.pdf</description>
 <label x="194.31" y="3.81" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J1" gate="J$1" pin="3"/>
+<pinref part="CLK" gate="J$1" pin="3"/>
 <wire x1="187.96" y1="-10.16" x2="193.04" y2="-10.16" width="0.1524" layer="91"/>
 <label x="194.31" y="-10.16" size="1.778" layer="95"/>
 </segment>
@@ -11782,7 +11782,7 @@ Source: AVX .. aphvc.pdf</description>
 <label x="24.13" y="54.61" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J1" gate="J$1" pin="1"/>
+<pinref part="CLK" gate="J$1" pin="1"/>
 <wire x1="187.96" y1="-15.24" x2="193.04" y2="-15.24" width="0.1524" layer="91"/>
 <label x="194.31" y="-15.24" size="1.778" layer="95"/>
 </segment>
@@ -11794,7 +11794,7 @@ Source: AVX .. aphvc.pdf</description>
 <label x="24.13" y="59.69" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J1" gate="J$1" pin="2"/>
+<pinref part="CLK" gate="J$1" pin="2"/>
 <wire x1="187.96" y1="-12.7" x2="193.04" y2="-12.7" width="0.1524" layer="91"/>
 <label x="194.31" y="-12.7" size="1.778" layer="95"/>
 </segment>
