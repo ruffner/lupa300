@@ -13,6 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        lupa300viewerwidget.cpp
+        lupa300viewerdialog.cpp
 
-HEADERS  += lupa300viewerwidget.h
+HEADERS  += lupa300viewerdialog.h

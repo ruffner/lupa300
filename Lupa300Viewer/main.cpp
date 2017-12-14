@@ -1,4 +1,4 @@
-#include "lupa300viewerwidget.h"
+#include "lupa300viewerdialog.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

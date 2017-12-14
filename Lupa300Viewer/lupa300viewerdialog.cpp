@@ -1,4 +1,4 @@
-#include "lupa300viewerwidget.h"
+#include "lupa300viewerdialog.h"
 
 Lupa300ViewerWidget::Lupa300ViewerWidget(QWidget *parent)
     : QWidget(parent)
