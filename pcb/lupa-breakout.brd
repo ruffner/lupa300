@@ -2910,11 +2910,11 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="P$21"/>
 <contactref element="U$1" pad="P$4"/>
 <contactref element="2.5V_POWER1" pad="4"/>
-<via x="5.842" y="14.605" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="5.842" y="14.605" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="7.874" y1="14.605" x2="5.842" y2="14.605" width="0.3048" layer="1"/>
-<via x="17.272" y="4.699" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="17.272" y="4.699" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="17.272" y1="4.699" x2="17.272" y2="7.239" width="0.3048" layer="1"/>
-<via x="30.734" y="14.605" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="30.734" y="14.605" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="30.734" y1="14.605" x2="27.686" y2="14.605" width="0.3048" layer="1"/>
 <wire x1="34.544" y1="18.415" x2="30.734" y2="14.605" width="0.3048" layer="1"/>
 <contactref element="R8" pad="1"/>
@@ -2957,14 +2957,14 @@ design rules under a new name.</description>
 <contactref element="3.3V_POWER" pad="4"/>
 <contactref element="2.5V_POWER1" pad="1"/>
 <contactref element="CLK" pad="3"/>
-<via x="19.304" y="30.353" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
-<via x="18.542" y="3.683" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
-<via x="4.572" y="19.685" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
-<via x="4.826" y="13.589" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
-<via x="29.718" y="11.557" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
-<via x="29.718" y="15.621" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
-<via x="29.718" y="13.589" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
-<via x="31.496" y="10.795" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="19.304" y="30.353" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
+<via x="18.542" y="3.683" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
+<via x="4.572" y="19.685" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
+<via x="4.826" y="13.589" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
+<via x="29.718" y="11.557" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
+<via x="29.718" y="15.621" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
+<via x="29.718" y="13.589" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
+<via x="31.496" y="10.795" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <contactref element="C7" pad="2"/>
 <contactref element="C8" pad="2"/>
 <contactref element="C9" pad="2"/>
@@ -2990,13 +2990,13 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="P$8"/>
 <contactref element="U$1" pad="P$19"/>
 <contactref element="2.5V_POWER1" pad="5"/>
-<via x="30.734" y="16.637" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="30.734" y="16.637" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="30.734" y1="16.637" x2="27.686" y2="16.637" width="0.3048" layer="1"/>
 <wire x1="34.544" y1="20.955" x2="32.766" y2="19.177" width="0.3048" layer="1"/>
 <wire x1="32.766" y1="19.177" x2="32.766" y2="17.399" width="0.3048" layer="1"/>
 <wire x1="32.766" y1="17.399" x2="32.004" y2="16.637" width="0.3048" layer="1"/>
 <wire x1="32.004" y1="16.637" x2="30.734" y2="16.637" width="0.3048" layer="1"/>
-<via x="5.588" y="18.669" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="5.588" y="18.669" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="5.591034375" y1="18.672034375" x2="5.588" y2="18.669" width="0.3048" layer="16"/>
 <wire x1="5.588" y1="18.669" x2="7.874" y2="18.669" width="0.3048" layer="1"/>
 <contactref element="R9" pad="1"/>
@@ -3047,7 +3047,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="ADC_BIAS">
 <contactref element="U$1" pad="P$18"/>
-<via x="29.718" y="17.653" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="29.718" y="17.653" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="27.686" y1="17.653" x2="29.718" y2="17.653" width="0.3048" layer="1"/>
 <wire x1="29.718" y1="17.653" x2="31.75" y2="17.653" width="0.3048" layer="16"/>
 <wire x1="31.75" y1="17.653" x2="32.512" y2="16.891" width="0.3048" layer="16"/>
@@ -3060,7 +3060,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="BIAS4">
 <contactref element="U$1" pad="P$17"/>
-<via x="30.734" y="18.669" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="30.734" y="18.669" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="27.686" y1="18.669" x2="30.734" y2="18.669" width="0.3048" layer="1"/>
 <contactref element="R9" pad="2"/>
 <wire x1="17.91" y1="16.637" x2="24.638" y2="16.637" width="0.3048" layer="16"/>
@@ -3078,7 +3078,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="BIAS3">
 <contactref element="U$1" pad="P$16"/>
-<via x="29.718" y="19.685" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="29.718" y="19.685" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="27.686" y1="19.685" x2="29.718" y2="19.685" width="0.3048" layer="1"/>
 <contactref element="R10" pad="2"/>
 <wire x1="22.99" y1="18.415" x2="24.26" y2="19.685" width="0.3048" layer="16"/>
@@ -3094,7 +3094,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="BIAS2">
 <contactref element="U$1" pad="P$15"/>
-<via x="30.734" y="20.701" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="30.734" y="20.701" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="27.686" y1="20.701" x2="30.734" y2="20.701" width="0.3048" layer="1"/>
 <contactref element="R11" pad="2"/>
 <wire x1="30.734" y1="20.701" x2="17.91" y2="20.701" width="0.3048" layer="16"/>
@@ -3107,7 +3107,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="BIAS1">
 <contactref element="U$1" pad="P$14"/>
-<via x="29.718" y="21.717" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="29.718" y="21.717" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="27.686" y1="21.717" x2="29.718" y2="21.717" width="0.3048" layer="1"/>
 <wire x1="29.718" y1="21.717" x2="24.5355" y2="21.717" width="0.3048" layer="16"/>
 <contactref element="R12" pad="2"/>
@@ -3122,7 +3122,7 @@ design rules under a new name.</description>
 <signal name="VPIX">
 <contactref element="U$1" pad="P$13"/>
 <contactref element="2.5V_POWER1" pad="6"/>
-<via x="30.48" y="22.733" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="30.48" y="22.733" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="27.686" y1="22.733" x2="30.48" y2="22.733" width="0.3048" layer="1"/>
 <wire x1="30.48" y1="22.733" x2="31.496" y2="23.495" width="0.3048" layer="1"/>
 <wire x1="31.496" y1="23.495" x2="34.544" y2="23.495" width="0.3048" layer="1"/>
@@ -3166,7 +3166,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="PRECHARGE_BIAS">
 <contactref element="U$1" pad="P$40"/>
-<via x="15.24" y="29.337" extent="1-16" drill="0.35" diameter="1.1" shape="octagon"/>
+<via x="15.24" y="29.337" extent="1-16" drill="0.35" diameter="0.95" shape="octagon"/>
 <wire x1="15.24" y1="29.337" x2="15.24" y2="27.051" width="0.3048" layer="1"/>
 <contactref element="R7" pad="2"/>
 <contactref element="C7" pad="1"/>
