@@ -146,7 +146,7 @@
 <wire x1="51.232" y1="0" x2="51.232" y2="43.17" width="0" layer="20"/>
 <wire x1="51.232" y1="43.17" x2="0" y2="43.17" width="0" layer="20"/>
 <wire x1="0" y1="43.17" x2="0" y2="0" width="0" layer="20"/>
-<text x="36.322" y="12.7" size="1.778" layer="25" rot="MR90">LUPA300 + uZED
+<text x="36.322" y="12.7" size="1.778" layer="26" rot="MR90">LUPA300 + uZED
 Matt Ruffner 2017
 v1.0</text>
 </plain>
