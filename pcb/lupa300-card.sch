@@ -7392,7 +7392,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <smd name="P$47" x="11.684" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
 <smd name="P$48" x="12.7" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
 <circle x="1.524" y="12.7" radius="0.179603125" width="0.127" layer="20"/>
-<text x="2.667" y="6.985" size="1.27" layer="20">LUPA-300</text>
 <hole x="-1.27" y="15.24" drill="1.6"/>
 <hole x="15.24" y="-1.27" drill="1.6"/>
 </package>
