@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.5.0">
+<eagle version="8.3.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6109,12 +6109,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </technologies>
 </device>
 </devices>
-<spice>
-<pinmapping spiceprefix="C">
-<pinmap gate="G$1" pin="1" pinorder="1"/>
-<pinmap gate="G$1" pin="2" pinorder="2"/>
-</pinmapping>
-</spice>
 </deviceset>
 <deviceset name="R-EU_" urn="urn:adsk.eagle:component:23791/14" prefix="R" uservalue="yes" library_version="3">
 <description>&lt;B&gt;RESISTOR&lt;/B&gt;, European symbol</description>
@@ -7327,12 +7321,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </technologies>
 </device>
 </devices>
-<spice>
-<pinmapping spiceprefix="R">
-<pinmap gate="G$1" pin="1" pinorder="1"/>
-<pinmap gate="G$1" pin="2" pinorder="2"/>
-</pinmapping>
-</spice>
 </deviceset>
 </devicesets>
 </library>
@@ -8593,6 +8581,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="17.78" y1="104.14" x2="22.86" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="104.14" x2="22.86" y2="107.95" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="104.14" x2="17.78" y2="101.6" width="0.1524" layer="91"/>
+<label x="17.78" y="101.6" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="3V3" class="0">
@@ -8619,6 +8608,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="19.05" y1="119.38" x2="13.97" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="13.97" y1="119.38" x2="13.97" y2="115.57" width="0.1524" layer="91"/>
 <wire x1="19.05" y1="119.38" x2="19.05" y2="121.92" width="0.1524" layer="91"/>
+<label x="19.05" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="2.5V" class="0">
@@ -8811,41 +8801,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="78.74" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="INT_TIME1" class="0">
-<segment>
-<pinref part="UZEDLOWER" gate="G$1" pin="11"/>
-<wire x1="55.88" y1="43.18" x2="50.8" y2="43.18" width="0.1524" layer="91"/>
-<label x="35.56" y="43.18" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="INT_TIME2" class="0">
-<segment>
-<pinref part="UZEDLOWER" gate="G$1" pin="13"/>
-<wire x1="55.88" y1="40.64" x2="50.8" y2="40.64" width="0.1524" layer="91"/>
-<label x="35.56" y="40.64" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="INT_TIME3" class="0">
-<segment>
-<pinref part="UZEDLOWER" gate="G$1" pin="15"/>
-<wire x1="55.88" y1="38.1" x2="50.8" y2="38.1" width="0.1524" layer="91"/>
-<label x="35.56" y="38.1" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="FRAME_VALID" class="0">
-<segment>
-<pinref part="UZEDLOWER" gate="G$1" pin="10"/>
-<wire x1="71.12" y1="45.72" x2="76.2" y2="45.72" width="0.1524" layer="91"/>
-<label x="78.74" y="45.72" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LINE_VALID" class="0">
-<segment>
-<pinref part="UZEDLOWER" gate="G$1" pin="9"/>
-<wire x1="55.88" y1="45.72" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
-<label x="35.56" y="45.72" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="VRAW" class="0">
 <segment>
 <pinref part="UZEDLOWER" gate="G$1" pin="7"/>
@@ -8865,25 +8820,60 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="86.36" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="SPI_EN" class="0">
+<net name="INT_TIME1" class="0">
 <segment>
-<pinref part="UZEDLOWER" gate="G$1" pin="12"/>
-<wire x1="71.12" y1="43.18" x2="76.2" y2="43.18" width="0.1524" layer="91"/>
-<label x="78.74" y="43.18" size="1.778" layer="95"/>
+<pinref part="UZEDLOWER" gate="G$1" pin="9"/>
+<wire x1="55.88" y1="45.72" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
+<label x="35.56" y="45.72" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="INT_TIME3" class="0">
+<segment>
+<pinref part="UZEDLOWER" gate="G$1" pin="11"/>
+<wire x1="55.88" y1="43.18" x2="50.8" y2="43.18" width="0.1524" layer="91"/>
+<label x="35.56" y="43.18" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="LINE_VALID" class="0">
+<segment>
+<pinref part="UZEDLOWER" gate="G$1" pin="13"/>
+<wire x1="55.88" y1="40.64" x2="50.8" y2="40.64" width="0.1524" layer="91"/>
+<label x="35.56" y="40.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SPI_CLK" class="0">
+<segment>
+<pinref part="UZEDLOWER" gate="G$1" pin="15"/>
+<wire x1="55.88" y1="38.1" x2="50.8" y2="38.1" width="0.1524" layer="91"/>
+<label x="35.56" y="38.1" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SPI_EN" class="0">
+<segment>
+<pinref part="UZEDLOWER" gate="G$1" pin="16"/>
+<wire x1="71.12" y1="38.1" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
+<label x="78.74" y="38.1" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SPI_DATA" class="0">
 <segment>
 <pinref part="UZEDLOWER" gate="G$1" pin="14"/>
 <wire x1="71.12" y1="40.64" x2="76.2" y2="40.64" width="0.1524" layer="91"/>
 <label x="78.74" y="40.64" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="SPI_DATA" class="0">
+<net name="FRAME_VALID" class="0">
 <segment>
-<pinref part="UZEDLOWER" gate="G$1" pin="16"/>
-<wire x1="71.12" y1="38.1" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
-<label x="78.74" y="38.1" size="1.778" layer="95"/>
+<pinref part="UZEDLOWER" gate="G$1" pin="12"/>
+<wire x1="71.12" y1="43.18" x2="76.2" y2="43.18" width="0.1524" layer="91"/>
+<label x="78.74" y="43.18" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="INT_TIME2" class="0">
+<segment>
+<pinref part="UZEDLOWER" gate="G$1" pin="10"/>
+<wire x1="71.12" y1="45.72" x2="76.2" y2="45.72" width="0.1524" layer="91"/>
+<label x="78.74" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -8906,12 +8896,6 @@ will not be understood (or retained) with this version.
 Since Version 8.3, EAGLE supports the association of 3D packages
 with devices in libraries, schematics, and board files. Those 3D
 packages will not be understood (or retained) with this version.
-</note>
-<note version="8.4" severity="warning">
-Since Version 8.4, EAGLE supports properties for SPICE simulation. 
-Probes in schematics and SPICE mapping objects found in parts and library devices
-will not be understood with this version. Update EAGLE to the latest version
-for full support of SPICE simulation. 
 </note>
 </compatibility>
 </eagle>
