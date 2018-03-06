@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -84,12 +84,27 @@
 <layer number="107" name="Crop" color="7" fill="1" visible="no" active="yes"/>
 <layer number="108" name="tplace-old" color="10" fill="1" visible="yes" active="yes"/>
 <layer number="109" name="ref-old" color="11" fill="1" visible="yes" active="yes"/>
+<layer number="110" name="fp0" color="7" fill="1" visible="no" active="yes"/>
+<layer number="111" name="tGTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="112" name="bGTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="116" name="Patch_BOT" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
+<layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
+<layer number="124" name="bTestmark" color="7" fill="1" visible="no" active="yes"/>
 <layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="126" name="_bNames" color="5" fill="1" visible="no" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="131" name="prix" color="7" fill="1" visible="no" active="yes"/>
+<layer number="132" name="test" color="7" fill="1" visible="no" active="yes"/>
+<layer number="133" name="Ports" color="7" fill="1" visible="no" active="yes"/>
+<layer number="134" name="Port2" color="7" fill="1" visible="no" active="yes"/>
+<layer number="135" name="Port3" color="7" fill="1" visible="no" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="no" active="yes"/>
+<layer number="150" name="Notes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
@@ -116,17 +131,21 @@
 <layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
 <layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
 <layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="231" name="Eagle3D_PG1" color="14" fill="1" visible="no" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="14" fill="2" visible="no" active="yes"/>
+<layer number="233" name="Eagle3D_PG3" color="14" fill="4" visible="no" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="OrgLBR" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="255" name="xfer" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="68.56" y2="0" width="0" layer="20"/>
-<wire x1="68.56" y1="0" x2="68.56" y2="53.01" width="0" layer="20"/>
-<wire x1="68.56" y1="53.01" x2="0" y2="53.01" width="0" layer="20"/>
-<wire x1="0" y1="53.01" x2="0" y2="0" width="0" layer="20"/>
-<dimension x1="11.43" y1="7.62" x2="11.43" y2="43.18" x3="-1.27" y3="25.4" textsize="1.778" layer="1"/>
+<wire x1="0" y1="0" x2="77.45" y2="0" width="0" layer="20"/>
+<wire x1="77.45" y1="0" x2="77.45" y2="58.09" width="0" layer="20"/>
+<wire x1="77.45" y1="58.09" x2="0" y2="58.09" width="0" layer="20"/>
+<wire x1="0" y1="58.09" x2="0" y2="0" width="0" layer="20"/>
+<dimension x1="11.43" y1="7.62" x2="11.43" y2="52.07" x3="89.535" y3="29.845" textsize="1.778" layer="1" unit="mil"/>
 </plain>
 <libraries>
 <library name="lupa300-components">
@@ -244,6 +263,15 @@
 <wire x1="3" y1="5.7" x2="3" y2="4.3" width="0.127" layer="21"/>
 <wire x1="3" y1="4.3" x2="4" y2="4.3" width="0.127" layer="21"/>
 <wire x1="4" y1="4.3" x2="4" y2="0.8" width="0.127" layer="21"/>
+</package>
+<package name="XTAL-6PIN">
+<smd name="P$1" x="-2.1" y="2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$2" x="-2.1" y="0" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$3" x="-2.1" y="-2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$4" x="2.1" y="-2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$5" x="2.1" y="0" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$6" x="2.1" y="2.54" dx="1.95" dy="1.55" layer="1"/>
+<text x="-3.1" y="4.8" size="1.778" layer="25">&gt;NAME</text>
 </package>
 </packages>
 </library>
@@ -404,6 +432,25 @@
 <rectangle x1="4.1656" y1="3.4318" x2="4.3434" y2="4.7526" layer="31"/>
 <rectangle x1="4.6736" y1="3.4064" x2="4.8514" y2="4.7272" layer="31"/>
 <wire x1="-4.5" y1="5" x2="5" y2="5" width="0.127" layer="21"/>
+</package>
+</packages>
+</library>
+<library name="saanlima">
+<packages>
+<package name="PSOP-8">
+<circle x="-0.66" y="-0.67" radius="0.1923" width="0.08" layer="21"/>
+<wire x1="-1" y1="-1.03" x2="1" y2="-1.03" width="0.08" layer="21"/>
+<wire x1="1" y1="-1.03" x2="1" y2="1.04" width="0.08" layer="21"/>
+<wire x1="1" y1="1.04" x2="-1" y2="1.04" width="0.08" layer="21"/>
+<wire x1="-1" y1="1.04" x2="-1" y2="-1.03" width="0.08" layer="21"/>
+<smd name="1" x="-0.73" y="-1.52" dx="0.25" dy="0.8" layer="1"/>
+<smd name="2" x="-0.23" y="-1.52" dx="0.25" dy="0.8" layer="1"/>
+<smd name="3" x="0.27" y="-1.52" dx="0.25" dy="0.8" layer="1"/>
+<smd name="4" x="0.77" y="-1.52" dx="0.25" dy="0.8" layer="1"/>
+<smd name="5" x="0.77" y="1.53" dx="0.25" dy="0.8" layer="1"/>
+<smd name="6" x="0.27" y="1.53" dx="0.25" dy="0.8" layer="1"/>
+<smd name="7" x="-0.23" y="1.53" dx="0.25" dy="0.8" layer="1"/>
+<smd name="8" x="-0.73" y="1.53" dx="0.25" dy="0.8" layer="1"/>
 </package>
 </packages>
 </library>
@@ -597,10 +644,12 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U$1" library="lupa300-components" package="BERG100POS" value="BERGSTAK-100POS" x="13.97" y="11.43" rot="R180"/>
-<element name="U$2" library="lupa300-components" package="BERG100POS" value="BERGSTAK-100POS" x="13.97" y="44.45" rot="R180"/>
-<element name="U$3" library="new-connectors" package="HDMI_A" value="HDMI-A" x="62.23" y="33.02" rot="R90"/>
-<element name="U$4" library="new-connectors" package="HDMI_A" value="HDMI-A" x="62.23" y="13.97" rot="R90"/>
+<element name="U$1" library="lupa300-components" package="BERG100POS" value="BERGSTAK-100POS" x="20.32" y="10.795" rot="R180"/>
+<element name="U$2" library="lupa300-components" package="BERG100POS" value="BERGSTAK-100POS" x="20.32" y="55.245" rot="R180"/>
+<element name="U$3" library="new-connectors" package="HDMI_A" value="HDMI-A" x="69.85" y="38.735" rot="MR270"/>
+<element name="U$4" library="new-connectors" package="HDMI_A" value="HDMI-A" x="69.85" y="19.685" rot="MR270"/>
+<element name="U$5" library="lupa300-components" package="XTAL-6PIN" value="SI514" x="26.035" y="29.21"/>
+<element name="U11" library="saanlima" package="PSOP-8" value="PCA9306" x="43.815" y="27.94" rot="R270"/>
 </elements>
 <signals>
 </signals>

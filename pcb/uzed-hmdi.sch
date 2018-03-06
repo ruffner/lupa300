@@ -84,12 +84,27 @@
 <layer number="107" name="Crop" color="7" fill="1" visible="no" active="yes"/>
 <layer number="108" name="tplace-old" color="10" fill="1" visible="yes" active="yes"/>
 <layer number="109" name="ref-old" color="11" fill="1" visible="yes" active="yes"/>
+<layer number="110" name="fp0" color="7" fill="1" visible="no" active="yes"/>
+<layer number="111" name="tGTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="112" name="bGTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="116" name="Patch_BOT" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
+<layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
+<layer number="124" name="bTestmark" color="7" fill="1" visible="no" active="yes"/>
 <layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="126" name="_bNames" color="5" fill="1" visible="no" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="131" name="prix" color="7" fill="1" visible="no" active="yes"/>
+<layer number="132" name="test" color="7" fill="1" visible="no" active="yes"/>
+<layer number="133" name="Ports" color="7" fill="1" visible="no" active="yes"/>
+<layer number="134" name="Port2" color="7" fill="1" visible="no" active="yes"/>
+<layer number="135" name="Port3" color="7" fill="1" visible="no" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="no" active="yes"/>
+<layer number="150" name="Notes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
@@ -116,9 +131,13 @@
 <layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
 <layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
 <layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="231" name="Eagle3D_PG1" color="14" fill="1" visible="no" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="14" fill="2" visible="no" active="yes"/>
+<layer number="233" name="Eagle3D_PG3" color="14" fill="4" visible="no" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="OrgLBR" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="255" name="xfer" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -238,6 +257,15 @@
 <wire x1="3" y1="4.3" x2="4" y2="4.3" width="0.127" layer="21"/>
 <wire x1="4" y1="4.3" x2="4" y2="0.8" width="0.127" layer="21"/>
 </package>
+<package name="XTAL-6PIN">
+<smd name="P$1" x="-2.1" y="2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$2" x="-2.1" y="0" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$3" x="-2.1" y="-2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$4" x="2.1" y="-2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$5" x="2.1" y="0" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$6" x="2.1" y="2.54" dx="1.95" dy="1.55" layer="1"/>
+<text x="-3.1" y="4.8" size="1.778" layer="25">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BERG100POS">
@@ -348,6 +376,21 @@
 <text x="-22.86" y="5.08" size="1.27" layer="95">&gt;NAME</text>
 <text x="-10.16" y="5.08" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="XTAL">
+<description>XO (Standard) CMOS 100kHz ~ 170MHz Programmable Oscillator 3.3V Enable/Disable 6-SMD, No Lead</description>
+<wire x1="-7.62" y1="10.16" x2="7.62" y2="10.16" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="7.62" y2="-10.16" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="-7.62" y2="-10.16" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="10.16" width="0.1524" layer="94"/>
+<pin name="VDD" x="-12.7" y="7.62" length="middle"/>
+<pin name="GND" x="-12.7" y="-7.62" length="middle"/>
+<pin name="SDA" x="-12.7" y="2.54" length="middle"/>
+<pin name="SCL" x="-12.7" y="-2.54" length="middle"/>
+<pin name="!CLK" x="12.7" y="-5.08" length="middle" rot="R180"/>
+<pin name="CLK" x="12.7" y="5.08" length="middle" rot="R180"/>
+<text x="-10.16" y="12.7" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="12.7" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BERGSTAK-100POS">
@@ -457,6 +500,26 @@
 <connect gate="G$1" pin="P$97" pad="P$4"/>
 <connect gate="G$1" pin="P$98" pad="P$3"/>
 <connect gate="G$1" pin="P$99" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SI514">
+<gates>
+<gate name="G$1" symbol="XTAL" x="-5.08" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="XTAL-6PIN">
+<connects>
+<connect gate="G$1" pin="!CLK" pad="P$5"/>
+<connect gate="G$1" pin="CLK" pad="P$4"/>
+<connect gate="G$1" pin="GND" pad="P$3"/>
+<connect gate="G$1" pin="SCL" pad="P$2"/>
+<connect gate="G$1" pin="SDA" pad="P$1"/>
+<connect gate="G$1" pin="VDD" pad="P$6"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -691,6 +754,67 @@
 </deviceset>
 </devicesets>
 </library>
+<library name="saanlima">
+<packages>
+<package name="PSOP-8">
+<circle x="-0.66" y="-0.67" radius="0.1923" width="0.08" layer="21"/>
+<wire x1="-1" y1="-1.03" x2="1" y2="-1.03" width="0.08" layer="21"/>
+<wire x1="1" y1="-1.03" x2="1" y2="1.04" width="0.08" layer="21"/>
+<wire x1="1" y1="1.04" x2="-1" y2="1.04" width="0.08" layer="21"/>
+<wire x1="-1" y1="1.04" x2="-1" y2="-1.03" width="0.08" layer="21"/>
+<smd name="1" x="-0.73" y="-1.52" dx="0.25" dy="0.8" layer="1"/>
+<smd name="2" x="-0.23" y="-1.52" dx="0.25" dy="0.8" layer="1"/>
+<smd name="3" x="0.27" y="-1.52" dx="0.25" dy="0.8" layer="1"/>
+<smd name="4" x="0.77" y="-1.52" dx="0.25" dy="0.8" layer="1"/>
+<smd name="5" x="0.77" y="1.53" dx="0.25" dy="0.8" layer="1"/>
+<smd name="6" x="0.27" y="1.53" dx="0.25" dy="0.8" layer="1"/>
+<smd name="7" x="-0.23" y="1.53" dx="0.25" dy="0.8" layer="1"/>
+<smd name="8" x="-0.73" y="1.53" dx="0.25" dy="0.8" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="PCA9306">
+<wire x1="-10.16" y1="-5.08" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-5.08" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="-10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="10.16" x2="-10.16" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="1.778" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="1.778" y2="0" width="0.254" layer="94"/>
+<pin name="EN" x="15.24" y="7.62" length="middle" rot="R180"/>
+<pin name="GND" x="-15.24" y="-2.54" length="middle"/>
+<pin name="SCL1" x="-15.24" y="2.54" length="middle"/>
+<pin name="SCL2" x="15.24" y="2.54" length="middle" rot="R180"/>
+<pin name="SDA1" x="-15.24" y="0" length="middle"/>
+<pin name="SDA2" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="VREF1" x="-15.24" y="5.08" length="middle"/>
+<pin name="VREF2" x="15.24" y="5.08" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PCA9306">
+<gates>
+<gate name="G$1" symbol="PCA9306" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PSOP-8">
+<connects>
+<connect gate="G$1" pin="EN" pad="8"/>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="SCL1" pad="3"/>
+<connect gate="G$1" pin="SCL2" pad="6"/>
+<connect gate="G$1" pin="SDA1" pad="4"/>
+<connect gate="G$1" pin="SDA2" pad="5"/>
+<connect gate="G$1" pin="VREF1" pad="2"/>
+<connect gate="G$1" pin="VREF2" pad="7"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -705,6 +829,8 @@
 <part name="U$2" library="lupa300-components" deviceset="BERGSTAK-100POS" device=""/>
 <part name="U$3" library="new-connectors" deviceset="HDMI-A" device=""/>
 <part name="U$4" library="new-connectors" deviceset="HDMI-A" device=""/>
+<part name="U$5" library="lupa300-components" deviceset="SI514" device=""/>
+<part name="U11" library="saanlima" deviceset="PCA9306" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -713,8 +839,10 @@
 <instances>
 <instance part="U$1" gate="G$1" x="-104.14" y="63.5"/>
 <instance part="U$2" gate="G$1" x="119.38" y="66.04"/>
-<instance part="U$3" gate="G$1" x="-55.88" y="-104.14" rot="R90"/>
+<instance part="U$3" gate="G$1" x="-53.34" y="-88.9" rot="R180"/>
 <instance part="U$4" gate="G$1" x="48.26" y="-101.6" rot="R90"/>
+<instance part="U$5" gate="G$1" x="-7.62" y="-20.32"/>
+<instance part="U11" gate="G$1" x="-11.43" y="22.86"/>
 </instances>
 <busses>
 </busses>

@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -234,6 +234,15 @@
 <wire x1="3" y1="4.3" x2="4" y2="4.3" width="0.127" layer="21"/>
 <wire x1="4" y1="4.3" x2="4" y2="0.8" width="0.127" layer="21"/>
 </package>
+<package name="XTAL-6PIN">
+<smd name="P$1" x="-2.1" y="2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$2" x="-2.1" y="0" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$3" x="-2.1" y="-2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$4" x="2.1" y="-2.54" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$5" x="2.1" y="0" dx="1.95" dy="1.55" layer="1"/>
+<smd name="P$6" x="2.1" y="2.54" dx="1.95" dy="1.55" layer="1"/>
+<text x="-3.1" y="4.8" size="1.778" layer="25">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="SPX1117">
@@ -405,6 +414,21 @@
 <text x="-22.86" y="5.08" size="1.27" layer="95">&gt;NAME</text>
 <text x="-10.16" y="5.08" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="XTAL">
+<description>XO (Standard) CMOS 100kHz ~ 170MHz Programmable Oscillator 3.3V Enable/Disable 6-SMD, No Lead</description>
+<wire x1="-7.62" y1="10.16" x2="7.62" y2="10.16" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="7.62" y2="-10.16" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="-7.62" y2="-10.16" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="10.16" width="0.1524" layer="94"/>
+<pin name="VDD" x="-12.7" y="7.62" length="middle"/>
+<pin name="GND" x="-12.7" y="-7.62" length="middle"/>
+<pin name="SDA" x="-12.7" y="2.54" length="middle"/>
+<pin name="SCL" x="-12.7" y="-2.54" length="middle"/>
+<pin name="!CLK" x="12.7" y="-5.08" length="middle" rot="R180"/>
+<pin name="CLK" x="12.7" y="5.08" length="middle" rot="R180"/>
+<text x="-10.16" y="12.7" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="12.7" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SPX1117">
@@ -568,6 +592,26 @@
 <connect gate="G$1" pin="P$97" pad="P$4"/>
 <connect gate="G$1" pin="P$98" pad="P$3"/>
 <connect gate="G$1" pin="P$99" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SI514">
+<gates>
+<gate name="G$1" symbol="XTAL" x="-5.08" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="XTAL-6PIN">
+<connects>
+<connect gate="G$1" pin="!CLK" pad="P$5"/>
+<connect gate="G$1" pin="CLK" pad="P$4"/>
+<connect gate="G$1" pin="GND" pad="P$3"/>
+<connect gate="G$1" pin="SCL" pad="P$2"/>
+<connect gate="G$1" pin="SDA" pad="P$1"/>
+<connect gate="G$1" pin="VDD" pad="P$6"/>
 </connects>
 <technologies>
 <technology name=""/>
