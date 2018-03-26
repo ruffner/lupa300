@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.5.0">
+<eagle version="8.6.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -271,6 +271,69 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <rectangle x1="0.7" y1="0.85" x2="1.2" y2="1.5" layer="51"/>
 <rectangle x1="-1.2" y1="0.85" x2="-0.7" y2="1.5" layer="51"/>
 </package>
+<package name="TSSOP24">
+<description>&lt;b&gt;Thin Shrink Small Outline Plastic 24&lt;/b&gt;&lt;p&gt;
+Source: http://www.lsicsi.com/pdfs/Drawings/TSSOP_OD.pdf</description>
+<wire x1="-4.1396" y1="-2.1328" x2="4.1396" y2="-2.1328" width="0.1524" layer="21"/>
+<wire x1="4.1396" y1="2.1328" x2="4.1396" y2="-2.1328" width="0.1524" layer="21"/>
+<wire x1="4.1396" y1="2.1328" x2="-4.1396" y2="2.1328" width="0.1524" layer="21"/>
+<wire x1="-4.1396" y1="-2.1328" x2="-4.1396" y2="2.1328" width="0.1524" layer="21"/>
+<wire x1="-3.911" y1="-1.9042" x2="3.911" y2="-1.9042" width="0.0508" layer="21"/>
+<wire x1="3.911" y1="1.9042" x2="3.911" y2="-1.9042" width="0.0508" layer="21"/>
+<wire x1="3.911" y1="1.9042" x2="-3.911" y2="1.9042" width="0.0508" layer="21"/>
+<wire x1="-3.911" y1="-1.9042" x2="-3.911" y2="1.9042" width="0.0508" layer="21"/>
+<circle x="-2.9256" y="-1.0692" radius="0.4572" width="0.1524" layer="21"/>
+<smd name="1" x="-3.575" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="2" x="-2.925" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="3" x="-2.275" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="4" x="-1.625" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="5" x="-0.975" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="6" x="-0.325" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="7" x="0.325" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="8" x="0.975" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="9" x="1.625" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="10" x="2.275" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="11" x="2.925" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="12" x="3.575" y="-2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="13" x="3.575" y="2.8178" dx="0.3048" dy="0.9906" layer="1" rot="R180"/>
+<smd name="14" x="2.925" y="2.8178" dx="0.3048" dy="0.9906" layer="1" rot="R180"/>
+<smd name="15" x="2.275" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="16" x="1.625" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="17" x="0.975" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="18" x="0.325" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="19" x="-0.325" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="20" x="-0.975" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="21" x="-1.625" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="22" x="-2.275" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="23" x="-2.925" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<smd name="24" x="-3.575" y="2.8178" dx="0.3048" dy="0.9906" layer="1"/>
+<text x="-4.55" y="-2.6" size="1.016" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-3.25" y="0" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-3.6766" y1="-3.2" x2="-3.4734" y2="-2.1328" layer="51"/>
+<rectangle x1="-3.0266" y1="-3.2" x2="-2.8234" y2="-2.1328" layer="51"/>
+<rectangle x1="-2.3766" y1="-3.2" x2="-2.1734" y2="-2.1328" layer="51"/>
+<rectangle x1="-1.7266" y1="-3.2" x2="-1.5234" y2="-2.1328" layer="51"/>
+<rectangle x1="-1.0766" y1="-3.2" x2="-0.8734" y2="-2.1328" layer="51"/>
+<rectangle x1="-0.4266" y1="-3.2" x2="-0.2234" y2="-2.1328" layer="51"/>
+<rectangle x1="0.2234" y1="-3.2" x2="0.4266" y2="-2.1328" layer="51"/>
+<rectangle x1="0.8734" y1="-3.2" x2="1.0766" y2="-2.1328" layer="51"/>
+<rectangle x1="1.5234" y1="-3.2" x2="1.7266" y2="-2.1328" layer="51"/>
+<rectangle x1="2.1734" y1="-3.2" x2="2.3766" y2="-2.1328" layer="51"/>
+<rectangle x1="2.8234" y1="-3.2" x2="3.0266" y2="-2.1328" layer="51"/>
+<rectangle x1="3.4734" y1="-3.2" x2="3.6766" y2="-2.1328" layer="51"/>
+<rectangle x1="3.4734" y1="2.1328" x2="3.6766" y2="3.2" layer="51" rot="R180"/>
+<rectangle x1="2.8234" y1="2.1328" x2="3.0266" y2="3.2" layer="51" rot="R180"/>
+<rectangle x1="2.1734" y1="2.1328" x2="2.3766" y2="3.2" layer="51"/>
+<rectangle x1="1.5234" y1="2.1328" x2="1.7266" y2="3.2" layer="51"/>
+<rectangle x1="0.8734" y1="2.1328" x2="1.0766" y2="3.2" layer="51"/>
+<rectangle x1="0.2234" y1="2.1328" x2="0.4266" y2="3.2" layer="51"/>
+<rectangle x1="-0.4266" y1="2.1328" x2="-0.2234" y2="3.2" layer="51"/>
+<rectangle x1="-1.0766" y1="2.1328" x2="-0.8734" y2="3.2" layer="51"/>
+<rectangle x1="-1.7266" y1="2.1328" x2="-1.5234" y2="3.2" layer="51"/>
+<rectangle x1="-2.3766" y1="2.1328" x2="-2.1734" y2="3.2" layer="51"/>
+<rectangle x1="-3.0266" y1="2.1328" x2="-2.8234" y2="3.2" layer="51"/>
+<rectangle x1="-3.6766" y1="2.1328" x2="-3.4734" y2="3.2" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SPX1117">
@@ -480,6 +543,38 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pin name="VOUT" x="25.4" y="2.54" length="middle" rot="R180"/>
 <text x="0" y="17.78" size="1.778" layer="95">&gt;NAME</text>
 <text x="12.7" y="17.78" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="10BITLINEDRIVER">
+<wire x1="0" y1="0" x2="17.78" y2="0" width="0.1524" layer="94"/>
+<wire x1="17.78" y1="0" x2="17.78" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="17.78" y1="33.02" x2="0" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="0" y1="33.02" x2="0" y2="0" width="0.1524" layer="94"/>
+<pin name="!OE1" x="-5.08" y="30.48" length="middle"/>
+<pin name="A0" x="-5.08" y="27.94" length="middle"/>
+<pin name="A1" x="-5.08" y="25.4" length="middle"/>
+<pin name="A2" x="-5.08" y="22.86" length="middle"/>
+<pin name="A3" x="-5.08" y="20.32" length="middle"/>
+<pin name="A4" x="-5.08" y="17.78" length="middle"/>
+<pin name="A5" x="-5.08" y="15.24" length="middle"/>
+<pin name="A6" x="-5.08" y="12.7" length="middle"/>
+<pin name="A7" x="-5.08" y="10.16" length="middle"/>
+<pin name="A8" x="-5.08" y="7.62" length="middle"/>
+<pin name="A9" x="-5.08" y="5.08" length="middle"/>
+<pin name="GND" x="-5.08" y="2.54" length="middle"/>
+<pin name="VCC" x="22.86" y="30.48" length="middle" rot="R180"/>
+<pin name="Y0" x="22.86" y="27.94" length="middle" rot="R180"/>
+<pin name="Y1" x="22.86" y="25.4" length="middle" rot="R180"/>
+<pin name="Y2" x="22.86" y="22.86" length="middle" rot="R180"/>
+<pin name="Y3" x="22.86" y="20.32" length="middle" rot="R180"/>
+<pin name="Y4" x="22.86" y="17.78" length="middle" rot="R180"/>
+<pin name="Y5" x="22.86" y="15.24" length="middle" rot="R180"/>
+<pin name="Y6" x="22.86" y="12.7" length="middle" rot="R180"/>
+<pin name="Y7" x="22.86" y="10.16" length="middle" rot="R180"/>
+<pin name="Y8" x="22.86" y="7.62" length="middle" rot="R180"/>
+<pin name="Y9" x="22.86" y="5.08" length="middle" rot="R180"/>
+<pin name="!OE2" x="22.86" y="2.54" length="middle" rot="R180"/>
+<text x="-2.54" y="35.56" size="1.778" layer="95">&gt;NAME</text>
+<text x="10.16" y="35.56" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -702,6 +797,45 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <connect gate="G$1" pin="GND" pad="2"/>
 <connect gate="G$1" pin="VIN" pad="1"/>
 <connect gate="G$1" pin="VOUT" pad="5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="74LVC827A">
+<description>Buffer, Non-Inverting 1 Element 10 Bit per Element Push-Pull Output 24-TSSOP</description>
+<gates>
+<gate name="G$1" symbol="10BITLINEDRIVER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TSSOP24">
+<connects>
+<connect gate="G$1" pin="!OE1" pad="1"/>
+<connect gate="G$1" pin="!OE2" pad="13"/>
+<connect gate="G$1" pin="A0" pad="2"/>
+<connect gate="G$1" pin="A1" pad="3"/>
+<connect gate="G$1" pin="A2" pad="4"/>
+<connect gate="G$1" pin="A3" pad="5"/>
+<connect gate="G$1" pin="A4" pad="6"/>
+<connect gate="G$1" pin="A5" pad="7"/>
+<connect gate="G$1" pin="A6" pad="8"/>
+<connect gate="G$1" pin="A7" pad="9"/>
+<connect gate="G$1" pin="A8" pad="10"/>
+<connect gate="G$1" pin="A9" pad="11"/>
+<connect gate="G$1" pin="GND" pad="12"/>
+<connect gate="G$1" pin="VCC" pad="24"/>
+<connect gate="G$1" pin="Y0" pad="23"/>
+<connect gate="G$1" pin="Y1" pad="22"/>
+<connect gate="G$1" pin="Y2" pad="21"/>
+<connect gate="G$1" pin="Y3" pad="20"/>
+<connect gate="G$1" pin="Y4" pad="19"/>
+<connect gate="G$1" pin="Y5" pad="18"/>
+<connect gate="G$1" pin="Y6" pad="17"/>
+<connect gate="G$1" pin="Y7" pad="16"/>
+<connect gate="G$1" pin="Y8" pad="15"/>
+<connect gate="G$1" pin="Y9" pad="14"/>
 </connects>
 <technologies>
 <technology name=""/>
