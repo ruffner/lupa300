@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -70,6 +70,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="5" fill="1" visible="yes" active="yes"/>
 </layers>
 <library>
 <packages>
@@ -334,6 +335,40 @@ Source: http://www.lsicsi.com/pdfs/Drawings/TSSOP_OD.pdf</description>
 <rectangle x1="-3.0266" y1="2.1328" x2="-2.8234" y2="3.2" layer="51"/>
 <rectangle x1="-3.6766" y1="2.1328" x2="-3.4734" y2="3.2" layer="51"/>
 </package>
+<package name="SOT23">
+<description>&lt;B&gt;DIODE&lt;/B&gt;</description>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.1524" x2="-1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="0.6604" x2="-0.8636" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.1524" width="0.1524" layer="21"/>
+<wire x1="0.8636" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
+<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
+<smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
+<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
+<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
+<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
+</package>
+<package name="SPDT">
+<pad name="P$1" x="1.27" y="11.43" drill="1.849996875" shape="octagon"/>
+<pad name="P$2" x="14.51" y="11.42" drill="1.849996875" shape="octagon"/>
+<pad name="P$3" x="3.18" y="1.87" drill="1.849996875" shape="octagon"/>
+<pad name="P$4" x="7.99" y="1.87" drill="1.849996875" shape="octagon"/>
+<pad name="P$5" x="12.6" y="1.87" drill="1.849996875" shape="octagon"/>
+<wire x1="-1.1" y1="4.6" x2="17.1" y2="4.6" width="0.1524" layer="21"/>
+<wire x1="17.1" y1="4.6" x2="17.1" y2="13.7" width="0.1524" layer="21"/>
+<wire x1="17.1" y1="13.7" x2="6.8" y2="13.7" width="0.1524" layer="21"/>
+<wire x1="6.8" y1="13.7" x2="-1.1" y2="13.7" width="0.1524" layer="21"/>
+<wire x1="-1.1" y1="13.7" x2="-1.1" y2="4.6" width="0.1524" layer="21"/>
+<wire x1="2.6" y1="13.8" x2="2.6" y2="17.3" width="0.1524" layer="21"/>
+<wire x1="2.6" y1="17.3" x2="6.8" y2="17.3" width="0.1524" layer="21"/>
+<wire x1="6.8" y1="17.3" x2="6.8" y2="13.7" width="0.1524" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SPX1117">
@@ -575,6 +610,58 @@ Source: http://www.lsicsi.com/pdfs/Drawings/TSSOP_OD.pdf</description>
 <pin name="!OE2" x="22.86" y="2.54" length="middle" rot="R180"/>
 <text x="-2.54" y="35.56" size="1.778" layer="95">&gt;NAME</text>
 <text x="10.16" y="35.56" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="NMOS-FET-E">
+<description>MOSFET N-channel - Enhancement mode</description>
+<wire x1="0.762" y1="0.762" x2="0.762" y2="0" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0" x2="0.762" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="0.762" y1="3.175" x2="0.762" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0.762" y1="2.54" x2="0.762" y2="1.905" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="-1.905" x2="0.762" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0.762" y1="-2.54" x2="0.762" y2="-3.175" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0.762" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="2.54" x2="3.81" y2="0.508" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="0.508" x2="3.81" y2="-0.508" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="-0.508" x2="3.81" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="3.81" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="2.54" x2="3.81" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="3.302" y1="0.508" x2="3.81" y2="0.508" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="0.508" x2="4.318" y2="0.508" width="0.1524" layer="94"/>
+<circle x="2.54" y="-2.54" radius="0.254" width="0" layer="94"/>
+<circle x="2.54" y="2.54" radius="0.254" width="0" layer="94"/>
+<text x="-11.43" y="3.81" size="1.778" layer="96" rot="MR180">&gt;VALUE</text>
+<text x="-11.43" y="1.27" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
+<pin name="S" x="2.54" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="G" x="-2.54" y="-2.54" visible="off" length="short" direction="pas"/>
+<pin name="D" x="2.54" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
+<polygon width="0.1524" layer="94">
+<vertex x="1.016" y="0"/>
+<vertex x="2.032" y="0.508"/>
+<vertex x="2.032" y="-0.508"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="3.81" y="0.508"/>
+<vertex x="3.302" y="-0.254"/>
+<vertex x="4.318" y="-0.254"/>
+</polygon>
+</symbol>
+<symbol name="SPDT">
+<wire x1="0" y1="0" x2="17.78" y2="0" width="0.1524" layer="94"/>
+<wire x1="17.78" y1="0" x2="17.78" y2="15.24" width="0.1524" layer="94"/>
+<wire x1="17.78" y1="15.24" x2="0" y2="15.24" width="0.1524" layer="94"/>
+<wire x1="0" y1="15.24" x2="0" y2="0" width="0.1524" layer="94"/>
+<pin name="2" x="-5.08" y="7.62" length="middle"/>
+<pin name="1" x="22.86" y="12.7" length="middle" rot="R180"/>
+<pin name="3" x="22.86" y="5.08" length="middle" rot="R180"/>
+<circle x="4.826" y="7.62" radius="0.567959375" width="0.1524" layer="94"/>
+<circle x="12.954" y="12.7" radius="0.567959375" width="0.1524" layer="94"/>
+<circle x="12.954" y="5.08" radius="0.567959375" width="0.1524" layer="94"/>
+<wire x1="5.334" y1="7.62" x2="13.462" y2="11.938" width="0.1524" layer="94"/>
+<text x="0" y="15.24" size="1.778" layer="95">&gt;NAME</text>
+<text x="10.16" y="15.24" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -836,6 +923,42 @@ Source: http://www.lsicsi.com/pdfs/Drawings/TSSOP_OD.pdf</description>
 <connect gate="G$1" pin="Y7" pad="16"/>
 <connect gate="G$1" pin="Y8" pad="15"/>
 <connect gate="G$1" pin="Y9" pad="14"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BSS138">
+<description>N-Channel 50V 220mA (Ta) 360mW (Ta) Surface Mount SOT-23-3</description>
+<gates>
+<gate name="G$1" symbol="NMOS-FET-E" x="2.54" y="5.08"/>
+</gates>
+<devices>
+<device name="" package="SOT23">
+<connects>
+<connect gate="G$1" pin="D" pad="3"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="T511006">
+<description>Slide Switch SPDT Through Hole, Right Angle</description>
+<gates>
+<gate name="G$1" symbol="SPDT" x="5.08" y="0"/>
+</gates>
+<devices>
+<device name="" package="SPDT">
+<connects>
+<connect gate="G$1" pin="1" pad="P$3"/>
+<connect gate="G$1" pin="2" pad="P$4"/>
+<connect gate="G$1" pin="3" pad="P$5"/>
 </connects>
 <technologies>
 <technology name=""/>
