@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.1">
+<eagle version="8.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -10940,6 +10940,56 @@ Source: RS Component / Phycomp</description>
 <label x="77.47" y="110.49" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="P2_CLOCK-" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$20"/>
+<wire x1="134.62" y1="132.08" x2="102.87" y2="132.08" width="0.1524" layer="91"/>
+<label x="102.87" y="132.08" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$24"/>
+<wire x1="134.62" y1="127" x2="102.87" y2="127" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$26"/>
+<wire x1="134.62" y1="124.46" x2="102.87" y2="124.46" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$30"/>
+<wire x1="134.62" y1="119.38" x2="102.87" y2="119.38" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$32"/>
+<wire x1="134.62" y1="116.84" x2="102.87" y2="116.84" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$13" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$36"/>
+<wire x1="134.62" y1="111.76" x2="102.87" y2="111.76" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$38"/>
+<wire x1="134.62" y1="109.22" x2="102.87" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="P2_CLOCK+" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$18"/>
+<wire x1="134.62" y1="134.62" x2="102.87" y2="134.62" width="0.1524" layer="91"/>
+<label x="102.87" y="134.62" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -11205,7 +11255,7 @@ Source: RS Component / Phycomp</description>
 <label x="30.48" y="96.52" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$11" class="0">
+<net name="HDMI_PU" class="0">
 <segment>
 <pinref part="RN4" gate="B" pin="2"/>
 <wire x1="76.2" y1="177.8" x2="76.2" y2="175.26" width="0.1524" layer="91"/>
@@ -11240,6 +11290,7 @@ Source: RS Component / Phycomp</description>
 <pinref part="RN6" gate="B" pin="2"/>
 <wire x1="116.84" y1="175.26" x2="116.84" y2="177.8" width="0.1524" layer="91"/>
 <junction x="55.88" y="177.8"/>
+<label x="82.55" y="177.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="3V3" class="0">
