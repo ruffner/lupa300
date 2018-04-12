@@ -1,9 +1,13 @@
-// Si514 Programmable Oscillator test
+// Si514 Programmable Oscillator Utility
+// Matt Ruffner 
+// March 2018
 
 #include <Wire.h>
 
-// i2c address
+// i2c address of Si514 programmable oscillator
 #define SI514 0x55
+
+long freq = 73250000;
 
 void setup() {
   delay(2000);
@@ -16,7 +20,7 @@ void setup() {
   readSi514Regs();
 
 
-  //Serial.println("changing to 73.25 MHz");
+  Serial.println("changing to 73.25 MHz");
   // program a large freq change in the Si514
   // values calculated with the following formula
   // F_out = (F_xo * M) / (HS_DIV * 2^LS_DIV)
@@ -30,56 +34,20 @@ void setup() {
   // LP1 = 3
   // LP2 = 3
   //         m_int, m_frac, hs_div, ls_div, lp1, lp2
-  //Si514SetFreq(68, 0x16DFD1E4, 30, 0, 3, 3);
+  // Si514SetFreq(68, 0x16DFD1E4, 30, 0, 3, 3);
 
   // 73.25 MHz
   Si514SetFreq(73250000);
 
-  // 800x600 @ 60.00Hz
-  // M = 75.0469043152
-  // M_INT = 75
-  // M_FRAC = 0xF803D7A
-  // LS_DIV = 1
-  // HS_DIV = 60
-  // LP1 = 3
-  // LP2 = 4
-  //Si514SetFreq(75, 0xF803D7A, 60, 0, 3, 4);
-
-
-  // 73.5 Mhz - correct frequency
-  // m_int = 68
-  // m_frac = 1E610000
-  // hs_div = 30
-  // ls_div = 0
-  // lp_1 = 3
-  // lp_2 = 3
-
-  /*
-   * reg 0x84 -> 0
-   * reg 0x0 -> 0x33
-   * reg 0x5 -> 0x00
-   * reg 0x6 -> 0x00
-   * reg
-   */
-
-
-
-  // 800x600 @ 120.00Hz - 73.25 Mhz
-  //Si514SetFreq(74, 0x00DFD1E4, 30, 0, 3, 3);
-
-
   // show current reg status
   delay(10);
   readSi514Regs();
-
 
   pinMode(13, OUTPUT);
   digitalWrite(13, HIGH);
   delay(1000);
   digitalWrite(13, LOW);
 }
-
-long freq = 36400000;
 
 void loop() {
   // put your main code here, to run repeatedly:
@@ -93,16 +61,11 @@ void loop() {
     Serial.print(newFreq);
     Serial.println("Hz");
   }
-
-//  Serial.print("Setting to ");
-//  Serial.print(freq);
-//  Serial.println(" MHz");
-//
-//  Si514SetFreq((double)freq);
-//  freq += 10000;
-//  delay(10000);
 }
 
+
+// calculates reg values for frequencies where hs_div=30 is valid
+// around 71Mhz to 75Mhz
 void Si514SetFreq(double freq)
 {
   unsigned char m_int;
@@ -129,6 +92,9 @@ void Si514SetFreq(double freq)
   Si514SetFreq(m_int,m_frac,hs_div,ls_div,lp1,lp2);
 }
 
+
+// write Si514 registers in order to program a 'large' frequency change
+// can also be used for small frequency changes
 void Si514SetFreq(unsigned char m_int,
                   unsigned long m_frac,
                   unsigned short hs_div,
@@ -174,6 +140,8 @@ void Si514SetFreq(unsigned char m_int,
 
 }
 
+// arduino utility for reading Si514 reg values.
+// not necessary for operation, only i2c write operation verification
 void readSi514Regs() {
   readRegs(0x00, 1);
   readRegs(0x05, 7);
@@ -183,6 +151,7 @@ void readSi514Regs() {
   readRegs(0x84, 1);
 }
 
+// do a burst read from the Si514 of a certain number of bytes
 void readRegs(unsigned char reg, unsigned char numBytes)
 {
   int i = reg;
@@ -200,6 +169,7 @@ void readRegs(unsigned char reg, unsigned char numBytes)
   }
 }
 
+// write a register to a certain value
 void writeReg(unsigned char reg, unsigned char d)
 {
   Wire.beginTransmission(SI514);
