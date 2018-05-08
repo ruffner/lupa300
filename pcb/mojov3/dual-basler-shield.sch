@@ -9422,35 +9422,35 @@ Source: AVX .. aphvc.pdf</description>
 </class>
 </classes>
 <parts>
-<part name="CAMERA2" library="con-yamaichi" library_urn="urn:adsk.eagle:library:202" deviceset="MD08SS" device="" package3d_urn="urn:adsk.eagle:package:11781/1"/>
-<part name="CAMERA1" library="con-yamaichi" library_urn="urn:adsk.eagle:library:202" deviceset="MD08SS" device="" package3d_urn="urn:adsk.eagle:package:11781/1"/>
+<part name="BASLER2" library="con-yamaichi" library_urn="urn:adsk.eagle:library:202" deviceset="MD08SS" device="" package3d_urn="urn:adsk.eagle:package:11781/1"/>
+<part name="BASLER1" library="con-yamaichi" library_urn="urn:adsk.eagle:library:202" deviceset="MD08SS" device="" package3d_urn="urn:adsk.eagle:package:11781/1"/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
-<part name="U$2" library="lupa300-components" deviceset="SI514" device=""/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
-<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2"/>
+<part name="OSC" library="lupa300-components" deviceset="SI514" device=""/>
+<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="3k"/>
+<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="3k"/>
+<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
 <part name="U$3" library="EmbeddedMicro-Mojo" deviceset="MOJO_OUTLINE" device=""/>
 <part name="U$4" library="EmbeddedMicro-Mojo" deviceset="MOJO" device="V3"/>
-<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2"/>
+<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="CAMERA2" gate="G$1" x="15.24" y="25.4" rot="R180"/>
-<instance part="CAMERA1" gate="G$1" x="15.24" y="53.34" rot="R180"/>
+<instance part="BASLER2" gate="G$1" x="15.24" y="25.4" rot="R180"/>
+<instance part="BASLER1" gate="G$1" x="15.24" y="53.34" rot="R180"/>
 <instance part="JP3" gate="A" x="66.04" y="53.34"/>
 <instance part="JP4" gate="A" x="66.04" y="25.4"/>
-<instance part="U$2" gate="G$1" x="106.68" y="38.1"/>
+<instance part="OSC" gate="G$1" x="106.68" y="38.1"/>
 <instance part="R5" gate="G$1" x="83.82" y="50.8" rot="R90"/>
 <instance part="R6" gate="G$1" x="78.74" y="43.18" rot="R90"/>
 <instance part="R1" gate="G$1" x="121.92" y="137.16" rot="R90"/>
@@ -9472,42 +9472,42 @@ Source: AVX .. aphvc.pdf</description>
 <nets>
 <net name="GND" class="0">
 <segment>
-<pinref part="CAMERA1" gate="G$1" pin="5"/>
+<pinref part="BASLER1" gate="G$1" pin="5"/>
 <wire x1="25.4" y1="53.34" x2="30.48" y2="53.34" width="0.1524" layer="91"/>
 <label x="30.48" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA1" gate="G$1" pin="3"/>
+<pinref part="BASLER1" gate="G$1" pin="3"/>
 <wire x1="25.4" y1="48.26" x2="30.48" y2="48.26" width="0.1524" layer="91"/>
 <label x="30.48" y="48.26" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA1" gate="G$1" pin="2"/>
+<pinref part="BASLER1" gate="G$1" pin="2"/>
 <wire x1="25.4" y1="45.72" x2="30.48" y2="45.72" width="0.1524" layer="91"/>
 <label x="30.48" y="45.72" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA1" gate="G$1" pin="1"/>
+<pinref part="BASLER1" gate="G$1" pin="1"/>
 <wire x1="25.4" y1="43.18" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
 <label x="30.48" y="43.18" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA2" gate="G$1" pin="5"/>
+<pinref part="BASLER2" gate="G$1" pin="5"/>
 <wire x1="25.4" y1="25.4" x2="30.48" y2="25.4" width="0.1524" layer="91"/>
 <label x="30.48" y="25.4" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA2" gate="G$1" pin="3"/>
+<pinref part="BASLER2" gate="G$1" pin="3"/>
 <wire x1="25.4" y1="20.32" x2="30.48" y2="20.32" width="0.1524" layer="91"/>
 <label x="30.48" y="20.32" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA2" gate="G$1" pin="2"/>
+<pinref part="BASLER2" gate="G$1" pin="2"/>
 <wire x1="25.4" y1="17.78" x2="30.48" y2="17.78" width="0.1524" layer="91"/>
 <label x="30.48" y="17.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA2" gate="G$1" pin="1"/>
+<pinref part="BASLER2" gate="G$1" pin="1"/>
 <wire x1="25.4" y1="15.24" x2="30.48" y2="15.24" width="0.1524" layer="91"/>
 <label x="30.48" y="15.24" size="1.778" layer="95"/>
 </segment>
@@ -9532,7 +9532,7 @@ Source: AVX .. aphvc.pdf</description>
 <label x="91.44" y="165.1" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="OSC" gate="G$1" pin="GND"/>
 <wire x1="93.98" y1="30.48" x2="88.9" y2="30.48" width="0.1524" layer="91"/>
 <label x="86.36" y="30.48" size="1.778" layer="95"/>
 </segment>
@@ -9589,7 +9589,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="CLK" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="CLK"/>
+<pinref part="OSC" gate="G$1" pin="CLK"/>
 <wire x1="119.38" y1="43.18" x2="124.46" y2="43.18" width="0.1524" layer="91"/>
 <label x="124.46" y="43.18" size="1.778" layer="95"/>
 </segment>
@@ -9601,7 +9601,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="SCL" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="SCL"/>
+<pinref part="OSC" gate="G$1" pin="SCL"/>
 <wire x1="93.98" y1="35.56" x2="78.74" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="78.74" y1="35.56" x2="78.74" y2="38.1" width="0.1524" layer="91"/>
@@ -9615,7 +9615,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="SDA" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="SDA"/>
+<pinref part="OSC" gate="G$1" pin="SDA"/>
 <wire x1="93.98" y1="40.64" x2="83.82" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="83.82" y1="40.64" x2="83.82" y2="45.72" width="0.1524" layer="91"/>
@@ -9629,7 +9629,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="LINE_1_4" class="0">
 <segment>
-<pinref part="CAMERA1" gate="G$1" pin="8"/>
+<pinref part="BASLER1" gate="G$1" pin="8"/>
 <wire x1="25.4" y1="60.96" x2="30.48" y2="60.96" width="0.1524" layer="91"/>
 <label x="30.48" y="60.96" size="1.778" layer="95"/>
 </segment>
@@ -9651,7 +9651,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="LINE_1_3" class="0">
 <segment>
-<pinref part="CAMERA1" gate="G$1" pin="7"/>
+<pinref part="BASLER1" gate="G$1" pin="7"/>
 <wire x1="25.4" y1="58.42" x2="30.48" y2="58.42" width="0.1524" layer="91"/>
 <label x="30.48" y="58.42" size="1.778" layer="95"/>
 </segment>
@@ -9673,7 +9673,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="LINE_1_1" class="0">
 <segment>
-<pinref part="CAMERA1" gate="G$1" pin="6"/>
+<pinref part="BASLER1" gate="G$1" pin="6"/>
 <wire x1="25.4" y1="55.88" x2="30.48" y2="55.88" width="0.1524" layer="91"/>
 <label x="30.48" y="55.88" size="1.778" layer="95"/>
 </segment>
@@ -9695,7 +9695,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="LINE_1_2" class="0">
 <segment>
-<pinref part="CAMERA1" gate="G$1" pin="4"/>
+<pinref part="BASLER1" gate="G$1" pin="4"/>
 <wire x1="25.4" y1="50.8" x2="30.48" y2="50.8" width="0.1524" layer="91"/>
 <label x="30.48" y="50.8" size="1.778" layer="95"/>
 </segment>
@@ -9717,7 +9717,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="LINE_2_4" class="0">
 <segment>
-<pinref part="CAMERA2" gate="G$1" pin="8"/>
+<pinref part="BASLER2" gate="G$1" pin="8"/>
 <wire x1="25.4" y1="33.02" x2="30.48" y2="33.02" width="0.1524" layer="91"/>
 <label x="30.48" y="33.02" size="1.778" layer="95"/>
 </segment>
@@ -9739,7 +9739,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="LINE_2_3" class="0">
 <segment>
-<pinref part="CAMERA2" gate="G$1" pin="7"/>
+<pinref part="BASLER2" gate="G$1" pin="7"/>
 <wire x1="25.4" y1="30.48" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
 <label x="30.48" y="30.48" size="1.778" layer="95"/>
 </segment>
@@ -9761,7 +9761,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="LINE_2_1" class="0">
 <segment>
-<pinref part="CAMERA2" gate="G$1" pin="6"/>
+<pinref part="BASLER2" gate="G$1" pin="6"/>
 <wire x1="25.4" y1="27.94" x2="30.48" y2="27.94" width="0.1524" layer="91"/>
 <label x="30.48" y="27.94" size="1.778" layer="95"/>
 </segment>
@@ -9783,7 +9783,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="LINE_2_2" class="0">
 <segment>
-<pinref part="CAMERA2" gate="G$1" pin="4"/>
+<pinref part="BASLER2" gate="G$1" pin="4"/>
 <wire x1="25.4" y1="22.86" x2="30.48" y2="22.86" width="0.1524" layer="91"/>
 <label x="30.48" y="22.86" size="1.778" layer="95"/>
 </segment>
@@ -9810,7 +9810,7 @@ Source: AVX .. aphvc.pdf</description>
 <label x="-5.08" y="165.1" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="VDD"/>
+<pinref part="OSC" gate="G$1" pin="VDD"/>
 <wire x1="93.98" y1="45.72" x2="88.9" y2="45.72" width="0.1524" layer="91"/>
 <label x="86.36" y="45.72" size="1.778" layer="95"/>
 </segment>
