@@ -9953,9 +9953,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="74.93" y="39.37" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA" gate="G$1" pin="2"/>
-<wire x1="135.89" y1="62.23" x2="144.78" y2="62.23" width="0.1524" layer="91"/>
-<label x="144.78" y="62.23" size="1.778" layer="95"/>
+<pinref part="CAMERA" gate="G$1" pin="1"/>
+<wire x1="135.89" y1="59.69" x2="144.78" y2="59.69" width="0.1524" layer="91"/>
+<label x="144.78" y="59.69" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -9990,11 +9990,6 @@ Source: AVX .. aphvc.pdf</description>
 <label x="95.25" y="26.67" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA" gate="G$1" pin="5"/>
-<wire x1="135.89" y1="69.85" x2="144.78" y2="69.85" width="0.1524" layer="91"/>
-<label x="144.78" y="69.85" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="120.65" y1="118.11" x2="120.65" y2="115.57" width="0.1524" layer="91"/>
 <wire x1="120.65" y1="115.57" x2="128.27" y2="115.57" width="0.1524" layer="91"/>
@@ -10020,6 +10015,11 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="8.89" y1="21.59" x2="16.51" y2="21.59" width="0.1524" layer="91"/>
 <label x="16.51" y="21.59" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="CAMERA" gate="G$1" pin="3"/>
+<wire x1="135.89" y1="64.77" x2="144.78" y2="64.77" width="0.1524" layer="91"/>
+<label x="144.78" y="64.77" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -10041,49 +10041,49 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="TX" class="0">
 <segment>
-<pinref part="JP2" gate="A" pin="18"/>
-<wire x1="8.89" y1="59.69" x2="17.78" y2="59.69" width="0.1524" layer="91"/>
-<label x="16.51" y="59.69" size="1.778" layer="95"/>
+<pinref part="CAMERA" gate="G$1" pin="2"/>
+<wire x1="135.89" y1="62.23" x2="144.78" y2="62.23" width="0.1524" layer="91"/>
+<label x="144.78" y="62.23" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA" gate="G$1" pin="1"/>
-<wire x1="135.89" y1="59.69" x2="144.78" y2="59.69" width="0.1524" layer="91"/>
-<label x="144.78" y="59.69" size="1.778" layer="95"/>
+<pinref part="JP2" gate="A" pin="20"/>
+<wire x1="8.89" y1="57.15" x2="17.78" y2="57.15" width="0.1524" layer="91"/>
+<label x="17.78" y="57.15" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RX" class="0">
 <segment>
-<pinref part="JP2" gate="A" pin="20"/>
-<wire x1="8.89" y1="57.15" x2="17.78" y2="57.15" width="0.1524" layer="91"/>
-<label x="16.51" y="57.15" size="1.778" layer="95"/>
+<pinref part="CAMERA" gate="G$1" pin="5"/>
+<wire x1="135.89" y1="69.85" x2="144.78" y2="69.85" width="0.1524" layer="91"/>
+<label x="144.78" y="69.85" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA" gate="G$1" pin="3"/>
-<wire x1="135.89" y1="64.77" x2="144.78" y2="64.77" width="0.1524" layer="91"/>
-<label x="144.78" y="64.77" size="1.778" layer="95"/>
+<pinref part="JP2" gate="A" pin="18"/>
+<wire x1="8.89" y1="59.69" x2="17.78" y2="59.69" width="0.1524" layer="91"/>
+<label x="17.78" y="59.69" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IN1" class="0">
-<segment>
-<pinref part="CAMERA" gate="G$1" pin="8"/>
-<wire x1="135.89" y1="77.47" x2="144.78" y2="77.47" width="0.1524" layer="91"/>
-<label x="144.78" y="78.74" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP3" gate="A" pin="1"/>
-<wire x1="146.05" y1="41.91" x2="133.35" y2="41.91" width="0.1524" layer="91"/>
-<label x="129.54" y="41.91" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="170.18" y1="57.15" x2="167.64" y2="57.15" width="0.1524" layer="91"/>
-<label x="166.37" y="57.15" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="120.65" y1="128.27" x2="120.65" y2="133.35" width="0.1524" layer="91"/>
 <label x="120.65" y="130.81" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAMERA" gate="G$1" pin="6"/>
+<wire x1="135.89" y1="72.39" x2="144.78" y2="72.39" width="0.1524" layer="91"/>
+<label x="144.78" y="72.39" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="162.56" y1="46.99" x2="158.75" y2="46.99" width="0.1524" layer="91"/>
+<label x="157.48" y="46.99" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="A" pin="4"/>
+<wire x1="146.05" y1="34.29" x2="133.35" y2="34.29" width="0.1524" layer="91"/>
+<label x="129.54" y="34.29" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IN2" class="0">
@@ -10111,25 +10111,25 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="OUT2" class="0">
 <segment>
-<pinref part="CAMERA" gate="G$1" pin="6"/>
-<wire x1="135.89" y1="72.39" x2="144.78" y2="72.39" width="0.1524" layer="91"/>
-<label x="144.78" y="72.39" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP3" gate="A" pin="4"/>
-<wire x1="146.05" y1="34.29" x2="133.35" y2="34.29" width="0.1524" layer="91"/>
-<label x="129.54" y="34.29" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="162.56" y1="46.99" x2="157.48" y2="46.99" width="0.1524" layer="91"/>
-<label x="153.67" y="46.99" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="R12" gate="G$1" pin="2"/>
 <pinref part="R11" gate="G$1" pin="1"/>
 <wire x1="142.24" y1="128.27" x2="142.24" y2="133.35" width="0.1524" layer="91"/>
 <label x="142.24" y="130.81" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAMERA" gate="G$1" pin="8"/>
+<wire x1="135.89" y1="77.47" x2="144.78" y2="77.47" width="0.1524" layer="91"/>
+<label x="144.78" y="77.47" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="A" pin="1"/>
+<wire x1="146.05" y1="41.91" x2="133.35" y2="41.91" width="0.1524" layer="91"/>
+<label x="128.27" y="41.91" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="170.18" y1="57.15" x2="166.37" y2="57.15" width="0.1524" layer="91"/>
+<label x="163.83" y="57.15" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="OUT1" class="0">
