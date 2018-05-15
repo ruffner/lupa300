@@ -10010,6 +10010,16 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="R12" gate="G$1" pin="1"/>
 <wire x1="142.24" y1="115.57" x2="142.24" y2="118.11" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="JP2" gate="A" pin="47"/>
+<wire x1="1.27" y1="21.59" x2="-6.35" y2="21.59" width="0.1524" layer="91"/>
+<label x="-11.43" y="21.59" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="A" pin="48"/>
+<wire x1="8.89" y1="21.59" x2="16.51" y2="21.59" width="0.1524" layer="91"/>
+<label x="16.51" y="21.59" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -10189,6 +10199,11 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="135.89" y1="143.51" x2="135.89" y2="146.05" width="0.1524" layer="91"/>
 <junction x="135.89" y="146.05"/>
 <label x="129.54" y="147.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="A" pin="10"/>
+<wire x1="194.31" y1="69.85" x2="201.93" y2="69.85" width="0.1524" layer="91"/>
+<label x="201.93" y="69.85" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
