@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.1">
+<eagle version="8.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8349,6 +8349,10 @@ Created 2014-10-08, Karrer Zheng&lt;br&gt;
 <part name="SUPPLY25" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="K1" library="Wurth_Elektronik_Electromechanic_DC_Power_Jack_Connectors_rev15c" deviceset="694108105102" device=""/>
 <part name="SUPPLY26" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF"/>
+<part name="C13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF"/>
+<part name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF"/>
+<part name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -8361,6 +8365,10 @@ Created 2014-10-08, Karrer Zheng&lt;br&gt;
 <instance part="JX2" gate="G$1" x="157.48" y="152.4"/>
 <instance part="SUPPLY14" gate="GND" x="124.46" y="12.7"/>
 <instance part="SUPPLY15" gate="GND" x="162.56" y="12.7"/>
+<instance part="C12" gate="G$1" x="88.9" y="134.62"/>
+<instance part="C13" gate="G$1" x="78.74" y="134.62"/>
+<instance part="C14" gate="G$1" x="76.2" y="99.06"/>
+<instance part="C15" gate="G$1" x="91.44" y="99.06"/>
 </instances>
 <busses>
 </busses>
@@ -8574,6 +8582,26 @@ Created 2014-10-08, Karrer Zheng&lt;br&gt;
 <junction x="162.56" y="45.72"/>
 <junction x="162.56" y="38.1"/>
 </segment>
+<segment>
+<pinref part="C12" gate="G$1" pin="2"/>
+<wire x1="88.9" y1="129.54" x2="88.9" y2="121.92" width="0.1524" layer="91"/>
+<label x="88.9" y="121.92" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C13" gate="G$1" pin="2"/>
+<wire x1="78.74" y1="129.54" x2="78.74" y2="121.92" width="0.1524" layer="91"/>
+<label x="78.74" y="121.92" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C15" gate="G$1" pin="2"/>
+<wire x1="91.44" y1="93.98" x2="88.9" y2="86.36" width="0.1524" layer="91"/>
+<label x="91.44" y="88.9" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C14" gate="G$1" pin="2"/>
+<wire x1="76.2" y1="93.98" x2="78.74" y2="86.36" width="0.1524" layer="91"/>
+<label x="78.74" y="88.9" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="PWR_EN" class="0">
 <segment>
@@ -8627,6 +8655,17 @@ Created 2014-10-08, Karrer Zheng&lt;br&gt;
 <wire x1="129.54" y1="139.7" x2="114.3" y2="139.7" width="0.1524" layer="91"/>
 <label x="114.3" y="139.7" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="C12" gate="G$1" pin="1"/>
+<wire x1="88.9" y1="137.16" x2="88.9" y2="144.78" width="0.1524" layer="91"/>
+<label x="88.9" y="144.78" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C13" gate="G$1" pin="1"/>
+<wire x1="78.74" y1="137.16" x2="78.74" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="144.78" x2="76.2" y2="144.78" width="0.1524" layer="91"/>
+<label x="78.74" y="139.7" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VCCIO_EN" class="0">
 <segment>
@@ -8665,6 +8704,16 @@ Created 2014-10-08, Karrer Zheng&lt;br&gt;
 <pinref part="JX2" gate="G$1" pin="P$79"/>
 <wire x1="157.48" y1="53.34" x2="177.8" y2="53.34" width="0.1524" layer="91"/>
 <label x="177.8" y="53.34" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C14" gate="G$1" pin="1"/>
+<wire x1="76.2" y1="101.6" x2="78.74" y2="109.22" width="0.1524" layer="91"/>
+<label x="78.74" y="109.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C15" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="101.6" x2="88.9" y2="109.22" width="0.1524" layer="91"/>
+<label x="88.9" y="109.22" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PG_CARRIER" class="0">
