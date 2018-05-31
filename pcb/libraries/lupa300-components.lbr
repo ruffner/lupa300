@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.1">
+<eagle version="8.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -410,6 +410,40 @@ Source: Comchip CGRM4001-G.pdf</description>
 <rectangle x1="1.425" y1="-0.55" x2="1.8" y2="0.55" layer="51" rot="R180"/>
 <rectangle x1="-0.95" y1="-0.775" x2="-0.65" y2="0.8" layer="21"/>
 </package>
+<package name="SO08" urn="urn:adsk.eagle:footprint:17116/1" locally_modified="yes">
+<description>&lt;b&gt;Small Outline Package&lt;/b&gt; SOIC 150 mil</description>
+<wire x1="2.159" y1="1.9558" x2="-2.159" y2="1.9558" width="0.1524" layer="21"/>
+<wire x1="2.159" y1="-1.9558" x2="2.54" y2="-1.5748" width="0.1524" layer="21" curve="90"/>
+<wire x1="-2.54" y1="1.5748" x2="-2.159" y2="1.9558" width="0.1524" layer="21" curve="-90"/>
+<wire x1="2.159" y1="1.9558" x2="2.54" y2="1.5748" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.54" y1="-1.5748" x2="-2.159" y2="-1.9558" width="0.1524" layer="21" curve="90"/>
+<wire x1="-2.159" y1="-1.9558" x2="2.159" y2="-1.9558" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-1.5748" x2="2.54" y2="1.5748" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="1.5748" x2="-2.54" y2="0.508" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.508" x2="-2.54" y2="-0.508" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-0.508" x2="-2.54" y2="-1.5748" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.508" x2="-2.54" y2="-0.508" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-2.54" y1="-1.6002" x2="2.54" y2="-1.6002" width="0.0508" layer="21"/>
+<smd name="1" x="-1.905" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="8" x="-1.905" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="2" x="-0.635" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="3" x="0.635" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="7" x="-0.635" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="6" x="0.635" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="4" x="1.905" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="5" x="1.905" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<text x="3.937" y="-2.032" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<text x="-2.921" y="-1.905" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<rectangle x1="1.651" y1="1.9558" x2="2.159" y2="3.0988" layer="51"/>
+<rectangle x1="-2.159" y1="-3.0988" x2="-1.651" y2="-1.9558" layer="51"/>
+<rectangle x1="-0.889" y1="-3.0988" x2="-0.381" y2="-1.9558" layer="51"/>
+<rectangle x1="0.381" y1="-3.0734" x2="0.889" y2="-1.9304" layer="51"/>
+<rectangle x1="1.651" y1="-3.0988" x2="2.159" y2="-1.9558" layer="51"/>
+<rectangle x1="0.381" y1="1.9558" x2="0.889" y2="3.0988" layer="51"/>
+<rectangle x1="-0.889" y1="1.9558" x2="-0.381" y2="3.0988" layer="51"/>
+<rectangle x1="-2.159" y1="1.9558" x2="-1.651" y2="3.0988" layer="51"/>
+<smd name="9" x="0" y="0" dx="2.3114" dy="2.3114" layer="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SPX1117">
@@ -773,6 +807,23 @@ Source: Comchip CGRM4001-G.pdf</description>
 <text x="25.4" y="-7.62" size="1.778" layer="94">&gt;NAME</text>
 <text x="25.4" y="-10.16" size="1.778" layer="94">&gt;SPICEMODEL</text>
 <text x="25.4" y="-12.7" size="1.778" layer="94">&gt;SPICEEXTRA</text>
+</symbol>
+<symbol name="8-SOIC-EP">
+<wire x1="0" y1="0" x2="20.32" y2="0" width="0.254" layer="94"/>
+<wire x1="20.32" y1="0" x2="20.32" y2="12.7" width="0.254" layer="94"/>
+<wire x1="20.32" y1="12.7" x2="0" y2="12.7" width="0.254" layer="94"/>
+<text x="2.54" y="17.78" size="1.778" layer="95">&gt;NAME</text>
+<text x="12.7" y="17.78" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="0" y1="12.7" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="VOUT" x="-5.08" y="10.16" length="middle"/>
+<pin name="VO_SEN" x="-5.08" y="7.62" length="middle"/>
+<pin name="BYP" x="-5.08" y="5.08" length="middle"/>
+<pin name="EN" x="-5.08" y="2.54" length="middle"/>
+<pin name="REF_SEN" x="25.4" y="2.54" length="middle" rot="R180"/>
+<pin name="REF" x="25.4" y="5.08" length="middle" rot="R180"/>
+<pin name="VREG" x="25.4" y="7.62" length="middle" rot="R180"/>
+<pin name="VIN" x="25.4" y="10.16" length="middle" rot="R180"/>
+<pin name="GND" x="10.16" y="-5.08" length="middle" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1177,6 +1228,29 @@ Source: Comchip CGRM4001-G.pdf</description>
 <connect gate="G$1" pin="VDD" pad="5"/>
 <connect gate="G$1" pin="VOUT" pad="4"/>
 <connect gate="G$1" pin="VSS" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ADP7158">
+<gates>
+<gate name="G$1" symbol="8-SOIC-EP" x="-7.62" y="5.08"/>
+</gates>
+<devices>
+<device name="" package="SO08">
+<connects>
+<connect gate="G$1" pin="BYP" pad="3"/>
+<connect gate="G$1" pin="EN" pad="4"/>
+<connect gate="G$1" pin="GND" pad="9"/>
+<connect gate="G$1" pin="REF" pad="6"/>
+<connect gate="G$1" pin="REF_SEN" pad="5"/>
+<connect gate="G$1" pin="VIN" pad="8"/>
+<connect gate="G$1" pin="VOUT" pad="1"/>
+<connect gate="G$1" pin="VO_SEN" pad="2"/>
+<connect gate="G$1" pin="VREG" pad="7"/>
 </connects>
 <technologies>
 <technology name=""/>
