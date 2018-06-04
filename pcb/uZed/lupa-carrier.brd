@@ -32,9 +32,9 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -46,15 +46,15 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
@@ -81,60 +81,60 @@
 <layer number="100" name="help" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="101" name="DOC" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="102" name="bot_pads" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="103" name="tMap" color="7" fill="1" visible="no" active="yes"/>
+<layer number="103" name="tMap" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="104" name="S_DOKU" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="105" name="tPlate" color="7" fill="1" visible="no" active="yes"/>
-<layer number="106" name="bPlate" color="7" fill="1" visible="no" active="yes"/>
-<layer number="107" name="Crop" color="7" fill="1" visible="no" active="yes"/>
+<layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="108" name="tplace-old" color="10" fill="1" visible="yes" active="yes"/>
 <layer number="109" name="ref-old" color="11" fill="1" visible="yes" active="yes"/>
-<layer number="110" name="fp0" color="7" fill="1" visible="no" active="yes"/>
-<layer number="111" name="tGTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="112" name="bGTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="110" name="fp0" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="111" name="tGTest" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="112" name="bGTest" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="113" name="IDFDebug" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="114" name="Badge_Outline" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
-<layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
-<layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
-<layer number="124" name="bTestmark" color="7" fill="1" visible="no" active="yes"/>
-<layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="126" name="_bNames" color="5" fill="1" visible="no" active="yes"/>
-<layer number="127" name="_tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="128" name="_bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="124" name="bTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="126" name="_bNames" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="131" name="prix" color="7" fill="1" visible="no" active="yes"/>
-<layer number="132" name="test" color="7" fill="1" visible="no" active="yes"/>
-<layer number="133" name="Ports" color="7" fill="1" visible="no" active="yes"/>
-<layer number="134" name="Port2" color="7" fill="1" visible="no" active="yes"/>
-<layer number="135" name="Port3" color="7" fill="1" visible="no" active="yes"/>
-<layer number="144" name="Drill_legend" color="7" fill="1" visible="no" active="yes"/>
-<layer number="150" name="Notes" color="7" fill="1" visible="no" active="yes"/>
-<layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
-<layer number="152" name="_bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="131" name="prix" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="132" name="test" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="133" name="Ports" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="134" name="Port2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="135" name="Port3" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="153" name="FabDoc1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
-<layer number="202" name="202bmp" color="3" fill="10" visible="no" active="yes"/>
-<layer number="203" name="203bmp" color="4" fill="10" visible="no" active="yes"/>
-<layer number="204" name="204bmp" color="5" fill="10" visible="no" active="yes"/>
-<layer number="205" name="205bmp" color="6" fill="10" visible="no" active="yes"/>
-<layer number="206" name="206bmp" color="7" fill="10" visible="no" active="yes"/>
-<layer number="207" name="207bmp" color="8" fill="10" visible="no" active="yes"/>
-<layer number="208" name="208bmp" color="9" fill="10" visible="no" active="yes"/>
-<layer number="209" name="209bmp" color="10" fill="10" visible="no" active="yes"/>
-<layer number="210" name="210bmp" color="11" fill="10" visible="no" active="yes"/>
-<layer number="211" name="211bmp" color="12" fill="10" visible="no" active="yes"/>
-<layer number="212" name="212bmp" color="13" fill="10" visible="no" active="yes"/>
-<layer number="213" name="213bmp" color="14" fill="10" visible="no" active="yes"/>
-<layer number="214" name="214bmp" color="15" fill="10" visible="no" active="yes"/>
-<layer number="215" name="215bmp" color="16" fill="10" visible="no" active="yes"/>
-<layer number="216" name="216bmp" color="17" fill="10" visible="no" active="yes"/>
+<layer number="202" name="202bmp" color="3" fill="10" visible="yes" active="yes"/>
+<layer number="203" name="203bmp" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="204" name="204bmp" color="5" fill="10" visible="yes" active="yes"/>
+<layer number="205" name="205bmp" color="6" fill="10" visible="yes" active="yes"/>
+<layer number="206" name="206bmp" color="7" fill="10" visible="yes" active="yes"/>
+<layer number="207" name="207bmp" color="8" fill="10" visible="yes" active="yes"/>
+<layer number="208" name="208bmp" color="9" fill="10" visible="yes" active="yes"/>
+<layer number="209" name="209bmp" color="10" fill="10" visible="yes" active="yes"/>
+<layer number="210" name="210bmp" color="11" fill="10" visible="yes" active="yes"/>
+<layer number="211" name="211bmp" color="12" fill="10" visible="yes" active="yes"/>
+<layer number="212" name="212bmp" color="13" fill="10" visible="yes" active="yes"/>
+<layer number="213" name="213bmp" color="14" fill="10" visible="yes" active="yes"/>
+<layer number="214" name="214bmp" color="15" fill="10" visible="yes" active="yes"/>
+<layer number="215" name="215bmp" color="16" fill="10" visible="yes" active="yes"/>
+<layer number="216" name="216bmp" color="17" fill="10" visible="yes" active="yes"/>
 <layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
 <layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
 <layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
@@ -149,15 +149,15 @@
 <layer number="228" name="228bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="231" name="Eagle3D_PG1" color="14" fill="1" visible="no" active="yes"/>
-<layer number="232" name="Eagle3D_PG2" color="14" fill="2" visible="no" active="yes"/>
-<layer number="233" name="Eagle3D_PG3" color="14" fill="4" visible="no" active="yes"/>
+<layer number="231" name="Eagle3D_PG1" color="14" fill="1" visible="yes" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="14" fill="2" visible="yes" active="yes"/>
+<layer number="233" name="Eagle3D_PG3" color="14" fill="4" visible="yes" active="yes"/>
 <layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="OrgLBR" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="255" name="xfer" color="7" fill="1" visible="no" active="yes"/>
+<layer number="255" name="xfer" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
 <plain>
@@ -1818,11 +1818,11 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="22uF" x="10.795" y="45.72" smashed="yes" rot="R180">
-<attribute name="NAME" x="7.62" y="46.355" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="8.255" y="46.355" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="C" x="10.795" y="45.72" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="15.24" y="41.275" smashed="yes">
-<attribute name="NAME" x="17.145" y="40.64" size="1.27" layer="25"/>
+<attribute name="NAME" x="13.97" y="39.37" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="C" x="15.24" y="41.275" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="12.065" y="27.305" smashed="yes" rot="R180">
@@ -1834,15 +1834,15 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="15.24" y="27.305" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="3k92" x="13.335" y="29.845" smashed="yes">
-<attribute name="NAME" x="15.24" y="29.21" size="1.27" layer="25"/>
+<attribute name="NAME" x="17.145" y="30.48" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="13.335" y="29.845" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="430" x="14.605" y="53.34" smashed="yes" rot="R180">
-<attribute name="NAME" x="12.7" y="53.34" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="15.875" y="55.88" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="14.605" y="53.34" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="680" x="11.43" y="47.625" smashed="yes">
-<attribute name="NAME" x="10.16" y="48.895" size="1.27" layer="25"/>
+<attribute name="NAME" x="7.62" y="46.99" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="R" x="11.43" y="47.625" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U$1" library="lupa300-components" package="SPDT" value="T511006" x="13.97" y="46.355" rot="MR270"/>
@@ -1850,72 +1850,72 @@ design rules under a new name.</description>
 <attribute name="NAME" x="6.35" y="28.575" size="1.27" layer="25" rot="R90"/>
 </element>
 <element name="U$3" library="lupa300-components" package="SOT23" value="BAT54L" x="12.065" y="50.8" smashed="yes">
-<attribute name="NAME" x="10.16" y="48.895" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="11.43" y="53.34" size="1.27" layer="25" rot="R180"/>
 </element>
 <element name="JX1" library="lupa300-components" package="BERG100POS" value="BERGSTAK-100POS" x="71.12" y="47.625" smashed="yes">
-<attribute name="NAME" x="28.52" y="46" size="1.27" layer="25"/>
+<attribute name="NAME" x="72.335" y="46" size="1.27" layer="25"/>
 </element>
 <element name="JX2" library="lupa300-components" package="BERG100POS" value="BERGSTAK-100POS" x="71.12" y="3.175" smashed="yes">
-<attribute name="NAME" x="31.695" y="11.075" size="1.27" layer="25"/>
+<attribute name="NAME" x="72.335" y="10.44" size="1.27" layer="25"/>
 </element>
 <element name="U$7" library="lupa300-components" package="SOT23" value="BSS138" x="15.875" y="24.13" smashed="yes" rot="R270">
-<attribute name="NAME" x="14.605" y="26.035" size="1.27" layer="25"/>
+<attribute name="NAME" x="12.7" y="20.955" size="1.27" layer="25"/>
 </element>
 <element name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="3k92" x="16.51" y="31.75" smashed="yes" rot="R180">
-<attribute name="NAME" x="12.7" y="31.115" size="1.27" layer="25"/>
+<attribute name="NAME" x="15.24" y="33.02" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="R" x="16.51" y="31.75" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="21.59" y="19.685" smashed="yes" rot="R180">
-<attribute name="NAME" x="20.2438" y="22.1488" size="1.27" layer="25" ratio="10"/>
+<attribute name="NAME" x="20.8788" y="16.4338" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="24.13" y="22.86" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k" x="26.67" y="20.32" smashed="yes">
-<attribute name="NAME" x="30.48" y="20.955" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="31.115" y="20.955" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="26.67" y="20.32" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="220" x="26.67" y="22.86" smashed="yes">
-<attribute name="NAME" x="30.48" y="23.495" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="31.115" y="23.495" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="26.67" y="22.86" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U$8" library="lupa300-components" package="SOT23" value="BAT54L" x="22.86" y="23.495" smashed="yes" rot="R90">
 <attribute name="NAME" x="21.59" y="25.4" size="1.27" layer="25"/>
 </element>
 <element name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="120" x="19.05" y="24.13" smashed="yes" rot="R270">
-<attribute name="NAME" x="18.415" y="22.225" size="1.27" layer="25" rot="R270"/>
+<attribute name="NAME" x="18.415" y="18.415" size="1.27" layer="25" rot="R90"/>
 <attribute name="SPICEPREFIX" value="R" x="19.05" y="24.13" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="17.78" y="40.005" smashed="yes" rot="R90">
-<attribute name="NAME" x="20.32" y="38.735" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="18.415" y="41.275" size="1.27" layer="25" rot="R90"/>
 <attribute name="SPICEPREFIX" value="C" x="17.78" y="40.005" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="U$9" library="lupa300-components" package="SOT23" value="TL431A" x="20.32" y="38.735" smashed="yes">
-<attribute name="NAME" x="19.05" y="34.925" size="1.27" layer="25"/>
+<attribute name="NAME" x="20.955" y="40.64" size="1.27" layer="25" rot="R90"/>
 </element>
 <element name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k" x="16.51" y="37.465" smashed="yes">
-<attribute name="NAME" x="15.24" y="34.925" size="1.27" layer="25"/>
+<attribute name="NAME" x="15.24" y="35.56" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="R" x="16.51" y="37.465" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U$10" library="lupa300-components" package="SOT25" value="AP331A" x="22.86" y="31.75" smashed="yes">
-<attribute name="NAME" x="24.765" y="33.655" size="1.27" layer="25" rot="R270"/>
+<attribute name="NAME" x="20.955" y="28.575" size="1.27" layer="25"/>
 </element>
 <element name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="19.685" y="33.655" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.875" y="33.02" size="1.27" layer="25"/>
+<attribute name="NAME" x="19.05" y="34.925" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="C" x="19.685" y="33.655" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k5" x="22.86" y="36.83" smashed="yes" rot="R270">
-<attribute name="NAME" x="20.955" y="38.735" size="1.27" layer="25" rot="R270"/>
+<attribute name="NAME" x="22.225" y="41.91" size="1.27" layer="25" rot="R270"/>
 <attribute name="SPICEPREFIX" value="R" x="22.86" y="36.83" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k" x="24.765" y="36.83" smashed="yes" rot="R270">
-<attribute name="NAME" x="23.495" y="35.56" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="25.4" y="38.735" size="1.27" layer="25" rot="R90"/>
 <attribute name="SPICEPREFIX" value="R" x="24.765" y="36.83" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k" x="19.05" y="27.305" smashed="yes" rot="R90">
-<attribute name="NAME" x="19.685" y="29.21" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="18.415" y="26.035" size="1.27" layer="25" rot="R90"/>
 <attribute name="SPICEPREFIX" value="R" x="19.05" y="27.305" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="3k74" x="19.685" y="31.75" smashed="yes" rot="R180">
-<attribute name="NAME" x="24.765" y="32.385" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="20.955" y="30.48" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="19.685" y="31.75" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="0" x="26.67" y="31.115" smashed="yes">
@@ -1923,53 +1923,55 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="26.67" y="31.115" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="22.86" y="27.305" smashed="yes">
-<attribute name="NAME" x="20.955" y="28.575" size="1.27" layer="25"/>
+<attribute name="NAME" x="24.765" y="26.67" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="C" x="22.86" y="27.305" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="3k" x="26.67" y="33.02" smashed="yes">
-<attribute name="NAME" x="29.845" y="31.115" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="31.75" y="33.655" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="26.67" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R18" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100k" x="24.13" y="52.705" smashed="yes">
-<attribute name="NAME" x="19.05" y="52.07" size="1.27" layer="25"/>
+<attribute name="NAME" x="22.225" y="53.975" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="R" x="24.13" y="52.705" size="1.778" layer="27" display="off"/>
 </element>
 <element name="K1" library="Wurth_Elektronik_Electromechanic_DC_Power_Jack_Connectors_rev15c" package="694108105102" value="694108105102" x="0.635" y="9.525" smashed="yes" rot="MR180"/>
-<element name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="53.34" y="55.245" rot="R180">
+<element name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="53.34" y="55.245" smashed="yes" rot="R180">
+<attribute name="NAME" x="58.42" y="55.88" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="C" x="53.34" y="55.245" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="C13" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="53.34" y="1.905" smashed="yes" rot="R180">
-<attribute name="NAME" x="51.435" y="1.905" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="58.42" y="2.54" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="C" x="53.34" y="1.905" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="62.23" y="1.905" rot="R180">
+<element name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="62.23" y="1.905" smashed="yes" rot="R180">
+<attribute name="NAME" x="67.31" y="2.54" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="C" x="62.23" y="1.905" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="64.135" y="55.245">
+<element name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value=".1uF" x="64.135" y="55.245" smashed="yes">
+<attribute name="NAME" x="59.055" y="54.61" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="C" x="64.135" y="55.245" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U$11" library="lupa300-components" package="SO08" value="ADP7158" x="20.32" y="48.895" smashed="yes" rot="R90">
-<attribute name="NAME" x="22.225" y="52.959" size="1.27" layer="25" ratio="10" rot="R180"/>
-<attribute name="VALUE" x="22.352" y="52.832" size="1.27" layer="27" ratio="10" rot="R180"/>
+<attribute name="NAME" x="20.066" y="55.88" size="1.27" layer="25" ratio="10" rot="R270"/>
 </element>
 <element name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10uF" x="17.78" y="45.085" smashed="yes">
-<attribute name="NAME" x="15.875" y="42.545" size="1.27" layer="25"/>
+<attribute name="NAME" x="13.335" y="44.45" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="C" x="17.78" y="45.085" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1uF" x="15.24" y="50.8" smashed="yes" rot="R90">
-<attribute name="NAME" x="13.335" y="49.53" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="15.875" y="45.72" size="1.27" layer="25" rot="R90"/>
 <attribute name="SPICEPREFIX" value="C" x="15.24" y="50.8" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1uF" x="17.78" y="52.705" smashed="yes">
-<attribute name="NAME" x="16.51" y="50.165" size="1.27" layer="25"/>
+<attribute name="NAME" x="16.51" y="53.975" size="1.27" layer="25"/>
 <attribute name="SPICEPREFIX" value="C" x="17.78" y="52.705" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1uF" x="26.67" y="52.07" smashed="yes" rot="R90">
-<attribute name="NAME" x="27.305" y="46.99" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="27.94" y="50.165" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="C" x="26.67" y="52.07" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10uF" x="22.86" y="45.085" smashed="yes" rot="R180">
-<attribute name="NAME" x="24.13" y="43.815" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="27.94" y="45.72" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="C" x="22.86" y="45.085" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 </elements>
@@ -2096,7 +2098,7 @@ design rules under a new name.</description>
 <vertex x="3.81" y="1.27"/>
 </polygon>
 <via x="22.86" y="29.21" extent="1-16" drill="0.3"/>
-<polygon width="0.1524" layer="1" orphans="yes" thermals="no">
+<polygon width="0.1524" layer="1" isolate="0.2032" orphans="yes" thermals="no">
 <vertex x="18.415" y="44.45"/>
 <vertex x="22.225" y="44.45"/>
 <vertex x="22.225" y="45.72"/>
@@ -2120,7 +2122,7 @@ design rules under a new name.</description>
 </polygon>
 <via x="19.685" y="45.085" extent="1-16" drill="0.3"/>
 <via x="20.955" y="45.085" extent="1-16" drill="0.3"/>
-<polygon width="0.1524" layer="1" orphans="yes" thermals="no">
+<polygon width="0.1524" layer="1" isolate="0.2032" orphans="yes" thermals="no">
 <vertex x="15.24" y="42.545"/>
 <vertex x="15.24" y="41.275"/>
 <vertex x="15.875" y="40.64"/>
@@ -2141,7 +2143,7 @@ design rules under a new name.</description>
 <via x="9.525" y="47.625" extent="1-16" drill="0.3"/>
 <via x="9.525" y="43.815" extent="1-16" drill="0.3"/>
 <via x="8.255" y="43.815" extent="1-16" drill="0.3"/>
-<polygon width="0.1524" layer="1" orphans="yes" thermals="no">
+<polygon width="0.1524" layer="1" isolate="0.2032" orphans="yes" thermals="no">
 <vertex x="7.62" y="43.18"/>
 <vertex x="9.525" y="43.18"/>
 <vertex x="10.16" y="43.815"/>
@@ -2164,7 +2166,7 @@ design rules under a new name.</description>
 </polygon>
 <via x="17.145" y="33.02" extent="1-16" drill="0.3"/>
 <via x="17.78" y="33.655" extent="1-16" drill="0.3"/>
-<polygon width="0.1524" layer="1" orphans="yes" thermals="no">
+<polygon width="0.1524" layer="1" isolate="0.2032" orphans="yes" thermals="no">
 <vertex x="8.89" y="31.115"/>
 <vertex x="13.335" y="31.115"/>
 <vertex x="13.335" y="29.21"/>
@@ -2177,7 +2179,7 @@ design rules under a new name.</description>
 </polygon>
 <via x="10.795" y="30.48" extent="1-16" drill="0.3"/>
 <via x="10.795" y="29.21" extent="1-16" drill="0.3"/>
-<polygon width="0.1524" layer="1" orphans="yes" thermals="no">
+<polygon width="0.1524" layer="1" isolate="0.2032" orphans="yes" thermals="no">
 <vertex x="13.335" y="23.495"/>
 <vertex x="19.685" y="23.495"/>
 <vertex x="19.685" y="21.59"/>
@@ -2197,35 +2199,38 @@ design rules under a new name.</description>
 <via x="51.435" y="50.8" extent="1-16" drill="0.3"/>
 <via x="51.435" y="55.245" extent="1-16" drill="0.3"/>
 <via x="57.785" y="50.8" extent="1-16" drill="0.3"/>
-<via x="60.325" y="50.8" extent="1-16" drill="0.3"/>
+<via x="60.96" y="50.8" extent="1-16" drill="0.3"/>
 <via x="66.04" y="55.245" extent="1-16" drill="0.3"/>
 <via x="65.405" y="50.8" extent="1-16" drill="0.3"/>
 <via x="68.58" y="50.8" extent="1-16" drill="0.3"/>
-<wire x1="65.52" y1="8.575" x2="67.92" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="62.32" y1="8.575" x2="65.52" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="59.92" y1="8.575" x2="62.32" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="57.52" y1="8.575" x2="59.92" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="67.92" y1="4.175" x2="67.92" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="65.52" y1="4.175" x2="67.92" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="59.92" y1="4.175" x2="59.92" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="57.52" y1="4.175" x2="59.92" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="61.38" y1="1.905" x2="59.92" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="52.49" y1="1.905" x2="57.52" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="51.92" y1="4.175" x2="52.49" y2="1.905" width="0" layer="19" extent="1-1"/>
-<wire x1="49.52" y1="4.175" x2="51.92" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="47.12" y1="4.175" x2="49.52" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="44.72" y1="4.175" x2="47.12" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="42.32" y1="4.175" x2="44.72" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="39.92" y1="4.175" x2="42.32" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="37.52" y1="4.175" x2="39.92" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="51.92" y1="8.575" x2="51.92" y2="4.175" width="0" layer="19" extent="1-1"/>
-<wire x1="49.52" y1="8.575" x2="51.92" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="47.12" y1="8.575" x2="49.52" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="44.72" y1="8.575" x2="47.12" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="42.32" y1="8.575" x2="44.72" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="39.92" y1="8.575" x2="42.32" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="37.52" y1="8.575" x2="39.92" y2="8.575" width="0" layer="19" extent="1-1"/>
-<wire x1="19.05" y1="23.28" x2="37.52" y2="8.575" width="0" layer="19" extent="1-1"/>
+<via x="23.495" y="28.575" extent="1-16" drill="0.3"/>
+<via x="24.13" y="29.21" extent="1-16" drill="0.3"/>
+<polygon width="0.1524" layer="1" isolate="0.2032" orphans="yes" thermals="no">
+<vertex x="22.86" y="29.845"/>
+<vertex x="24.13" y="29.845"/>
+<vertex x="24.765" y="29.21"/>
+<vertex x="24.765" y="28.575"/>
+<vertex x="24.13" y="27.94"/>
+<vertex x="22.86" y="27.94"/>
+<vertex x="22.225" y="28.575"/>
+<vertex x="22.225" y="29.21"/>
+</polygon>
+<polygon width="0.1524" layer="1" isolate="0.2032" orphans="yes" thermals="no">
+<vertex x="36.83" y="0.635"/>
+<vertex x="76.2" y="0.635"/>
+<vertex x="76.2" y="10.16"/>
+<vertex x="36.83" y="10.16"/>
+</polygon>
+<via x="37.465" y="6.35" extent="1-16" drill="0.3"/>
+<via x="42.545" y="6.35" extent="1-16" drill="0.3"/>
+<via x="52.705" y="6.35" extent="1-16" drill="0.3"/>
+<via x="47.625" y="6.35" extent="1-16" drill="0.3"/>
+<via x="50.8" y="1.905" extent="1-16" drill="0.3"/>
+<via x="59.69" y="1.905" extent="1-16" drill="0.3"/>
+<via x="57.785" y="6.35" extent="1-16" drill="0.3"/>
+<via x="60.96" y="6.35" extent="1-16" drill="0.3"/>
+<via x="65.405" y="6.35" extent="1-16" drill="0.3"/>
+<via x="68.58" y="6.35" extent="1-16" drill="0.3"/>
 </signal>
 <signal name="PWR_EN">
 <contactref element="U$2" pad="3"/>
@@ -2368,7 +2373,7 @@ design rules under a new name.</description>
 <wire x1="12.7" y1="19.685" x2="8.255" y2="19.685" width="2.032" layer="16"/>
 <wire x1="8.255" y1="19.685" x2="5.08" y2="22.86" width="2.032" layer="16"/>
 <wire x1="5.08" y1="22.86" x2="5.08" y2="33.655" width="2.032" layer="16"/>
-<polygon width="0.1524" layer="1" orphans="yes" thermals="no">
+<polygon width="0.1524" layer="1" isolate="0.2032" orphans="yes" thermals="no">
 <vertex x="8.255" y="40.005"/>
 <vertex x="15.24" y="40.005"/>
 <vertex x="16.51" y="38.735"/>
@@ -2450,10 +2455,10 @@ design rules under a new name.</description>
 <contactref element="U$11" pad="1"/>
 <contactref element="U$11" pad="2"/>
 <wire x1="23.3934" y1="46.99" x2="23.3934" y2="48.26" width="0.6096" layer="1"/>
-<via x="25.4" y="48.26" extent="1-16" drill="0.2"/>
-<via x="25.4" y="46.99" extent="1-16" drill="0.2"/>
-<via x="26.67" y="46.99" extent="1-16" drill="0.2"/>
-<via x="26.67" y="48.26" extent="1-16" drill="0.2"/>
+<via x="25.4" y="48.26" extent="1-16" drill="0.3"/>
+<via x="25.4" y="46.99" extent="1-16" drill="0.3"/>
+<via x="26.67" y="46.99" extent="1-16" drill="0.3"/>
+<via x="26.67" y="48.26" extent="1-16" drill="0.3"/>
 <wire x1="23.3934" y1="48.26" x2="25.4" y2="48.26" width="0.762" layer="1"/>
 <wire x1="25.4" y1="46.99" x2="23.3934" y2="46.99" width="0.762" layer="1"/>
 <wire x1="23.3934" y1="46.99" x2="23.3934" y2="45.4034" width="1.016" layer="1"/>
@@ -2490,7 +2495,7 @@ design rules under a new name.</description>
 <wire x1="63.12" y1="48.625" x2="63.12" y2="53.025" width="0.508" layer="1"/>
 <wire x1="63.285" y1="55.245" x2="63.12" y2="55.08" width="0.508" layer="1"/>
 <wire x1="63.12" y1="55.08" x2="63.12" y2="53.025" width="0.508" layer="1"/>
-<via x="26.035" y="47.625" extent="1-16" drill="0.2"/>
+<via x="26.035" y="47.625" extent="1-16" drill="0.3"/>
 <wire x1="62.23" y1="10.795" x2="63.12" y2="9.905" width="0.508" layer="1"/>
 <wire x1="63.12" y1="9.905" x2="63.12" y2="8.575" width="0.508" layer="1"/>
 <wire x1="63.12" y1="8.575" x2="63.12" y2="5.715" width="0.508" layer="1"/>
