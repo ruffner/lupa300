@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="8.5.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<packages>
+<package name="LUPA300">
+<wire x1="-1.27" y1="-1.27" x2="15.494" y2="-1.27" width="0.3048" layer="21"/>
+<wire x1="15.494" y1="-1.27" x2="15.494" y2="15.494" width="0.3048" layer="21"/>
+<wire x1="15.494" y1="15.494" x2="-1.27" y2="15.494" width="0.3048" layer="21"/>
+<wire x1="-1.27" y1="15.494" x2="-1.27" y2="-1.27" width="0.3048" layer="21"/>
+<smd name="P$1" x="-2.794" y="1.524" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$2" x="-2.794" y="2.54" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$3" x="-2.794" y="3.556" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$4" x="-2.794" y="4.572" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$5" x="-2.794" y="5.588" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$6" x="-2.794" y="6.604" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$7" x="-2.794" y="7.62" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$8" x="-2.794" y="8.636" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$9" x="-2.794" y="9.652" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$10" x="-2.794" y="10.668" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$11" x="-2.794" y="11.684" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$12" x="-2.794" y="12.7" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$13" x="17.018" y="12.7" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$14" x="17.018" y="11.684" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$15" x="17.018" y="10.668" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$16" x="17.018" y="9.652" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$17" x="17.018" y="8.636" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$18" x="17.018" y="7.62" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$19" x="17.018" y="6.604" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$20" x="17.018" y="5.588" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$21" x="17.018" y="4.572" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$22" x="17.018" y="3.556" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$23" x="17.018" y="2.54" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$24" x="17.018" y="1.524" dx="2.54" dy="0.635" layer="1"/>
+<smd name="P$25" x="1.524" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$26" x="2.54" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$27" x="3.556" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$28" x="4.572" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$29" x="5.588" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$30" x="6.604" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$31" x="7.62" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$32" x="8.636" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$33" x="9.652" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$34" x="10.668" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$35" x="11.684" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$36" x="12.7" y="-2.794" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$37" x="1.524" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$38" x="2.54" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$39" x="3.556" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$40" x="4.572" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$41" x="5.588" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$42" x="6.604" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$43" x="7.62" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$44" x="8.636" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$45" x="9.652" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$46" x="10.668" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$47" x="11.684" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$48" x="12.7" y="17.018" dx="2.54" dy="0.635" layer="1" rot="R90"/>
+<circle x="1.524" y="12.7" radius="0.179603125" width="0.127" layer="20"/>
+<hole x="-1.27" y="15.24" drill="1.6"/>
+<hole x="15.24" y="-1.27" drill="1.6"/>
+</package>
+</packages>
+<symbols>
+<symbol name="LUPA300">
+<pin name="GNDO" x="-5.08" y="12.7" length="middle"/>
+<pin name="VDDO" x="-5.08" y="17.78" length="middle"/>
+<pin name="GNDA" x="-5.08" y="22.86" length="middle"/>
+<pin name="VADC1" x="-5.08" y="27.94" length="middle"/>
+<pin name="CLK" x="-5.08" y="33.02" length="middle"/>
+<pin name="RESET_N" x="-5.08" y="38.1" length="middle"/>
+<pin name="GNDA1" x="-5.08" y="43.18" length="middle"/>
+<pin name="VDDA" x="-5.08" y="48.26" length="middle"/>
+<pin name="GNDD" x="-5.08" y="53.34" length="middle"/>
+<pin name="VDDD" x="-5.08" y="58.42" length="middle"/>
+<pin name="INT_TIME_1" x="-5.08" y="63.5" length="middle"/>
+<pin name="INT_TIME_2" x="-5.08" y="68.58" length="middle"/>
+<pin name="D0" x="12.7" y="-5.08" length="middle" rot="R90"/>
+<pin name="D1" x="17.78" y="-5.08" length="middle" rot="R90"/>
+<pin name="D2" x="22.86" y="-5.08" length="middle" rot="R90"/>
+<pin name="D3" x="27.94" y="-5.08" length="middle" rot="R90"/>
+<pin name="D4" x="33.02" y="-5.08" length="middle" rot="R90"/>
+<pin name="VADC" x="38.1" y="-5.08" length="middle" rot="R90"/>
+<pin name="GNDADC" x="43.18" y="-5.08" length="middle" rot="R90"/>
+<pin name="D5" x="48.26" y="-5.08" length="middle" rot="R90"/>
+<pin name="D6" x="53.34" y="-5.08" length="middle" rot="R90"/>
+<pin name="D7" x="58.42" y="-5.08" length="middle" rot="R90"/>
+<pin name="D8" x="63.5" y="-5.08" length="middle" rot="R90"/>
+<pin name="D9" x="68.58" y="-5.08" length="middle" rot="R90"/>
+<pin name="GNDD1" x="86.36" y="12.7" length="middle" rot="R180"/>
+<pin name="VDDD1" x="86.36" y="17.78" length="middle" rot="R180"/>
+<pin name="GNDADC1" x="86.36" y="22.86" length="middle" rot="R180"/>
+<pin name="VADC2" x="86.36" y="27.94" length="middle" rot="R180"/>
+<pin name="GNDA2" x="86.36" y="33.02" length="middle" rot="R180"/>
+<pin name="VDDA1" x="86.36" y="38.1" length="middle" rot="R180"/>
+<pin name="ADC_BIAS" x="86.36" y="43.18" length="middle" rot="R180"/>
+<pin name="BIAS4" x="86.36" y="48.26" length="middle" rot="R180"/>
+<pin name="BIAS3" x="86.36" y="53.34" length="middle" rot="R180"/>
+<pin name="BIAS2" x="86.36" y="58.42" length="middle" rot="R180"/>
+<pin name="BIAS1" x="86.36" y="63.5" length="middle" rot="R180"/>
+<pin name="VPIX" x="86.36" y="68.58" length="middle" rot="R180"/>
+<pin name="INT_TIME_3" x="12.7" y="86.36" length="middle" rot="R270"/>
+<pin name="FRAME_VALID" x="17.78" y="86.36" length="middle" rot="R270"/>
+<pin name="LINE_VALID" x="22.86" y="86.36" length="middle" rot="R270"/>
+<pin name="PRECHARGE_BIAS" x="27.94" y="86.36" length="middle" rot="R270"/>
+<pin name="VRESET_3" x="33.02" y="86.36" length="middle" rot="R270"/>
+<pin name="VRESET_2" x="38.1" y="86.36" length="middle" rot="R270"/>
+<pin name="VRESET_1" x="43.18" y="86.36" length="middle" rot="R270"/>
+<pin name="GND_DRIVERS" x="48.26" y="86.36" length="middle" rot="R270"/>
+<pin name="VMEM_H" x="53.34" y="86.36" length="middle" rot="R270"/>
+<pin name="SPI_DATA" x="58.42" y="86.36" length="middle" rot="R270"/>
+<pin name="SPI_CLK" x="63.5" y="86.36" length="middle" rot="R270"/>
+<pin name="SPI_EN" x="68.58" y="86.36" length="middle" rot="R270"/>
+<wire x1="0" y1="81.28" x2="0" y2="0" width="0.4064" layer="94"/>
+<wire x1="0" y1="0" x2="81.28" y2="0" width="0.4064" layer="94"/>
+<wire x1="81.28" y1="0" x2="81.28" y2="81.28" width="0.4064" layer="94"/>
+<wire x1="81.28" y1="81.28" x2="0" y2="81.28" width="0.4064" layer="94"/>
+<text x="35.56" y="40.64" size="1.778" layer="94">LUPA-300</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="LUPA300" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="LUPA300" x="-30.48" y="-35.56"/>
+</gates>
+<devices>
+<device name="" package="LUPA300">
+<connects>
+<connect gate="G$1" pin="ADC_BIAS" pad="P$18"/>
+<connect gate="G$1" pin="BIAS1" pad="P$14"/>
+<connect gate="G$1" pin="BIAS2" pad="P$15"/>
+<connect gate="G$1" pin="BIAS3" pad="P$16"/>
+<connect gate="G$1" pin="BIAS4" pad="P$17"/>
+<connect gate="G$1" pin="CLK" pad="P$5"/>
+<connect gate="G$1" pin="D0" pad="P$25"/>
+<connect gate="G$1" pin="D1" pad="P$26"/>
+<connect gate="G$1" pin="D2" pad="P$27"/>
+<connect gate="G$1" pin="D3" pad="P$28"/>
+<connect gate="G$1" pin="D4" pad="P$29"/>
+<connect gate="G$1" pin="D5" pad="P$32"/>
+<connect gate="G$1" pin="D6" pad="P$33"/>
+<connect gate="G$1" pin="D7" pad="P$34"/>
+<connect gate="G$1" pin="D8" pad="P$35"/>
+<connect gate="G$1" pin="D9" pad="P$36"/>
+<connect gate="G$1" pin="FRAME_VALID" pad="P$38"/>
+<connect gate="G$1" pin="GNDA" pad="P$3"/>
+<connect gate="G$1" pin="GNDA1" pad="P$7"/>
+<connect gate="G$1" pin="GNDA2" pad="P$20"/>
+<connect gate="G$1" pin="GNDADC" pad="P$31"/>
+<connect gate="G$1" pin="GNDADC1" pad="P$22"/>
+<connect gate="G$1" pin="GNDD" pad="P$9"/>
+<connect gate="G$1" pin="GNDD1" pad="P$24"/>
+<connect gate="G$1" pin="GNDO" pad="P$1"/>
+<connect gate="G$1" pin="GND_DRIVERS" pad="P$44"/>
+<connect gate="G$1" pin="INT_TIME_1" pad="P$11"/>
+<connect gate="G$1" pin="INT_TIME_2" pad="P$12"/>
+<connect gate="G$1" pin="INT_TIME_3" pad="P$37"/>
+<connect gate="G$1" pin="LINE_VALID" pad="P$39"/>
+<connect gate="G$1" pin="PRECHARGE_BIAS" pad="P$40"/>
+<connect gate="G$1" pin="RESET_N" pad="P$6"/>
+<connect gate="G$1" pin="SPI_CLK" pad="P$47"/>
+<connect gate="G$1" pin="SPI_DATA" pad="P$46"/>
+<connect gate="G$1" pin="SPI_EN" pad="P$48"/>
+<connect gate="G$1" pin="VADC" pad="P$30"/>
+<connect gate="G$1" pin="VADC1" pad="P$4"/>
+<connect gate="G$1" pin="VADC2" pad="P$21"/>
+<connect gate="G$1" pin="VDDA" pad="P$8"/>
+<connect gate="G$1" pin="VDDA1" pad="P$19"/>
+<connect gate="G$1" pin="VDDD" pad="P$10"/>
+<connect gate="G$1" pin="VDDD1" pad="P$23"/>
+<connect gate="G$1" pin="VDDO" pad="P$2"/>
+<connect gate="G$1" pin="VMEM_H" pad="P$45"/>
+<connect gate="G$1" pin="VPIX" pad="P$13"/>
+<connect gate="G$1" pin="VRESET_1" pad="P$43"/>
+<connect gate="G$1" pin="VRESET_2" pad="P$42"/>
+<connect gate="G$1" pin="VRESET_3" pad="P$41"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
