@@ -18095,13 +18095,6 @@ Source: www.kingbright.com</description>
 <label x="233.68" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK" class="0">
-<segment>
-<pinref part="U$4" gate="G$1" pin="CLK"/>
-<wire x1="60.96" y1="76.2" x2="53.34" y2="76.2" width="0.1524" layer="91"/>
-<label x="48.26" y="76.2" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="RESET" class="0">
 <segment>
 <pinref part="U$4" gate="G$1" pin="RESET_N"/>
@@ -18477,6 +18470,13 @@ Source: www.kingbright.com</description>
 <pinref part="U$4" gate="G$1" pin="VRESET_3"/>
 <wire x1="99.06" y1="129.54" x2="99.06" y2="137.16" width="0.1524" layer="91"/>
 <label x="99.06" y="137.16" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="CLK" class="0">
+<segment>
+<label x="35.56" y="76.2" size="1.778" layer="95"/>
+<pinref part="U$4" gate="G$1" pin="CLK"/>
+<wire x1="60.96" y1="76.2" x2="35.56" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
