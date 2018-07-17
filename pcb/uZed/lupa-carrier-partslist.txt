@@ -1,0 +1,103 @@
+Partlist
+
+Exported from lupa-carrier.sch at 7/17/2018 12:01 PM
+
+EAGLE Version 9.0.1 Copyright (c) 1988-2018 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value                   Device                  Package      Library                                                          Sheet
+
+C1       22uF                    C-USC1206               C1206        rcl                                                              2
+C2       .1uF                    C-USC0603               C0603        rcl                                                              2
+C3       .1uF                    C-USC0603               C0603        rcl                                                              2
+C4       1uF                     C-USC0603               C0603        rcl                                                              4
+C5       1uF                     C-USC0603               C0603        rcl                                                              4
+C6       10uF                    C-USC0603               C0603        rcl                                                              4
+C7       1uF                     C-USC0603               C0603        rcl                                                              4
+C8       .1uF                    C-USC0603               C0603        rcl                                                              2
+C9       .1uF                    C-USC0603               C0603        rcl                                                              2
+C10      .1uF                    C-USC0603               C0603        rcl                                                              2
+C11      10uF                    C-USC0603               C0603        rcl                                                              2
+C12      .1uF                    C-USC0603               C0603        rcl                                                              1
+C13      .1uF                    C-USC0603               C0603        rcl                                                              1
+C14      .1uF                    C-USC0603               C0603        rcl                                                              1
+C15      .1uF                    C-USC0603               C0603        rcl                                                              1
+C16      1uF                     C-USC0603               C0603        rcl                                                              2
+C17      1uF                     C-USC0603               C0603        rcl                                                              2
+C18      1uF                     C-USC0603               C0603        rcl                                                              2
+C19      10uF                    C-USC0603               C0603        rcl                                                              2
+C20      1uF                     C-USC0603               C0603        rcl                                                              4
+C22      .1uF                    C-EUC0603               C0603        rcl                                                              3
+C23      .1uF                    C-EUC0603               C0603        rcl                                                              3
+C24      .1uf                    C-EUC0603               C0603        rcl                                                              3
+C25      .1uf                    C-EUC0603               C0603        rcl                                                              3
+C26      .1uF                    C-EUC0603               C0603        rcl                                                              3
+C27      .1uF                    C-EUC0603               C0603        rcl                                                              3
+C29      10uF                    C-USC0603               C0603        rcl                                                              4
+C30      1uF                     C-USC0603               C0603        rcl                                                              4
+C31      1uF                     C-USC0603               C0603        rcl                                                              4
+C37      1uF                     C-USC0603               C0603        rcl                                                              4
+C38      1uF                     C-USC0603               C0603        rcl                                                              4
+C39      1uF                     C-USC0603               C0603        rcl                                                              4
+C40      1uF                     C-USC0603               C0603        rcl                                                              4
+C41      1uF                     C-USC0603               C0603        rcl                                                              4
+C42      1uF                     C-USC0603               C0603        rcl                                                              4
+FR_VAL   TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+INT1     TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+INT2     TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+INT3     TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+JX1      BERGSTAK-100POS         BERGSTAK-100POS         BERG100POS   lupa300-components                                               1
+JX2      BERGSTAK-100POS         BERGSTAK-100POS         BERG100POS   lupa300-components                                               1
+K1       694108105102            694108105102            694108105102 Wurth_Elektronik_Electromechanic_DC_Power_Jack_Connectors_rev15c 2
+LED1                             LEDCHIPLED_0805         CHIPLED_0805 led                                                              1
+LED2                             LEDCHIPLED_0805         CHIPLED_0805 led                                                              1
+LED3                             LEDCHIPLED_0805         CHIPLED_0805 led                                                              1
+LED4                             LEDCHIPLED_0805         CHIPLED_0805 led                                                              1
+LN_VAL   TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+POW_EN   TPTP08R                 TPTP08R                 TP08R        testpad                                                          1
+R1       1k                      R-US_R0603              R0603        rcl                                                              2
+R2       3k92                    R-US_R0603              R0603        rcl                                                              2
+R3       430                     R-US_R0603              R0603        rcl                                                              2
+R4       680                     R-US_R0603              R0603        rcl                                                              2
+R5       330                     R-US_R0603              R0603        resistor                                                         1
+R6       330                     R-US_R0603              R0603        resistor                                                         1
+R7       3k92                    R-US_R0603              R0603        rcl                                                              2
+R9       220                     R-US_R0603              R0603        rcl                                                              2
+R10      120                     R-US_R0603              R0603        rcl                                                              2
+R11      1k                      R-US_R0603              R0603        rcl                                                              2
+R12      1k5                     R-US_R0603              R0603        rcl                                                              2
+R13      1k                      R-US_R0603              R0603        rcl                                                              2
+R14      1k                      R-US_R0603              R0603        rcl                                                              2
+R15      3k74                    R-US_R0603              R0603        rcl                                                              2
+R16      0                       R-US_R0603              R0603        rcl                                                              2
+R17      3k                      R-US_R0603              R0603        rcl                                                              2
+R18      100k                    R-US_R0603              R0603        rcl                                                              2
+R19      330                     R-US_R0603              R0603        resistor                                                         1
+R20      330                     R-US_R0603              R0603        resistor                                                         1
+R23      68k                     R-US_R0603              R0603        rcl                                                              3
+R24      10k                     R-US_R0603              R0603        rcl                                                              3
+R25      110k                    R-US_R0603              R0603        rcl                                                              3
+R26      42k                     R-US_R0603              R0603        rcl                                                              3
+R27      1.5M                    R-US_R0603              R0603        rcl                                                              3
+R28      500k                    R-US_R0603              R0603        rcl                                                              3
+RESET    TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+SPI_CLK  TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+SPI_DATA TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+SPI_EN   TPTP08R                 TPTP08R                 TP08R        testpad                                                          3
+U$1      T511006                 T511006                 SPDT         lupa300-components                                               2
+U$2      BSS138                  BSS138                  SOT23        lupa300-components                                               2
+U$3      BAT54L                  BAT54L                  SOT23        lupa300-components                                               2
+U$4                              LUPA300                 LUPA300      andon                                                            3
+U$5      ADP7158ARDZ-2.5-R7CT-ND ADP7158ARDZ-2.5-R7CT-ND SO08         lupa300-components                                               4
+U$6      XC6210B252MR-G          XC6210B252MR-G          SOT25        lupa300-components                                               4
+U$7      BSS138                  BSS138                  SOT23        lupa300-components                                               2
+U$8      BAT54L                  BAT54L                  SOT23        lupa300-components                                               2
+U$9      TL431A                  TL431A                  SOT23        lupa300-components                                               2
+U$10     AP331A                  AP331A                  SOT25        lupa300-components                                               2
+U$11     ADP7158                 ADP7158                 SO08         lupa300-components                                               2
+U$12     BLM18                   BLM18                   C0603K       lupa300-components                                               4
+U$13     BLM18                   BLM18                   C0603K       lupa300-components                                               4
+U$14     XC6210B252MR-G          XC6210B252MR-G          SOT25        lupa300-components                                               4
+U$15     XC6210B252MR-G          XC6210B252MR-G          SOT25        lupa300-components                                               4
+U$16     BLM18                   BLM18                   C0603K       lupa300-components                                               4
