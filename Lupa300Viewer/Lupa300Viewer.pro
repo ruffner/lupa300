@@ -53,19 +53,6 @@ HEADERS  += TCP/lau3dvideotcpclient.h \
     Support/lauscaninspector.h \
     Sinks/lau3dfiducialglwidget.h
 
-tcp {
-    DEFINES     += USETCP
-    INCLUDEPATH += $$PWD/TCP
-    HEADERS     += TCP/lau3dvideotcpwidget.h \
-                   TCP/lau3dvideotcpclient.h \
-                   TCP/lau3dvideotcpserver.h \
-                   TCP/lau3dvideotcpglfilter.h
-    SOURCES     += TCP/lau3dvideotcpwidget.cpp \
-                   TCP/lau3dvideotcpclient.cpp \
-                   TCP/lau3dvideotcpserver.cpp \
-                   TCP/lau3dvideotcpglfilter.cpp
-}
-
 unix:macx {
     QMAKE_MAC_SDK   = macosx10.12
     QMAKE_CXXFLAGS += -msse2 -msse3 -mssse3 -msse4.1
@@ -82,6 +69,7 @@ unix:macx {
 }
 
 unix:!macx {
+    CONFIG += c++11
     QMAKE_CXXFLAGS += -msse2 -msse3 -mssse3 -msse4.1
     INCLUDEPATH    += /usr/include /usr/include/eigen3
     DEPENDPATH     += /usr/include /usr/include/eigen3
