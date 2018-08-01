@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/"/>
+    <qresource prefix="/RGB">
+        <file>displayRGBVideo.frag</file>
+        <file>displayRGBVideo.vert</file>
+    </qresource>
+    <qresource prefix="/GRAY">
+        <file>displayGrayVideo.frag</file>
+        <file>displayGrayVideo.vert</file>
+        <file>processGrayVideo.frag</file>
+        <file>processGrayVideo.vert</file>
+    </qresource>
+</RCC>
