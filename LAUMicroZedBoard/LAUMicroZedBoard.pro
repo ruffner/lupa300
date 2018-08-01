@@ -1,8 +1,6 @@
 QT += core network
 QT -= gui
 
-CONFIG += c++11
-
 TARGET = LAUMicroZedBoard
 CONFIG += console
 CONFIG -= app_bundle
@@ -31,19 +29,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH    += /usr/local/include /usr/local/include/eigen3
-INCLUDEPATH    += /usr/include
-DEPENDPATH     += /usr/include
-DEPENDPATH     += /usr/local/include /usr/local/include/eigen3
-#LIBS           += /usr/local/lib/libtiff.5.dylib
-#LIBS           += /usr/local/lib/libQtZeroConf.dylib
-LIBS           += -L/usr/lib -ltiff
-LIBS           += /root/Engineering/tcpip/QtZeroConf-master/libQtZeroConf.so
-LIBS           += /root/Engineering/tcpip/QtZeroConf-master/libQtZeroConf.so.1
-LIBS           += /root/Engineering/tcpip/QtZeroConf-master/libQtZeroConf.so.1.0
-#LIBS           += /root/Engineering/tcpip/QtZeroConf-master/libQtZeroConf.so.1.0.0
-#LIBS           += /root/Engineering/tcpip/QtZeroConf-master/qzeroconf.h
-#LIBS           += /root/Engineering/tcpip/QtZeroConf-master/qzeroconf.pri
+unix:macx{
+    INCLUDEPATH    += /usr/local/include
+    DEPENDPATH     += /usr/local/include
+    LIBS += -L/usr/local/lib/ -lQtZeroConf /usr/local/lib/libtiff.5.dylib
+}
 
-include(QtZeroConf-master/qtzeroconf.pri)
-DEFINES = QZEROCONF_STATIC
+unix:!macx {
+    CONFIG += c++11
+    INCLUDEPATH    += /usr/local/include /usr/local/include/eigen3
+    INCLUDEPATH    += /usr/include
+    DEPENDPATH     += /usr/include
+    DEPENDPATH     += /usr/local/include /usr/local/include/eigen3
+    #LIBS           += /usr/local/lib/libtiff.5.dylib
+    #LIBS           += /usr/local/lib/libQtZeroConf.dylib
+    LIBS           += -L/usr/lib -ltiff
+    LIBS           += /root/Engineering/tcpip/QtZeroConf-master/libQtZeroConf.so
+    LIBS           += /root/Engineering/tcpip/QtZeroConf-master/libQtZeroConf.so.1
+    LIBS           += /root/Engineering/tcpip/QtZeroConf-master/libQtZeroConf.so.1.0
+    #LIBS           += /root/Engineering/tcpip/QtZeroConf-master/libQtZeroConf.so.1.0.0
+    #LIBS           += /root/Engineering/tcpip/QtZeroConf-master/qzeroconf.h
+    #LIBS           += /root/Engineering/tcpip/QtZeroConf-master/qzeroconf.pri
+}
+

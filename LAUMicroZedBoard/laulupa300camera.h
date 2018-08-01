@@ -42,9 +42,7 @@
 #include <QtCore>
 #include <QFile>
 
-
 #include <sys/types.h>
-#include <linux/hdreg.h>
 #include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <stdlib.h>
@@ -52,17 +50,12 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
+#include <linux/hdreg.h>
+#endif
 
-#ifdef Q_OS_WIN
-#include "uEye.h"
-
-#define IDSALLOCATEFRAMEBUFFERS
-#define IDSNUMFRAMESINBUFFER        10
-#define IDSWAITFORFRAMEDELAY     10000
-#else
 #define LUPA300_WIDTH  640
 #define LUPA300_HEIGHT 480
-#endif
 
 #include "lau3dcamera.h"
 
