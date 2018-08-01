@@ -125,15 +125,14 @@ LAU3DVideoTCPWidget::~LAU3DVideoTCPWidget()
     if (tcpClient) {
         delete tcpClient;
     }
-qDebug() << "here1";
     // CLEAR THE RECORDED VIDEO FRAMES LIST
     recordedVideoFramesBufferList.clear();
-qDebug() << "here2";
     if (zeroConf) {
+        // BOTH OF THESE CAUSE A SEGFAULT IN WINDOWS AS THE
+        // PROGRAM IS CLOSING
         //delete zeroConf;
         //zeroConf->~QZeroConf();
     }
-qDebug() << "here3";
 }
 
 /****************************************************************************/
