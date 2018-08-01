@@ -280,7 +280,11 @@ void LAU3DVideoTCPWidget::onServiceError(QZeroConf::error_t error)
 /******************************************************************************/
 void LAU3DVideoTCPWidget::onAddService(QZeroConfService item)
 {
+#ifdef Q_OS_WIN
     tcpAddressComboBox->addItem(QString("%1::%2").arg(item.name()).arg(item.port()), item.ip().toString());
+#else
+    tcpAddressComboBox->addItem(QString("%1::%2").arg(item.name).arg(item.port), item.ip.toString());
+#endif
 }
 
 /******************************************************************************/
@@ -288,7 +292,11 @@ void LAU3DVideoTCPWidget::onAddService(QZeroConfService item)
 /******************************************************************************/
 void LAU3DVideoTCPWidget::onRemoveService(QZeroConfService item)
 {
+#ifdef Q_OS_WIN
     tcpAddressComboBox->removeItem(tcpAddressComboBox->findText(QString("%1::%2").arg(item.name()).arg(item.port())));
+#else
+    tcpAddressComboBox->removeItem(tcpAddressComboBox->findText(QString("%1::%2").arg(item.name).arg(item.port)));
+#endif
 }
 
 /******************************************************************************/

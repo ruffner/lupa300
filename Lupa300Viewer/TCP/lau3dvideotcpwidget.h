@@ -48,7 +48,7 @@
 #include <QDialogButtonBox>
 
 #include "qzeroconf.h"
-#include "qzeroconfservice.h"
+//#include "qzeroconfservice.h"
 
 #include "lau3dvideoglwidget.h"
 #include "lau3dvideotcpclient.h"

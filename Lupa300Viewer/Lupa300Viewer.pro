@@ -16,7 +16,6 @@ TEMPLATE = app
 INCLUDEPATH += $$PWD/Filters $$PWD/Sources $$PWD/Sinks $$PWD/Support $$PWD/TCP
 
 SOURCES += main.cpp\
-        lupa300viewerdialog.cpp \
     Filters/lauabstractfilter.cpp \
     Sinks/lau3dvideoglwidget.cpp \
     Sinks/lau3dvideoplayerwidget.cpp \
@@ -33,11 +32,8 @@ SOURCES += main.cpp\
     Sinks/lau3dscanglwidget.cpp \
     Support/lauscaninspector.cpp \
     Sinks/lau3dfiducialglwidget.cpp \
-    tcprelaywidget.cpp
 
-HEADERS  += lupa300viewerdialog.h \
-    tcprelaywidget.h \
-    TCP/lau3dvideotcpclient.h \
+HEADERS  += TCP/lau3dvideotcpclient.h \
     TCP/lau3dvideotcpglfilter.h \
     TCP/lau3dvideotcpwidget.h \
     Filters/lauabstractfilter.h \
