@@ -131,7 +131,11 @@ void LAU3DVideoTCPServer::onServiceError(QZeroConf::error_t error)
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
+#if defined(Q_OS_MAC) || defined(Q_OS_WIN)
 void LAU3DVideoTCPServer::incomingConnection(qintptr handle)
+#else
+void LAU3DVideoTCPServer::incomingConnection(int handle)
+#endif
 {
     // SET THE CONNECTED FLAG HIGH
     connected = true;
@@ -290,6 +294,7 @@ void LAU3DVideoTCPServer::onTcpError(QAbstractSocket::SocketError error)
 /******************************************************************************/
 void LAU3DVideoTCPServer::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject color, LAUMemoryObject mapping)
 {
+qDebug() << "server entering onUpdateBuffer()";
     // TRANSMIT THE INCOMING VIDEO FRAME TO THE CLIENT
     if (socket && socket->isOpen()) {
         // IF THE SOCKET IS READY TO SEND MORE DATA THEN TRANSMIT THE INCOMING VIDEO
@@ -350,4 +355,6 @@ void LAU3DVideoTCPServer::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject 
             counter = 0;
         }
     }
+
+qDebug() << "server leaving onUpdateBuffer()";
 }
