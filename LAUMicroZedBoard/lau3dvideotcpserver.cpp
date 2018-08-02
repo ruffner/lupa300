@@ -294,6 +294,7 @@ void LAU3DVideoTCPServer::onTcpError(QAbstractSocket::SocketError error)
 /******************************************************************************/
 void LAU3DVideoTCPServer::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject color, LAUMemoryObject mapping)
 {
+qDebug() << "server entering onUpdateBuffer()";
     // TRANSMIT THE INCOMING VIDEO FRAME TO THE CLIENT
     if (socket && socket->isOpen()) {
         // IF THE SOCKET IS READY TO SEND MORE DATA THEN TRANSMIT THE INCOMING VIDEO
@@ -354,4 +355,6 @@ void LAU3DVideoTCPServer::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject 
             counter = 0;
         }
     }
+
+qDebug() << "server leaving onUpdateBuffer()";
 }
