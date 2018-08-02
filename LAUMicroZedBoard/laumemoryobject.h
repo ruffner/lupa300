@@ -33,25 +33,14 @@
 #ifndef LAUMEMORYOBJECT_H
 #define LAUMEMORYOBJECT_H
 
-#ifndef Q_PROCESSOR_ARM
-#include "emmintrin.h"
-#include "xmmintrin.h"
-#include "tmmintrin.h"
-#include "smmintrin.h"
-#endif
 
 #include <QTime>
 #include <QtCore>
 #include <QDebug>
 #include <QObject>
 #include <QString>
-#include <QMatrix4x4>
 #include <QSharedData>
 #include <QSharedDataPointer>
-
-#ifndef HEADLESS
-#include <QFileDialog>
-#endif
 
 namespace libtiff
 {
@@ -61,13 +50,10 @@ namespace libtiff
 namespace LAU3DVideoParameters
 {
     enum LAUVideoPlaybackState  { StateLiveVideo, StateVideoPlayback };
-    enum LAUVideoPlaybackDevice { DeviceUndefined, DeviceKinect, DevicePrimeSense, DeviceProsilicaLCG, DeviceProsilicaIOS, DeviceProsilicaARG, Device2DCamera, DeviceXimea, DeviceIDS, DeviceRealSense, DeviceDemo };
+    enum LAUVideoPlaybackDevice { DeviceUndefined, DeviceKinect, DevicePrimeSense, DeviceProsilicaLCG, DeviceProsilicaIOS, Device2DCamera, DeviceXimea, DeviceIDS, DeviceRealSense, DeviceDemo };
     enum LAUVideoPlaybackColor  { ColorUndefined, ColorGray, ColorRGB, ColorRGBA, ColorXYZ, ColorXYZW, ColorXYZG, ColorXYZRGB, ColorXYZWRGBA };
-    enum LAUVideoProjectorSynchronizationMode { ModeSlave, ModeMaster, ModeMono, ModeMasterHandshake, ModeHDMIFPGA };
+    enum LAUVideoProjectorSynchronizationMode { ModeSlave, ModeMaster, ModeMono, ModeMasterHandshake};
     enum LAUVideoPatternSynchronizationScheme { SchemeFlashingSequence, SchemePatternBit, SchemeNone };
-
-    int colors(LAUVideoPlaybackColor clr);
-    bool isMachineVision(LAUVideoPlaybackDevice dvc);
 }
 
 using namespace LAU3DVideoParameters;
@@ -108,46 +94,30 @@ public:
     {
         data = new LAUMemoryObjectData();
     }
-
     LAUMemoryObject(unsigned int cols, unsigned int rows, unsigned int chns = 1, unsigned int byts = 1, unsigned int frms = 1)
     {
         data = new LAUMemoryObjectData(cols, rows, chns, byts, frms);
     }
-
     LAUMemoryObject(unsigned long long bytes)
     {
         data = new LAUMemoryObjectData(bytes);
     }
-
-    LAUMemoryObject(const LAUMemoryObject &other) : data(other.data), transformMatrix(other.transformMatrix), anchorPt(other.anchorPt), elapsedTime(other.elapsedTime) { ; }
-
+    LAUMemoryObject(const LAUMemoryObject &other) : data(other.data), elapsedTime(other.elapsedTime) { ; }
     LAUMemoryObject &operator = (const LAUMemoryObject &other)
     {
         if (this != &other) {
             data = other.data;
-            rfidString = other.rfidString;
-            transformMatrix = other.transformMatrix;
-            anchorPt = other.anchorPt;
             elapsedTime = other.elapsedTime;
         }
         return (*this);
     }
 
-    LAUMemoryObject(QString filename, int index = -1);
-    LAUMemoryObject(libtiff::TIFF *inTiff, int index = -1);
+    LAUMemoryObject(QString filename);
+    LAUMemoryObject(libtiff::TIFF *inTiff);
 
     bool save(QString filename = QString());
     bool save(libtiff::TIFF *otTiff, int index = 0);
-    bool load(libtiff::TIFF *inTiff, int index = -1);
-
-#ifndef Q_PROCESSOR_ARM
-    unsigned int nonZeroPixelsCount() const;
-#endif
-
-    void setRFID(QString string)
-    {
-        rfidString = string;
-    }
+    bool load(libtiff::TIFF *inTiff);
 
     // SEE IF THE POINTERS ARE LOOKING AT SAME MEMORY
     bool operator == (const LAUMemoryObject &other) const
@@ -157,7 +127,6 @@ public:
         }
         return (data->buffer == other.data->buffer);
     }
-
     bool operator  < (const LAUMemoryObject &other) const
     {
         if (this == &other) {
@@ -165,7 +134,6 @@ public:
         }
         return (elapsedTime   < other.elapsedTime);
     }
-
     bool operator  > (const LAUMemoryObject &other) const
     {
         if (this == &other) {
@@ -173,7 +141,6 @@ public:
         }
         return (elapsedTime   > other.elapsedTime);
     }
-
     bool operator <= (const LAUMemoryObject &other) const
     {
         if (this == &other) {
@@ -181,7 +148,6 @@ public:
         }
         return (elapsedTime  <= other.elapsedTime);
     }
-
     bool operator >= (const LAUMemoryObject &other) const
     {
         if (this == &other) {
@@ -236,7 +202,6 @@ public:
     {
         return (data->numChns);
     }
-
     inline unsigned int frames()  const
     {
         return (data->numFrms);
@@ -282,24 +247,9 @@ public:
         return (constScanLine(0, frm));
     }
 
-    inline QMatrix4x4 transform() const
-    {
-        return (transformMatrix);
-    }
-
     inline unsigned int elapsed() const
     {
         return (elapsedTime);
-    }
-
-    inline QPoint anchor() const
-    {
-        return (anchorPt);
-    }
-
-    inline void setTransform(QMatrix4x4 mat)
-    {
-        transformMatrix = mat;
     }
 
     inline void setElapsed(unsigned int elps)
@@ -307,36 +257,8 @@ public:
         elapsedTime = elps;
     }
 
-    inline void setAnchor(QPoint pt)
-    {
-        anchorPt = pt;
-    }
-
-    static int numberOfColors(LAUVideoPlaybackColor color)
-    {
-        switch (color) {
-            case ColorGray:
-                return (1);
-            case ColorRGB:
-            case ColorXYZ:
-                return (3);
-            case ColorRGBA:
-            case ColorXYZG:
-                return (4);
-            case ColorXYZRGB:
-                return (6);
-            case ColorXYZWRGBA:
-                return (8);
-            default:
-                return (-1);
-        }
-    }
-
 protected:
-    QString rfidString;
     QSharedDataPointer<LAUMemoryObjectData> data;
-    QMatrix4x4 transformMatrix;
-    QPoint anchorPt;
     unsigned int elapsedTime;
 };
 
