@@ -39,6 +39,8 @@
 #include "lau3dcamera.h"
 #include "lau3dvideotcpglfilter.h"
 
+#define LUPA300_FRAMES 8
+
 class LAU3DVideoTCPClient : public QObject
 {
     Q_OBJECT

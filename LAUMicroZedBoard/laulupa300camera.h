@@ -56,6 +56,7 @@
 
 #define LUPA300_WIDTH  640
 #define LUPA300_HEIGHT 480
+#define LUPA300_FRAMES 8
 
 #include "lau3dcamera.h"
 

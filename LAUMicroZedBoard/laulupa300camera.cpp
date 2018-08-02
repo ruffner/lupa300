@@ -203,9 +203,9 @@ LAUMemoryObject LAULUPA300Camera::colorMemoryObject() const
         case ColorRGBA:
         case ColorXYZWRGBA:
             if (bitDpth == 8) {
-                return (LAUMemoryObject(numCols, numRows, 1, sizeof(unsigned char), 1));
+                return (LAUMemoryObject(numCols, numRows, 1, sizeof(unsigned char), LUPA300_FRAMES));
             } else {
-                return (LAUMemoryObject(numCols, numRows, 1, sizeof(unsigned short), 1));
+                return (LAUMemoryObject(numCols, numRows, 1, sizeof(unsigned short), LUPA300_FRAMES));
             }
         case ColorUndefined:
         case ColorXYZ:
@@ -361,17 +361,15 @@ void LAULUPA300Camera::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject col
             }
         }
 #else
-        if (counter % 2 == 0) {
-            for (unsigned int frm = 0; frm < color.frames(); frm++) {
+        for (unsigned int frm = 0; frm < color.frames(); frm++) {
+            if (frm % 2 == 0) {
                 for (unsigned int row = 0; row < color.height(); row++) {
                     unsigned short *buffer = (unsigned short *)color.constScanLine(row, frm);
                     for (unsigned int col = 0; col < color.width(); col++) {
                         buffer[col] = 16 * qMin(col % 64, row % 48);
                     }
                 }
-            }
-        } else {
-            for (unsigned int frm = 0; frm < color.frames(); frm++) {
+            } else {
                 for (unsigned int row = 0; row < color.height(); row++) {
                     unsigned short *buffer = (unsigned short *)color.constScanLine(row, frm);
                     for (unsigned int col = 0; col < color.width(); col++) {

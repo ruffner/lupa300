@@ -79,17 +79,17 @@ bool LAU3DVideoTCPClient::allocateBuffers()
                     break;
                 case ColorGray:
                     frame.depth = LAUMemoryObject();
-                    frame.color = LAUMemoryObject(numCols, numRows, 1, sizeof(unsigned short));
+                    frame.color = LAUMemoryObject(numCols, numRows, 1, sizeof(unsigned short), LUPA300_FRAMES);
                     frame.mappi = LAUMemoryObject();
                     break;
                 case ColorRGB:
                     frame.depth = LAUMemoryObject();
-                    frame.color = LAUMemoryObject(numCols, numRows, 3, sizeof(unsigned char));
+                    frame.color = LAUMemoryObject(numCols, numRows, 3, sizeof(unsigned char), LUPA300_FRAMES);
                     frame.mappi = LAUMemoryObject();
                     break;
                 case ColorRGBA:
                     frame.depth = LAUMemoryObject();
-                    frame.color = LAUMemoryObject(numCols, numRows, 3, sizeof(unsigned char));
+                    frame.color = LAUMemoryObject(numCols, numRows, 3, sizeof(unsigned char), LUPA300_FRAMES);
                     frame.mappi = LAUMemoryObject();
                     break;
                 case ColorXYZ:
@@ -319,7 +319,7 @@ void LAU3DVideoTCPClient::onReadyRead()
                     long long bytesAvailable = qMin(spaceAvailable, socket->bytesAvailable());
                     socket->read((char *)(color.constPointer() + (bytesSoFarRead - depth.length())), bytesAvailable);
                     bytesSoFarRead += bytesAvailable;
-                } else {
+                } else if (bytesSoFarRead < (long long)(depth.length() + color.length() + mappi.length())) {
                     long long spaceAvailable = depth.length() + color.length() + mappi.length() - bytesSoFarRead;
                     long long bytesAvailable = qMin(spaceAvailable, socket->bytesAvailable());
                     socket->read((char *)(color.constPointer() + (bytesSoFarRead - depth.length() - color.length())), bytesAvailable);
