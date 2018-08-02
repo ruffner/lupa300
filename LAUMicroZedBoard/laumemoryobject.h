@@ -140,7 +140,9 @@ public:
     bool save(libtiff::TIFF *otTiff, int index = 0);
     bool load(libtiff::TIFF *inTiff, int index = -1);
 
+#ifndef Q_PROCESSOR_ARM
     unsigned int nonZeroPixelsCount() const;
+#endif
 
     void setRFID(QString string)
     {

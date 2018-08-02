@@ -147,6 +147,7 @@ public:
 public slots:
     void onConnect();
     void onDisconnect();
+    void onRequestFrame();
     void onSetExposure(int val);
     void onSetMTNThreshold(int val);
     void onSetSNRThreshold(int val);
@@ -169,7 +170,7 @@ private:
     QString serialString;
 
     unsigned int numRows, numCols;
-    QList<LAUModalityObject> framesList;
+    QList<LAUModalityObject> framesListIn, framesListOt;
     int portNumber;
     QTime time;
 

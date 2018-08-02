@@ -119,7 +119,7 @@ bool LAU3DVideoTCPClient::allocateBuffers()
                     break;
             }
         }
-        framesList << frame;
+        framesListIn << frame;
     }
     return (true);
 }
@@ -192,7 +192,8 @@ void LAU3DVideoTCPClient::onDisconnected()
     connected = false;
 
     // CLEAR THE FRAME BUFFER LIST
-    framesList.clear();
+    framesListIn.clear();
+    framesListOt.clear();
 
     // TELL THE WIDGET WE ARE DISCONNECTED
     emit emitConnected(false);
@@ -283,7 +284,8 @@ void LAU3DVideoTCPClient::onReadyRead()
 
                 // NOW WE CAN ALLOCATE BUFFERS AND SET UP THE GLFILTER AND GLDISPLAY
                 if (allocateBuffers()) {
-                    socket->write(QString("GRAB").toLatin1());
+                    //socket->write(QString("GRAB").toLatin1());
+                    onRequestFrame();
 
                     // TELL THE WIDGET WE ARE CONNECTED
                     emit emitConnected(true);
@@ -302,8 +304,8 @@ void LAU3DVideoTCPClient::onReadyRead()
                 subState = 1;
 
                 // GET THE NEXT AVAILABLE FRAME BUFFERS FROM OUR FRAME LIST
-                if (framesList.count() > 0) {
-                    LAUModalityObject frame = framesList.takeFirst();
+                if (framesListOt.count() > 0) {
+                    LAUModalityObject frame = framesListOt.takeFirst();
                     depth = frame.depth;
                     color = frame.color;
                     mappi = frame.mappi;
@@ -330,7 +332,7 @@ void LAU3DVideoTCPClient::onReadyRead()
             // SEE IF WE HAVE OUR COMPLETE SET OF FRAME BUFFERS FROM THE SERVER
             if (bytesSoFarRead == bytesLeftToRead) {
                 // SEND A MESSAGE TO THE SERVER TO SEND THE NEXT FRAME OF VIDEO TO US
-                socket->write(QString("GRAB").toLatin1());
+                // socket->write(QString("GRAB").toLatin1());
                 messageLength = LAU3DVIDEOTCPMESSAGELENGTH;
                 message = QString();
 
@@ -416,6 +418,22 @@ void LAU3DVideoTCPClient::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject 
 
     // SEE IF WE SHOULD KEEP THIS PARTICULAR FRAME
     if (frame.isAnyValid()) {
-        framesList << frame;
+        framesListIn << frame;
+
+        // USE A TIMER TO REQUEST THE NEXT SET OF FRAMES
+        QTimer::singleShot(100, this, SLOT(onRequestFrame()));
+    }
+}
+
+/******************************************************************************/
+/******************************************************************************/
+/******************************************************************************/
+void LAU3DVideoTCPClient::onRequestFrame()
+{
+    // MAKE SURE WE HAVE AN OPEN CONNECTION AND FRAMES TO HANDLE INCOMING VIDEO
+    // AND MOVE A FRAME BUFFER FROM THE INPUT LIST TO THE OUTPUT LIST
+    if (socket->isOpen() && framesListIn.count() > 0) {
+        socket->write(QString("GRAB").toLatin1());
+        framesListOt << framesListIn.takeFirst();
     }
 }
