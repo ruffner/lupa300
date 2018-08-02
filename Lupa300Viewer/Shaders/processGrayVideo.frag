@@ -1,7 +1,7 @@
 #version 330 core
 
-uniform sampler2D qt_texture;   // THIS TEXTURE HOLDS THE RGB TEXTURE COORDINATES
-uniform     float qt_maximum;   // USED TO RESCALE INCOMING VIDEO TO RANGE UP TO 1.0
+uniform sampler2D qt_texture;         // THIS TEXTURE HOLDS THE RGB TEXTURE COORDINATES
+uniform     float qt_maximum = 1.0f;  // USED TO RESCALE INCOMING VIDEO TO RANGE UP TO 1.0
 
 layout(location = 0, index = 0) out vec4 qt_fragColor;
 

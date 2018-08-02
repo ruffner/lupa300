@@ -55,6 +55,7 @@ public:
     {
         return (connected);
     }
+
     inline QString ipAddress()
     {
         return (clientIPAddress);
@@ -64,7 +65,7 @@ public slots:
     void onUpdateBuffer(LAUMemoryObject depth = LAUMemoryObject(), LAUMemoryObject color = LAUMemoryObject(), LAUMemoryObject mapping = LAUMemoryObject());
 
 protected:
-    void incomingConnection(int handle);
+    void incomingConnection(qintptr handle);
 
 private slots:
     void onReadyRead();

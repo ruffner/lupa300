@@ -125,14 +125,9 @@ LAU3DVideoTCPWidget::~LAU3DVideoTCPWidget()
     if (tcpClient) {
         delete tcpClient;
     }
+
     // CLEAR THE RECORDED VIDEO FRAMES LIST
     recordedVideoFramesBufferList.clear();
-    if (zeroConf) {
-        // BOTH OF THESE CAUSE A SEGFAULT IN WINDOWS AS THE
-        // PROGRAM IS CLOSING
-        //delete zeroConf;
-        //zeroConf->~QZeroConf();
-    }
 }
 
 /****************************************************************************/
@@ -140,7 +135,7 @@ LAU3DVideoTCPWidget::~LAU3DVideoTCPWidget()
 /****************************************************************************/
 void LAU3DVideoTCPWidget::onRecordButtonClicked(bool state)
 {
-    if (state && lastVideoFrame.isValid()){
+    if (state && lastVideoFrame.isValid()) {
         videoPlayerLabel->onPlayButtonClicked(false);
         lastVideoFrame.save(QString());
     }
@@ -279,11 +274,7 @@ void LAU3DVideoTCPWidget::onServiceError(QZeroConf::error_t error)
 /******************************************************************************/
 void LAU3DVideoTCPWidget::onAddService(QZeroConfService item)
 {
-#ifdef Q_OS_WIN
     tcpAddressComboBox->addItem(QString("%1::%2").arg(item.name()).arg(item.port()), item.ip().toString());
-#else
-    tcpAddressComboBox->addItem(QString("%1::%2").arg(item.name).arg(item.port), item.ip.toString());
-#endif
 }
 
 /******************************************************************************/
@@ -291,11 +282,7 @@ void LAU3DVideoTCPWidget::onAddService(QZeroConfService item)
 /******************************************************************************/
 void LAU3DVideoTCPWidget::onRemoveService(QZeroConfService item)
 {
-#ifdef Q_OS_WIN
     tcpAddressComboBox->removeItem(tcpAddressComboBox->findText(QString("%1::%2").arg(item.name()).arg(item.port())));
-#else
-    tcpAddressComboBox->removeItem(tcpAddressComboBox->findText(QString("%1::%2").arg(item.name).arg(item.port)));
-#endif
 }
 
 /******************************************************************************/
@@ -334,16 +321,16 @@ void LAU3DVideoTCPWidget::onConnectButton_clicked(bool checked)
 /******************************************************************************/
 void LAU3DVideoTCPWidget::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject color, LAUMemoryObject mapping)
 {
-    if (depth.isValid()){
-        if (lastVideoFrame.isNull()){
+    if (depth.isValid()) {
+        if (lastVideoFrame.isNull()) {
             qDebug() << "lastVideoFrame = depth;";
             lastVideoFrame = depth;
             lastVideoFrame.pointer();
         } else {
             memcpy(lastVideoFrame.constPointer(), depth.constPointer(), qMin(lastVideoFrame.length(), depth.length()));
         }
-    } else if (color.isValid()){
-        if (lastVideoFrame.isNull()){
+    } else if (color.isValid()) {
+        if (lastVideoFrame.isNull()) {
             qDebug() << "lastVideoFrame = color;";
             lastVideoFrame = color;
             lastVideoFrame.pointer();
@@ -422,6 +409,7 @@ void LAU3DVideoTCPWidget::onTcpClient_connected(bool state)
         glWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         glWidget->setRangeLimits(tcpClient->minDistance(), tcpClient->maxDistance(), tcpClient->horizontalFieldOfViewInRadians(), tcpClient->verticalFieldOfViewInRadians());
         glWidget->setLookUpTable(LAULookUpTable(tcpClient->width(), tcpClient->height(), playbackDevice, tcpClient->horizontalFieldOfViewInRadians(), tcpClient->verticalFieldOfViewInRadians(), tcpClient->minDistance(), tcpClient->maxDistance()));
+        glWidget->setMaximumIntensityValue((unsigned short)1023);
         ((QVBoxLayout *)(this->layout()))->insertWidget(1, glWidget);
 
         // ADD AN ACTION TO THE WIDGET SO THAT WE CAN ACCESS THE SCANNER WIDGET

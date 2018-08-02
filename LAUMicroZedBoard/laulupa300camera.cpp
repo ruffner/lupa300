@@ -324,13 +324,15 @@ void LAULUPA300Camera::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject col
         // SET THE DATA VALUES TO SHOW A CHANGING GRAY LEVEL
         memset(color.constPointer(), 0, color.length());
 
+        // UPDATE THE FRAME COUNTER TO REFLECT THE NEW FRAMES
         counter += color.frames();
+
+#if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
         if (lseek(fdm, 3, SEEK_SET) < 0) {
             qDebug() << "Failed to seek";
             exit(1);
         }
 
-#if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
         int rcw = write(fdm, &counter, 1);
         if (rcw < 0) {
             qDebug() << "Write mem error.";
@@ -355,6 +357,26 @@ void LAULUPA300Camera::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject col
                         int rf = read(fd, buffer + rc, 1280 - rc);
                         rc += rf;
                     } while (rc < 1280);
+                }
+            }
+        }
+#else
+        if (counter % 2 == 0) {
+            for (unsigned int frm = 0; frm < color.frames(); frm++) {
+                for (unsigned int row = 0; row < color.height(); row++) {
+                    unsigned short *buffer = (unsigned short *)color.constScanLine(row, frm);
+                    for (unsigned int col = 0; col < color.width(); col++) {
+                        buffer[col] = 16 * qMin(col % 64, row % 48);
+                    }
+                }
+            }
+        } else {
+            for (unsigned int frm = 0; frm < color.frames(); frm++) {
+                for (unsigned int row = 0; row < color.height(); row++) {
+                    unsigned short *buffer = (unsigned short *)color.constScanLine(row, frm);
+                    for (unsigned int col = 0; col < color.width(); col++) {
+                        buffer[col] = 1023 - 16 * qMin(col % 64, row % 48);
+                    }
                 }
             }
         }

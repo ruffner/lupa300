@@ -38,10 +38,7 @@
 /******************************************************************************/
 LAU3DVideoTCPServer::LAU3DVideoTCPServer(LAUVideoPlaybackColor color, LAUVideoPlaybackDevice device, QObject *parent) : QTcpServer(parent), playbackDevice(device), playbackColor(color), socket(NULL), camera(NULL), cameraController(NULL), connected(false), counter(0), zeroConf(NULL)
 {
-    if (device == DeviceIDS) {
-        camera = new LAULUPA300Camera(playbackColor);
-    }
-
+    camera = new LAULUPA300Camera(playbackColor);
     if (camera && camera->isValid()) {
         // ALLOCATE MEMORY OBJECTS TO HOLD INCOMING VIDEO FRAMES
         for (int n = 0; n < NUMFRAMESINBUFFER; n++) {
@@ -53,7 +50,7 @@ LAU3DVideoTCPServer::LAU3DVideoTCPServer(LAUVideoPlaybackColor color, LAUVideoPl
         }
 
         // MAKE THE CAMERA TO OBJECT CONNECTIONS
-	connect(this, SIGNAL(emitExposure(int)), camera, SLOT(onUpdateExposure(int)), Qt::QueuedConnection);
+        connect(this, SIGNAL(emitExposure(int)), camera, SLOT(onUpdateExposure(int)), Qt::QueuedConnection);
         connect(this, SIGNAL(emitBuffer(LAUMemoryObject, LAUMemoryObject, LAUMemoryObject)), camera, SLOT(onUpdateBuffer(LAUMemoryObject, LAUMemoryObject, LAUMemoryObject)), Qt::QueuedConnection);
         connect(camera, SIGNAL(emitBuffer(LAUMemoryObject, LAUMemoryObject, LAUMemoryObject)), this, SLOT(onUpdateBuffer(LAUMemoryObject, LAUMemoryObject, LAUMemoryObject)), Qt::QueuedConnection);
 
@@ -134,7 +131,7 @@ void LAU3DVideoTCPServer::onServiceError(QZeroConf::error_t error)
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-void LAU3DVideoTCPServer::incomingConnection(int handle)
+void LAU3DVideoTCPServer::incomingConnection(qintptr handle)
 {
     // SET THE CONNECTED FLAG HIGH
     connected = true;

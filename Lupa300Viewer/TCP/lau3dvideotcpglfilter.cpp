@@ -1324,9 +1324,7 @@ void LAU3DVideoTCPGLWidget::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObjec
                     }
 
                     // SET THE MAXIMUM INTENSITY VALUE FOR THE INCOMING VIDEO
-                    if (playbackColor == ColorGray) {
-                        programA.setUniformValue("qt_maximum", (float)maxIntensityValue / 65535.0f);
-                    }
+                    programA.setUniformValue("qt_maximum", (float)maxIntensityValue / 65535.0f);
 
                     // TELL OPENGL PROGRAMMABLE PIPELINE HOW TO LOCATE VERTEX POSITION DATA
                     glVertexAttribPointer(programA.attributeLocation("qt_vertex"), 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
@@ -1342,6 +1340,7 @@ void LAU3DVideoTCPGLWidget::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObjec
         }
         frameBufferObject->release();
     }
+
     // REDRAW THE WIDGET ON SCREEN
     update();
 

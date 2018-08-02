@@ -58,6 +58,7 @@ public slots:
     {
         mtnThreshold = val;
     }
+
     void onSetSNRThreshold(int val)
     {
         snrThreshold = val;
@@ -90,6 +91,7 @@ public:
     {
         return (playbackColor);
     }
+
     LAUVideoPlaybackDevice device() const
     {
         return (playbackDevice);

@@ -9,5 +9,4 @@ void main()
 {
     // GET THE PIXEL COORDINATE OF THE CURRENT FRAGMENT
     qt_fragColor = texture(qt_texture, qt_coordinate, 0).rrra;
-    qt_fragColor.rgb = 64.0 * qt_fragColor.rgb;
 }

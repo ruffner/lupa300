@@ -165,8 +165,8 @@ void LAU3DVideoTCPClient::onConnected()
     // SET THE CONNECTED FLAG TO REFLECT WE ARE NO LONGER CONNECTED
     connected = true;
 
-    message = QString();
     subState = 0;
+    message = QString();
     messageLength = LAU3DVIDEOTCPMESSAGELENGTH;
 
     // SEND MESSAGES TO THE SERVER TO GET THE CAMERA SIZE, MAKE, MODEL, AND SERIAL NUMBER

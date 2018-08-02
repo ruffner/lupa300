@@ -99,26 +99,32 @@ public:
     {
         return (errorString);
     }
+
     float horizontalFieldOfViewInRadians() const
     {
         return (horizontalFieldOfView);
     }
+
     float verticalFieldOfViewInRadians() const
     {
         return (verticalFieldOfView);
     }
+
     float horizontalFieldOfViewInDegrees() const
     {
         return (horizontalFieldOfView * 180.0 / 3.14159265359);
     }
+
     float verticalFieldOfViewInDegrees() const
     {
         return (verticalFieldOfView * 180.0 / 3.14159265359);
     }
+
     float minDistance() const
     {
         return ((double)zMinDistance);
     }
+
     float maxDistance() const
     {
         return ((double)zMaxDistance);
@@ -128,14 +134,17 @@ public:
     {
         return (numCols);
     }
+
     unsigned int depthHeight() const
     {
         return (numRows);
     }
+
     unsigned int colorWidth() const
     {
         return (numCols);
     }
+
     unsigned int colorHeight() const
     {
         return (numRows);
