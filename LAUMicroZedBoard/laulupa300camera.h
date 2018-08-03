@@ -50,6 +50,13 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#include <pthread.h>
+#include <semaphore.h>
+#include <errno.h>
+#include <sys/mman.h>
+
+#define FIFO_TEST
+
 #if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
 #include <linux/hdreg.h>
 #endif
@@ -59,6 +66,37 @@
 #define LUPA300_FRAMES 8
 
 #include "lau3dcamera.h"
+
+/*********************************************************************
+ *                                                                   *
+ *                 D E C L A R A T I O N S                           *
+ *                                                                   *
+ *********************************************************************/
+
+struct xillyfifo {
+  unsigned long read_total;
+  unsigned long write_total;
+  unsigned int bytes_in_fifo;
+  unsigned int read_position;
+  unsigned int write_position;
+  unsigned int size;
+  unsigned int done;
+  unsigned char *baseaddr;
+  sem_t write_sem;
+  sem_t read_sem;
+};
+
+struct xillyinfo {
+  int slept;
+  int bytes;
+  int position;
+  void *addr;
+};
+
+#define FIFO_BACKOFF 0
+static int read_fd = 0;
+
+
 
 class LAULUPA300Camera : public LAU3DCamera
 {
@@ -210,6 +248,19 @@ private:
     bool setSynchronization();
     bool disconnectFromHost();
     bool connectToHost(QString);
+
+#ifdef FIFO_TEST
+    struct xillyfifo fifo;
+
+    // XILLYBUS FIFO FUNCTIONS
+    int fifo_init(struct xillyfifo *fifo, unsigned int size);
+    void fifo_done(struct xillyfifo *fifo);
+    void fifo_destroy(struct xillyfifo *fifo);
+    int fifo_request_drain(struct xillyfifo *fifo, struct xillyinfo *info);
+    void fifo_drained(struct xillyfifo *fifo, unsigned int req_bytes);
+    int fifo_request_write(struct xillyfifo *fifo, struct xillyinfo *info);
+    void fifo_wrote(struct xillyfifo *fifo, unsigned int req_bytes);
+#endif
 };
 
 #endif // LAULUPA300CAMERA_H
