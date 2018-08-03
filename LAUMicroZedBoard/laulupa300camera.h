@@ -67,12 +67,7 @@
 
 #include "lau3dcamera.h"
 
-/*********************************************************************
- *                                                                   *
- *                 D E C L A R A T I O N S                           *
- *                                                                   *
- *********************************************************************/
-
+#ifdef FIFO_TEST
 struct xillyfifo {
   unsigned long read_total;
   unsigned long write_total;
@@ -94,8 +89,7 @@ struct xillyinfo {
 };
 
 #define FIFO_BACKOFF 0
-static int read_fd = 0;
-
+#endif
 
 
 class LAULUPA300Camera : public LAU3DCamera
