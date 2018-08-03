@@ -326,7 +326,7 @@ qDebug() << "entering onUpdateBuffer";
         memset(color.constPointer(), 0, color.length());
 
         // UPDATE THE FRAME COUNTER TO REFLECT THE NEW FRAMES
-        counter += color.frames();
+        counter=1;//counter += color.frames();
 
 #if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
         if (lseek(fdm, 3, SEEK_SET) < 0) {
@@ -370,6 +370,17 @@ qDebug() << "   read a remaining " << rf << " bytes";
                 }
             }
         }
+
+        if (lseek(fdm, 3, SEEK_SET) < 0) {
+            qDebug() << "Failed to seek";
+            exit(1);
+        }
+        counter = 0;
+        rcw = write(fdm, &counter, 1);
+        if (rcw < 0) {
+            qDebug() << "Write mem error.";
+        }
+
 #else
         for (unsigned int frm = 0; frm < color.frames(); frm++) {
             if (frm % 2 == 0) {
