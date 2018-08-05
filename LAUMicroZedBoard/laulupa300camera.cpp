@@ -34,7 +34,6 @@
 
 bool LAULUPA300Camera::libraryInitializedFlag = false;
 
-QFile file("/dev/xillybus_read_8");
 /****************************************************************************/
 /****************************************************************************/
 /****************************************************************************/
@@ -62,6 +61,17 @@ void LAULUPA300Camera::initialize()
     playbackDevice = Device2DCamera;
 
 #if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
+
+#ifdef FIFO_TEST
+    unsigned int fifo_size = 16384;
+
+    if (fifo_init(&fifo, fifo_size)) {
+      qDebug() << "Failed to init fifo";
+      exit(1);
+    }
+#endif
+
+
     //fp = fopen("/dev/xillybus_read_8", "r");
     fd = open("/dev/xillybus_read_32", O_RDONLY);
     if (fd < 0) {
@@ -160,6 +170,10 @@ LAULUPA300Camera::~LAULUPA300Camera()
         disconnectFromHost();
 
 #if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
+
+#ifdef FIFO_TEST
+        fifo_destroy(&fifo);
+#endif
         int rb = close(fd);
         //fclose(fp);
         //file.close();
@@ -326,7 +340,7 @@ qDebug() << "entering onUpdateBuffer";
         memset(color.constPointer(), 0, color.length());
 
         // UPDATE THE FRAME COUNTER TO REFLECT THE NEW FRAMES
-        counter += color.frames();
+        counter=1;//counter += color.frames();
 
 #if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
         if (lseek(fdm, 3, SEEK_SET) < 0) {
@@ -338,7 +352,48 @@ qDebug() << "entering onUpdateBuffer";
         if (rcw < 0) {
             qDebug() << "Write mem error.";
         }
+#ifdef FIFO_TEST
+        int do_bytes, read_bytes;
+        struct xillyinfo info;
+        unsigned char *buf;
 
+        while (1) {
+          do_bytes = fifo_request_write(&fifo, &info);
+
+          if (do_bytes == 0){
+            //return NULL;
+            break;
+          }
+
+          for (buf = (unsigned char *)info.addr; do_bytes > 0;
+           buf += read_bytes, do_bytes -= read_bytes) {
+
+            read_bytes = read(fd, buf, do_bytes);
+
+            if ((read_bytes < 0) && (errno != EINTR)) {
+                perror("read() failed");
+                break;
+                //return NULL;
+            }
+
+            if (read_bytes == 0) {
+              // Reached EOF. Quit without complaining.
+              fifo_done(&fifo);
+              break;
+              //return NULL;
+            }
+
+            if (read_bytes < 0) { // errno is EINTR
+                qDebug() << "read bytes less than 0";
+              read_bytes = 0;
+              continue;
+            }
+
+            fifo_wrote(&fifo, read_bytes);
+            qDebug() << "read " << read_bytes << " bytes";
+          }
+        }
+#else
         // ITERATE THROUGH EACH OF 12 FRAMES OF VIDEO
         for (unsigned int frm = 0; frm < color.frames(); frm++) {
             // ITERATE THROUGH EACH ROW OF THE IMAGE SENSOR
@@ -370,6 +425,19 @@ qDebug() << "   read a remaining " << rf << " bytes";
                 }
             }
         }
+
+#endif
+
+        if (lseek(fdm, 3, SEEK_SET) < 0) {
+            qDebug() << "Failed to seek";
+            exit(1);
+        }
+        counter = 0;
+        rcw = write(fdm, &counter, 1);
+        if (rcw < 0) {
+            qDebug() << "Write mem error.";
+        }
+
 #else
         for (unsigned int frm = 0; frm < color.frames(); frm++) {
             if (frm % 2 == 0) {
@@ -407,3 +475,224 @@ QString LAULUPA300Camera::errorMessages(int err)
             return QString("Error Unknown");
     }
 }
+
+#ifdef FIFO_TEST
+// FROM fifo.c XILLYBUS DEMO CODE
+/*********************************************************************
+ *                                                                   *
+ *                 A P I   F U N C T I O N S                         *
+ *                                                                   *
+ *********************************************************************/
+
+// IMPORTANT:
+// =========
+//
+// NEITHER of the fifo_* functions is reentrant. Only one thread should have
+// access to any set of them. This is pretty straightforward when one thread
+// writes and one thread reads from the FIFO.
+//
+// Also make sure that fifo_drained() and fifo_wrote() are NEVER called with
+// req_bytes larger than what their request-counterparts RETURNED, or
+// things will go crazy pretty soon.
+
+
+int LAULUPA300Camera::fifo_init(struct xillyfifo *fifo,unsigned int size)
+{
+
+  fifo->baseaddr = NULL;
+  fifo->size = 0;
+  fifo->bytes_in_fifo = 0;
+  fifo->read_position = 0;
+  fifo->write_position = 0;
+  fifo->read_total = 0;
+  fifo->write_total = 0;
+  fifo->done = 0;
+
+  if (sem_init(&fifo->read_sem, 0, 0) == -1)
+    return -1; // Fail!
+
+  if (sem_init(&fifo->write_sem, 0, 1) == -1)
+    return -1;
+
+  fifo->baseaddr = (unsigned char *)malloc(size);
+
+  if (!fifo->baseaddr)
+    return -1;
+
+  if (mlock(fifo->baseaddr, size)) {
+    unsigned int i;
+    unsigned char *buf = fifo->baseaddr;
+
+    fprintf(stderr, "Warning: Failed to lock RAM, so FIFO's memory may swap to disk.\n"
+        "(You may want to use ulimit -l)\n");
+
+    // Write something every 1024 bytes (4096 should be OK, actually).
+    // Hopefully all pages are in real RAM after this. Better than nothing.
+
+    for (i=0; i<size; i+=1024)
+      buf[i] = 0;
+  }
+
+  fifo->size = size;
+
+  return 0; // Success
+}
+
+void LAULUPA300Camera::fifo_done(struct xillyfifo *fifo)
+{
+  fifo->done = 1;
+  sem_post(&fifo->read_sem);
+  sem_post(&fifo->write_sem);
+}
+
+void LAULUPA300Camera::fifo_destroy(struct xillyfifo *fifo)
+{
+  if (!fifo->baseaddr)
+    return; // Better safe than SEGV
+
+  munlock(fifo->baseaddr, fifo->size);
+  free(fifo->baseaddr);
+
+  sem_destroy(&fifo->read_sem);
+  sem_destroy(&fifo->write_sem);
+
+  fifo->baseaddr = NULL;
+}
+
+int LAULUPA300Camera::fifo_request_drain(struct xillyfifo *fifo, struct xillyinfo *info)
+{
+  int taken = 0;
+  unsigned int now_bytes, max_bytes;
+
+  info->slept = 0;
+  info->addr = NULL;
+
+  now_bytes = __sync_add_and_fetch(&fifo->bytes_in_fifo, 0);
+
+  while (now_bytes == 0) {
+    if (fifo->done)
+      goto fail; // FIFO will not be used by other side, and is empty
+
+    // fifo_wrote() updates bytes_in_fifo and then increments semaphore,
+    // so there's no chance for oversleeping. On the other hand, it's
+    // possible that the data was drained between the bytes_in_fifo
+    // update and the semaphore increment, leading to a false wakeup.
+    // That's why we're in a while loop ( + other race conditions).
+
+    info->slept = 1;
+
+    if (sem_wait(&fifo->read_sem) && (errno != EINTR))
+      goto fail;
+
+    now_bytes = __sync_add_and_fetch(&fifo->bytes_in_fifo, 0);
+  }
+
+  max_bytes = fifo->size - fifo->read_position;
+  taken = (now_bytes < max_bytes) ? now_bytes : max_bytes;
+  info->addr = fifo->baseaddr + fifo->read_position;
+
+ fail:
+  info->bytes = taken;
+  info->position = fifo->read_position;
+
+  return taken;
+}
+
+void LAULUPA300Camera::fifo_drained(struct xillyfifo *fifo, unsigned int req_bytes)
+{
+
+  int semval;
+
+  if (req_bytes == 0)
+    return;
+
+  __sync_sub_and_fetch(&fifo->bytes_in_fifo, req_bytes);
+  __sync_add_and_fetch(&fifo->read_total, req_bytes);
+
+  fifo->read_position += req_bytes;
+
+  if (fifo->read_position >= fifo->size)
+    fifo->read_position -= fifo->size;
+
+  if (sem_getvalue(&fifo->write_sem, &semval))
+    semval = 1; // This fallback should never happen
+
+  // Don't increment the semaphore if it's nonzero anyhow. The possible
+  // race condition between reading and possibly incrementing has no effect.
+
+  if (semval == 0)
+    sem_post(&fifo->write_sem);
+}
+
+int LAULUPA300Camera::fifo_request_write(struct xillyfifo *fifo, struct xillyinfo *info)
+{
+  int taken = 0;
+  unsigned int now_bytes, max_bytes;
+
+  info->slept = 0;
+  info->addr = NULL;
+
+  now_bytes = __sync_add_and_fetch(&fifo->bytes_in_fifo, 0);
+
+  if (fifo->done)
+    goto fail; // No point filling an abandoned FIFO
+
+  while (now_bytes >= (fifo->size - FIFO_BACKOFF)) {
+    // fifo_drained() updates bytes_in_fifo and then increments semaphore,
+    // so there's no chance for oversleeping. On the other hand, it's
+    // possible that the data was drained between the bytes_in_fifo
+    // update and the semaphore increment, leading to a false wakeup.
+    // That's why we're in a while loop ( + other race conditions).
+
+    info->slept = 1;
+
+    if (sem_wait(&fifo->write_sem) && (errno != EINTR))
+      goto fail;
+
+    if (fifo->done)
+      goto fail; // No point filling an abandoned FIFO
+
+    now_bytes = __sync_add_and_fetch(&fifo->bytes_in_fifo, 0);
+  }
+
+  taken = fifo->size - (now_bytes + FIFO_BACKOFF);
+
+  max_bytes = fifo->size - fifo->write_position;
+
+  if (taken > max_bytes)
+    taken = max_bytes;
+  info->addr = fifo->baseaddr + fifo->write_position;
+
+ fail:
+  info->bytes = taken;
+  info->position = fifo->write_position;
+
+  return taken;
+}
+
+void LAULUPA300Camera::fifo_wrote(struct xillyfifo *fifo, unsigned int req_bytes)
+{
+
+  int semval;
+
+  if (req_bytes == 0)
+    return;
+
+  __sync_add_and_fetch(&fifo->bytes_in_fifo, req_bytes);
+  __sync_add_and_fetch(&fifo->write_total, req_bytes);
+
+  fifo->write_position += req_bytes;
+
+  if (fifo->write_position >= fifo->size)
+    fifo->write_position -= fifo->size;
+
+  if (sem_getvalue(&fifo->read_sem, &semval))
+    semval = 1; // This fallback should never happen
+
+  // Don't increment the semaphore if it's nonzero anyhow. The possible
+  // race condition between reading and possibly incrementing has no effect.
+
+  if (semval == 0)
+    sem_post(&fifo->read_sem);
+}
+#endif
