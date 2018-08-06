@@ -34,6 +34,18 @@
 
 int  LAULUPA300Camera::fd = -1;
 int  LAULUPA300Camera::fdm = -1;
+struct xillyfifo LAULUPA300Camera::fifo = {
+    .read_total = 0,
+    .write_total = 0,
+    .bytes_in_fifo = 0,
+    .read_position = 0,
+    .write_position = 0,
+    .size = 0,
+    .done = 0,
+    .baseaddr=NULL,
+    .write_sem = 0,
+    .read_sem = 0
+};
 bool LAULUPA300Camera::libraryInitializedFlag = false;
 
 /****************************************************************************/
