@@ -217,7 +217,7 @@ private:
     unsigned int numFrms;
     unsigned int bitDpth;
 
-    int fd, fdm;
+    static int fd, fdm;
     FILE *fp;		//used for fopen(). fread(). fclose().
     unsigned char counter;
     unsigned char cfgn;
@@ -244,16 +244,18 @@ private:
     bool connectToHost(QString);
 
 #ifdef FIFO_TEST
-    struct xillyfifo fifo;
+    static struct xillyfifo fifo;
+    pthread_t tid;
 
     // XILLYBUS FIFO FUNCTIONS
-    int fifo_init(struct xillyfifo *fifo, unsigned int size);
-    void fifo_done(struct xillyfifo *fifo);
-    void fifo_destroy(struct xillyfifo *fifo);
-    int fifo_request_drain(struct xillyfifo *fifo, struct xillyinfo *info);
-    void fifo_drained(struct xillyfifo *fifo, unsigned int req_bytes);
-    int fifo_request_write(struct xillyfifo *fifo, struct xillyinfo *info);
-    void fifo_wrote(struct xillyfifo *fifo, unsigned int req_bytes);
+    static void *read_thread(void *arg);
+    static int fifo_init(struct xillyfifo *fifo, unsigned int size);
+    static void fifo_done(struct xillyfifo *fifo);
+    static void fifo_destroy(struct xillyfifo *fifo);
+    static int fifo_request_drain(struct xillyfifo *fifo, struct xillyinfo *info);
+    static void fifo_drained(struct xillyfifo *fifo, unsigned int req_bytes);
+    static int fifo_request_write(struct xillyfifo *fifo, struct xillyinfo *info);
+    static void fifo_wrote(struct xillyfifo *fifo, unsigned int req_bytes);
 #endif
 };
 

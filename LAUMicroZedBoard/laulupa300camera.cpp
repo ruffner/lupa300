@@ -63,7 +63,7 @@ void LAULUPA300Camera::initialize()
 #if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
 
 #ifdef FIFO_TEST
-    unsigned int fifo_size = 16384;
+    unsigned int fifo_size = 614400;
 
     if (fifo_init(&fifo, fifo_size)) {
       qDebug() << "Failed to init fifo";
@@ -80,6 +80,13 @@ void LAULUPA300Camera::initialize()
         hasDepthVideo = false;
         hasColorVideo = false;
     }
+
+#ifdef FIFO_TEST
+    if (pthread_create(&tid, NULL, read_thread, &fifo)) {
+      perror("Failed to create thread");
+      exit(1);
+    }
+#endif
 
     fdm = open("/dev/xillybus_mem_8", O_WRONLY);
     if (fdm < 0) {
@@ -353,45 +360,36 @@ qDebug() << "entering onUpdateBuffer";
             qDebug() << "Write mem error.";
         }
 #ifdef FIFO_TEST
-        int do_bytes, read_bytes;
+        int do_bytes, written_bytes;
         struct xillyinfo info;
         unsigned char *buf;
 
         while (1) {
-          do_bytes = fifo_request_write(&fifo, &info);
+          do_bytes = fifo_request_drain(&fifo, &info);
 
           if (do_bytes == 0){
-            //return NULL;
-            break;
+            qDebug() << "read bytes from fifo";
+            return;
           }
+
+          unsigned char *frameMem = color.pointer();
+
+          qDebug() << "Copying from FIFO";
 
           for (buf = (unsigned char *)info.addr; do_bytes > 0;
-           buf += read_bytes, do_bytes -= read_bytes) {
+           buf += written_bytes, do_bytes -= written_bytes) {
 
-            read_bytes = read(fd, buf, do_bytes);
+            //written_bytes = write(1, buf, do_bytes);
 
-            if ((read_bytes < 0) && (errno != EINTR)) {
-                perror("read() failed");
-                break;
-                //return NULL;
-            }
+            memcpy(frameMem, buf, do_bytes);
+            frameMem += do_bytes;
 
-            if (read_bytes == 0) {
-              // Reached EOF. Quit without complaining.
-              fifo_done(&fifo);
-              break;
-              //return NULL;
-            }
+            qDebug() << ".";
 
-            if (read_bytes < 0) { // errno is EINTR
-                qDebug() << "read bytes less than 0";
-              read_bytes = 0;
-              continue;
-            }
-
-            fifo_wrote(&fifo, read_bytes);
-            qDebug() << "read " << read_bytes << " bytes";
+            fifo_drained(&fifo, written_bytes);
           }
+
+          qDebug() << "Done copying from FIFO";
         }
 #else
         // ITERATE THROUGH EACH OF 12 FRAMES OF VIDEO
@@ -495,6 +493,44 @@ QString LAULUPA300Camera::errorMessages(int err)
 // req_bytes larger than what their request-counterparts RETURNED, or
 // things will go crazy pretty soon.
 
+void *LAULUPA300Camera::read_thread(void *arg)
+{
+  static struct xillyfifo *f = (xillyfifo *)arg;
+  int do_bytes, read_bytes;
+  static struct xillyinfo info;
+  unsigned char *buf;
+
+  while (1) {
+    do_bytes = fifo_request_write(f, &info);
+
+    if (do_bytes == 0)
+      return NULL;
+
+    for (buf = (unsigned char *)info.addr; do_bytes > 0;
+     buf += read_bytes, do_bytes -= read_bytes) {
+
+      read_bytes = read(fd, buf, do_bytes);
+
+      if ((read_bytes < 0) && (errno != EINTR)) {
+    perror("read() failed");
+    return NULL;
+      }
+
+      if (read_bytes == 0) {
+    // Reached EOF. Quit without complaining.
+    fifo_done(f);
+    return NULL;
+      }
+
+      if (read_bytes < 0) { // errno is EINTR
+    read_bytes = 0;
+    continue;
+      }
+
+      fifo_wrote(f, read_bytes);
+    }
+  }
+}
 
 int LAULUPA300Camera::fifo_init(struct xillyfifo *fifo,unsigned int size)
 {
