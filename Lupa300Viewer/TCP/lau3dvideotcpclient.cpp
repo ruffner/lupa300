@@ -422,6 +422,7 @@ void LAU3DVideoTCPClient::onUpdateBuffer(LAUMemoryObject depth, LAUMemoryObject 
 
         // USE A TIMER TO REQUEST THE NEXT SET OF FRAMES
         QTimer::singleShot(100, this, SLOT(onRequestFrame()));
+        //onRequestFrame();
     }
 }
 
