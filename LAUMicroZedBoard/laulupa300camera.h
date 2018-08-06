@@ -88,7 +88,6 @@ struct xillyinfo {
   void *addr;
 };
 
-#define FIFO_BACKOFF 0
 #endif
 
 

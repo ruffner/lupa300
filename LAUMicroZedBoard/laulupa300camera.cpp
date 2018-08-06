@@ -32,6 +32,8 @@
 
 #include "laulupa300camera.h"
 
+int  LAULUPA300Camera::fd = -1;
+int  LAULUPA300Camera::fdm = -1;
 bool LAULUPA300Camera::libraryInitializedFlag = false;
 
 /****************************************************************************/
