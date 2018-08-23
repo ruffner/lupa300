@@ -5000,15 +5000,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <busses>
 </busses>
 <nets>
-<net name="XIMEA_OUT" class="0">
-<segment>
-<pinref part="JP1" gate="A" pin="6"/>
-<wire x1="7.62" y1="45.72" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
-<label x="12.7" y="45.72" size="1.778" layer="95"/>
-<pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="22.86" y1="48.26" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="XIMEA_IN" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="5"/>
@@ -5040,8 +5031,16 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <net name="AJILE_IN" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="1"/>
-<wire x1="7.62" y1="33.02" x2="22.86" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="33.02" x2="27.94" y2="33.02" width="0.1524" layer="91"/>
 <label x="12.7" y="33.02" size="1.778" layer="95"/>
+<wire x1="27.94" y1="33.02" x2="27.94" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="A" pin="6"/>
+<wire x1="7.62" y1="45.72" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
+<label x="12.7" y="45.72" size="1.778" layer="95"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="22.86" y1="48.26" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="45.72" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
+<junction x="22.86" y="45.72"/>
 </segment>
 </net>
 <net name="GND" class="0">
