@@ -1,11 +1,18 @@
 #ifndef SLIMOJOLOADERWIDGET_H
 #define SLIMOJOLOADERWIDGET_H
 
+#include <QLabel>
 #include <QWidget>
 #include <QDialog>
+#include <QPushButton>
+#include <QCheckBox>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QProgressBar>
+#include <QGroupBox>
+#include <QComboBox>
+#include <QLineEdit>
+#include <QSerialPortInfo>
 
 class SLIMojoLoaderWidget : public QWidget
 {
@@ -14,28 +21,14 @@ class SLIMojoLoaderWidget : public QWidget
 public:
     SLIMojoLoaderWidget(QWidget *parent = 0);
     ~SLIMojoLoaderWidget();
-};
-
-class SLIMojoLoaderDialog : public QDialog
-{
-    Q_OBJECT
-public:
-    SLIMojoLoaderDialog(QDialog *parent) : QDialog(parent) {
-        this->setLayout(new QVBoxLayout());
-        this->layout()->setContentsMargins(10,10,10,10);
-
-        loaderWidget = new SLIMojoLoaderWidget();
-        this->layout()->addWidget(loaderWidget);
-        ((QVBoxLayout*)(this->layout()))->addSpacing(20);
-    }
-    ~SLIMojoLoaderDialog();
-
-protected:
-    void accept() { QDialog::accept(); }
-    void reject() { QDialog::reject(); }
 
 private:
-    SLIMojoLoaderWidget *loaderWidget;
+    QProgressBar *progressUpload;
+    QComboBox *cmbSerial;
+    QLineEdit *leBitFilePath, *leEEPROMFilePath;
+    QCheckBox *ckbVerifyFlash, *ckbStoreFlash;
+    QPushButton *buttonChooseBitFile, *buttonLoadBitFile, *buttonClose, *buttonChooseEEPROMFile, *buttonLoadEEPROMFile;
+
 };
 
 #endif // SLIMOJOLOADERWIDGET_H
