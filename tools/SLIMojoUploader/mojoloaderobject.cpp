@@ -1,8 +1,9 @@
 #include "mojoloaderobject.h"
 
-MojoLoaderObject::MojoLoaderObject(QObject *parent) : QObject(parent), serialPort(NULL), serialIsValid(false), bitFileIsValid(false), romFileIsValid(false), serialTimeout(false)
+MojoLoaderObject::MojoLoaderObject(QObject *parent) : QObject(parent), serialPort(NULL), serialIsValid(false), bitFileIsValid(false), romFileIsValid(false)
 {
-    
+    serialPort = new QSerialPort();
+    connect(serialPort, SIGNAL(readyRead()), this, SLOT(onReadyRead()));
 }
 
 MojoLoaderObject::~MojoLoaderObject()
@@ -21,14 +22,13 @@ void MojoLoaderObject::onSerialPortInfoChanged(QString portName)
         if( serialPort->isOpen() ){
             serialPort->close();
         }
-        delete serialPort;
     }
 
     serialIsValid = false;
-    serialPort = new QSerialPort(portName);
+    serialPort->setPortName(portName);
     serialPort->setBaudRate(500000);
 
-    if( serialPort->open(QSerialPort::ReadWrite) ){
+    if( serialPort->open(QIODevice::ReadWrite) ){
         serialPort->setDataTerminalReady(false);
         serialIsValid = true;
         emit emitStatus(SERIAL_OK);
@@ -65,6 +65,7 @@ void MojoLoaderObject::onSetEEPROMFileName(QString fileName)
     unsigned long fileSize = 0;
 
     if( romFile.open(QFile::ReadOnly) ){
+        eeprom.clear();
 
         while( romFile.bytesAvailable() ){
             QByteArray s = romFile.readLine();
@@ -113,30 +114,32 @@ void MojoLoaderObject::onUploadEEPROM(bool verify)
 
     // START EEPROM WRITE AND OR VERIFY
     if( verify ){
+        qDebug() << "wrote T";
         serialPort->write("T");
     } else {
+        qDebug() << "wrote U";
         serialPort->write("U");
     }
-    serialPort->flush();
 
-    // WAIT FOR REPLY OF 'R'
-    if( waitForReplyOf('R') ){
+    responseLetter = 'R';
+    if( waitForResponse() ){
+        response.remove(0,1);
         emit emitStatus(EEPROM_HANDSHAKE_OK);
     } else {
         emit emitStatus(EEPROM_HANDSHAKE_ERROR);
-        return;
     }
 
     // SEND 1024 LUT BYTES
     serialPort->write(eeprom);
 
+    if( serialPort->waitForBytesWritten(1000) ){
+        qDebug() << "wrote eeprom";
+    }
 
-    // WAIT FOR SEND TO COMPLETE
-    while( serialPort->bytesToWrite() );
 
-
-    // WAIT FOR REPLY OF 'D'
-    if( waitForReplyOf('D') ){
+    responseLetter = 'D';
+    if( waitForResponse() ){
+        response.remove(0,1);
         emit emitStatus(AVR_ACK_EEPROM);
     } else {
         emit emitStatus(EEPROM_UPLOAD_ERROR);
@@ -146,27 +149,30 @@ void MojoLoaderObject::onUploadEEPROM(bool verify)
     if( verify ){
         // REQUEST EEPROM BE READ BACK FOR VERIFICATION
         serialPort->write("P");
-        serialPort->flush();
 
         // WAIT FOR ENTIRE RESPONSE
-        while( serialPort->bytesAvailable() < 1024 );
+        while( response.size()<1024 ){
+            serialPort->waitForReadyRead(100);
+        }
 
-        QByteArray ver = serialPort->readAll();
-        if( ver!=eeprom ){
+        qDebug() << "response size: " << response.size();
+
+        if( response!=eeprom ){
             emit emitStatus(EEPROM_VER_FAILED);
         } else {
             emit emitStatus(EEPROM_VER_SUCCESS);
         }
+
+        response.clear();
     }
 
     // TELL AVR TO CONFIGURE FPGA FROM SPI FLASH MEMORY
     serialPort->write("L");
-    serialPort->flush();
-
     emit emitStatus(FPGA_FLASH_REQUEST);
 
-
-    if( waitForReplyOf('D') ){
+    responseLetter = 'D';
+    if( waitForResponse() ){
+        response.remove(0,1);
         emit emitStatus(FPGA_CONFIG_SUCCESS);
     } else {
         emit emitStatus(FPGA_CONFIG_ERROR);
@@ -176,6 +182,8 @@ void MojoLoaderObject::onUploadEEPROM(bool verify)
 
 void MojoLoaderObject::resetMojoBoard()
 {
+    qDebug() << "putting mojo into loader mode...";
+
     // 5 PULSES ON DTR TO BRING MOJO INTO LOADER MODE
     for( int i=0; i<5; i++ ){
         serialPort->setDataTerminalReady(true);
@@ -183,27 +191,23 @@ void MojoLoaderObject::resetMojoBoard()
         serialPort->setDataTerminalReady(false);
         QThread::msleep(25);
     }
+    serialPort->setDataTerminalReady(true);
+    qDebug() << "done\n";
 }
 
-bool MojoLoaderObject::waitForReplyOf(char reply)
+bool MojoLoaderObject::waitForResponse()
 {
-    serialTimeout = false;
-    QTimer::singleShot(3000, this, SLOT(onSerialResponseTimeout()));
-    while( serialPort->bytesAvailable()==0 && !serialTimeout );
-    if( serialPort->bytesAvailable()==0 ){
-        emit emitStatus(SERIAL_TIMEOUT);
-        return false;
+    while( response.size()==0 ){
+        serialPort->waitForReadyRead(10);
+    }
+    if( (char)response.at(0)==responseLetter ){
+        return true;
     } else {
-        auto resp = serialPort->read(1);
-        if( resp.at(0) != reply ){
-            return false;
-        } else {
-            return true;
-        }
+        return false;
     }
 }
 
-void MojoLoaderObject::onSerialResponseTimeout()
+void MojoLoaderObject::onReadyRead()
 {
-    serialTimeout = true;
+    response.append(serialPort->readAll());
 }

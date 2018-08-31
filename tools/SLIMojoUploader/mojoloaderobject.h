@@ -161,17 +161,16 @@ public slots:
     void onSetEEPROMFileName(QString fileName);
     void onUploadBitFile(bool flash, bool verify);
     void onUploadEEPROM(bool verify);
-
-private slots:
-    void onSerialResponseTimeout();
+    void onReadyRead();
 
 private:
-    bool waitForReplyOf(char reply);
+    bool waitForResponse();
     void resetMojoBoard();
 
     QSerialPort *serialPort;
-    QByteArray eeprom;
-    bool serialIsValid, bitFileIsValid, romFileIsValid, serialTimeout;
+    QByteArray eeprom, response;
+    char responseLetter;
+    bool serialIsValid, bitFileIsValid, romFileIsValid;
 };
 
 #endif // MOJOLOADEROBJECT_H

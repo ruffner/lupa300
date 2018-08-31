@@ -16,9 +16,6 @@ SLIMojoLoaderWidget::SLIMojoLoaderWidget(QWidget *parent)
     buttonLoadEEPROMFile = new QPushButton("Load LUT");
     buttonSerialChoose = new QPushButton("Select");
 
-    // PROGRESS BAR CREATION
-    progressUpload = new QProgressBar();
-
     // CHECKBOX CREATION
     ckbStoreFlash = new QCheckBox("Save to Flash");
     ckbVerifyFlash = new QCheckBox("Verify Bit");
@@ -44,32 +41,23 @@ SLIMojoLoaderWidget::SLIMojoLoaderWidget(QWidget *parent)
     this->layout()->addWidget(connectionGroupBox);
     // END SERIAL PORT SELECTION BOX
 
-
-    // BEGIN UPLOAD PROGRESS BAR
-    QGroupBox *gbProgress = new QGroupBox(QString("Upload Progress"));
-    gbProgress->setLayout(new QHBoxLayout());
-    gbProgress->layout()->addWidget(progressUpload);
-    this->layout()->addWidget(gbProgress);
-    // END UPLOAD PROGRESS BAR
-
-
-    // BIT FILE UPLOAD CONTROLS AND PROGRESS
-    QGroupBox *gbBitFile = new QGroupBox(QString("Bit File Upload"));
-    gbBitFile->setLayout(new QHBoxLayout());
-    gbBitFile->setContentsMargins(6,6,6,6);
-    QGroupBox *gbBitFileCkb = new QGroupBox();
-    gbBitFileCkb->setLayout(new QVBoxLayout());
-    gbBitFileCkb->layout()->addWidget(ckbStoreFlash);
-    gbBitFileCkb->layout()->addWidget(ckbVerifyFlash);
-    gbBitFile->layout()->addWidget(gbBitFileCkb);
-    gbBitFile->layout()->addWidget(leBitFilePath);
-    QGroupBox *gbBitFileButtons = new QGroupBox();
-    gbBitFileButtons->setLayout(new QVBoxLayout());
-    gbBitFileButtons->layout()->addWidget(buttonChooseBitFile);
-    gbBitFileButtons->layout()->addWidget(buttonLoadBitFile);
-    gbBitFile->layout()->addWidget(gbBitFileButtons);
-    this->layout()->addWidget(gbBitFile);
-    // END BIT FILE UPLOAD CONTROLS AND PROGRESS
+//    // BIT FILE UPLOAD CONTROLS AND PROGRESS
+//    QGroupBox *gbBitFile = new QGroupBox(QString("Bit File Upload"));
+//    gbBitFile->setLayout(new QHBoxLayout());
+//    gbBitFile->setContentsMargins(6,6,6,6);
+//    QGroupBox *gbBitFileCkb = new QGroupBox();
+//    gbBitFileCkb->setLayout(new QVBoxLayout());
+//    gbBitFileCkb->layout()->addWidget(ckbStoreFlash);
+//    gbBitFileCkb->layout()->addWidget(ckbVerifyFlash);
+//    gbBitFile->layout()->addWidget(gbBitFileCkb);
+//    gbBitFile->layout()->addWidget(leBitFilePath);
+//    QGroupBox *gbBitFileButtons = new QGroupBox();
+//    gbBitFileButtons->setLayout(new QVBoxLayout());
+//    gbBitFileButtons->layout()->addWidget(buttonChooseBitFile);
+//    gbBitFileButtons->layout()->addWidget(buttonLoadBitFile);
+//    gbBitFile->layout()->addWidget(gbBitFileButtons);
+//    this->layout()->addWidget(gbBitFile);
+//    // END BIT FILE UPLOAD CONTROLS AND PROGRESS
 
 
     // EEPROM UPLOAD CONTROLS AND PROGRESS
@@ -92,12 +80,12 @@ SLIMojoLoaderWidget::SLIMojoLoaderWidget(QWidget *parent)
     
     mojoLoader = new MojoLoaderObject();
 
-    connect(buttonLoadBitFile, SIGNAL(clicked()), this, SLOT(onLoadBitFile()));
+    //connect(buttonLoadBitFile, SIGNAL(clicked()), this, SLOT(onLoadBitFile()));
     connect(buttonSerialChoose, SIGNAL(clicked()), this, SLOT(onChooseSerial()));
-    connect(buttonChooseBitFile, SIGNAL(clicked()), this, SLOT(onChooseBitFile()));
+    //connect(buttonChooseBitFile, SIGNAL(clicked()), this, SLOT(onChooseBitFile()));
     connect(buttonLoadEEPROMFile, SIGNAL(clicked()), this, SLOT(onLoadEEPROMFile()));
     connect(buttonChooseEEPROMFile, SIGNAL(clicked()), this, SLOT(onChooseEEPROMFile()));
-    connect(mojoLoader, SIGNAL(emitStatus(QString)), this, SLOT(onLoaderStatusChanged(QString)));
+    connect(mojoLoader, SIGNAL(emitStatus(QString)), this, SLOT(onLoaderStatusChanged(QString)), Qt::QueuedConnection);
 
 
 

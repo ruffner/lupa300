@@ -8,7 +8,6 @@
 #include <QCheckBox>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <QProgressBar>
 #include <QGroupBox>
 #include <QComboBox>
 #include <QLineEdit>
@@ -36,7 +35,6 @@ public slots:
 private:
     MojoLoaderObject *mojoLoader;
 
-    QProgressBar *progressUpload;
     QComboBox *cmbSerial;
     QLabel *labelStatus;
     QLineEdit *leBitFilePath, *leEEPROMFilePath;
