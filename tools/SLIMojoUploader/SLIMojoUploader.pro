@@ -26,8 +26,31 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         slimojoloaderwidget.cpp \
-    mojoloaderobject.cpp
+        mojoloaderobject.cpp \
+        laumemoryobject.cpp
 
 HEADERS += \
         slimojoloaderwidget.h \
-    mojoloaderobject.h
+        mojoloaderobject.h \
+        laumemoryobject.h
+
+win32 {
+    INCLUDEPATH += $$quote(C:/usr/include)
+    DEPENDPATH  += $$quote(C:/usr/include)
+    LIBS        += -L$$quote(C:/usr/lib) -llibtiff_i
+}
+
+unix:macx {
+    QMAKE_CXXFLAGS += -msse2 -msse3 -mssse3 -msse4.1
+    INCLUDEPATH    += /usr/local/include /usr/local/include/eigen3
+    DEPENDPATH     += /usr/local/include /usr/local/include/eigen3
+    LIBS           += /usr/local/lib/libtiff.5.dylib
+}
+
+unix:!macx {
+    QMAKE_CXXFLAGS += -msse2 -msse3 -mssse3 -msse4.1
+    INCLUDEPATH    += /usr/include /usr/include/eigen3
+    DEPENDPATH     += /usr/include /usr/include/eigen3
+    LIBS           += -ltiff
+    CONFIG         += c++11
+}

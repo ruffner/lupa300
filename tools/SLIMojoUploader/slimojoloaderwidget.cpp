@@ -121,12 +121,24 @@ void SLIMojoLoaderWidget::onChooseBitFile()
 
 void SLIMojoLoaderWidget::onChooseEEPROMFile()
 {
+    QSettings settings;
+    QString lastPath = settings.value("SLIMojoLoader::LUTPath").toString();
+    qDebug() << " retrieved last path as " << lastPath;
     QString fileName = QFileDialog::getOpenFileName(this,
-        tr("Open LUT File"), "/", tr("Text Files (*.txt)"));
+        tr("Open LUT File"), lastPath, tr("Text Files, TCC Files (*.txt *.tcc)"));
 
     if( !fileName.isEmpty() ){
         leEEPROMFilePath->setText(fileName);
-        mojoLoader->onSetEEPROMFileName(fileName);
+        if( fileName.endsWith(QString("tcc")) || fileName.endsWith(QString("TCC")) ){
+            mojoLoader->onSetEEPROMFileName(fileName, true);
+        } else {
+            mojoLoader->onSetEEPROMFileName(fileName);
+        }
+        while( !fileName.endsWith('/') && !fileName.endsWith('\\') ){
+            fileName.chop(1);
+        }
+        qDebug() << "saving last path as " << fileName;
+        settings.setValue("SLIMojoLoader::LUTPath", fileName);
     } else {
         qDebug() << "no file selected";
     }

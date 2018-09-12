@@ -56,42 +56,48 @@ void MojoLoaderObject::onSetBitFileName(QString fileName)
     }
 
     bitFile.close();
-
 }
 
-void MojoLoaderObject::onSetEEPROMFileName(QString fileName)
+void MojoLoaderObject::onSetEEPROMFileName(QString fileName, bool isLauMem)
 {
-    QFile romFile(fileName);
     unsigned long fileSize = 0;
 
-    if( romFile.open(QFile::ReadOnly) ){
-        eeprom.clear();
+    if( isLauMem ){
+        LAUMemoryObject romFile(fileName);
+        unsigned char *data = romFile.constPointer();
 
-        while( romFile.bytesAvailable() ){
-            QByteArray s = romFile.readLine();
-            if( s.length()==1 && s.at(0)=='0' ){
-                eeprom.append((char)0x00);
-            } else {
-                eeprom.append(QByteArray::fromHex(s));
-            }
+        for( int i=0; i<romFile.length(); i++){
+            eeprom.append(data[i]);
         }
+    } else {
+        QFile romFile(fileName);
+        if( romFile.open(QFile::ReadOnly) ){
+            eeprom.clear();
 
-        fileSize = (unsigned long) eeprom.size();
-
-        if( fileSize!=1024 ){
+            while( romFile.bytesAvailable() ){
+                QByteArray s = romFile.readLine();
+                if( s.length()==1 && s.at(0)=='0' ){
+                    eeprom.append((char)0x00);
+                } else {
+                    eeprom.append(QByteArray::fromHex(s));
+                }
+            }
+        } else {
             romFileIsValid = false;
             emit emitStatus(ROMFILE_INVALID);
-        } else {
-            romFileIsValid = true;
-            emit emitStatus(ROMFILE_VALID);
         }
-
         romFile.close();
-    } else {
-        romFileIsValid = false;
-        emit emitStatus(ROMFILE_INVALID);
     }
 
+    fileSize = (unsigned long) eeprom.size();
+
+    if( fileSize!=1024 ){
+        romFileIsValid = false;
+        emit emitStatus(ROMFILE_INVALID);
+    } else {
+        romFileIsValid = true;
+        emit emitStatus(ROMFILE_VALID);
+    }
 }
 
 void MojoLoaderObject::onUploadBitFile(bool flash, bool verify)
