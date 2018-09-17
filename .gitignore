@@ -1,3 +1,5 @@
 # ignore backup schematic and board files from eagle
 **.b#*
 **.s#*
+**.l#*
+
