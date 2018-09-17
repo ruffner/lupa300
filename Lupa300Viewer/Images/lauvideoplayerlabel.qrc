@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>BackgroundTexture.tif</file>
+        <file>CenterSwope.tif</file>
+        <file>DownVideoRecordArrow.tif</file>
+        <file>lauvideoplayerlabel.qrc</file>
+        <file>LeftSwope.tif</file>
+        <file>NoVideoScreen.jpg</file>
+        <file>RightSwope.tif</file>
+        <file>VideoRecordArrow.tif</file>
+    </qresource>
+</RCC>
