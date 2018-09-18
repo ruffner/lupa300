@@ -24653,17 +24653,6 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="50.8" y="53.34"/>
 </segment>
 </net>
-<net name="VDDA" class="0">
-<segment>
-<pinref part="F2" gate="G$1" pin="1"/>
-<wire x1="55.88" y1="33.02" x2="50.8" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="C5" gate="G$1" pin="1"/>
-<wire x1="50.8" y1="33.02" x2="50.8" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="33.02" x2="40.64" y2="33.02" width="0.1524" layer="91"/>
-<label x="40.64" y="33.02" size="1.778" layer="95"/>
-<junction x="50.8" y="33.02"/>
-</segment>
-</net>
 <net name="VADC" class="0">
 <segment>
 <pinref part="F3" gate="G$1" pin="1"/>
@@ -24673,6 +24662,17 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="50.8" y1="12.7" x2="40.64" y2="12.7" width="0.1524" layer="91"/>
 <label x="40.64" y="12.7" size="1.778" layer="95"/>
 <junction x="50.8" y="12.7"/>
+</segment>
+</net>
+<net name="VDDA" class="0">
+<segment>
+<pinref part="F2" gate="G$1" pin="1"/>
+<wire x1="55.88" y1="33.02" x2="50.8" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="50.8" y1="33.02" x2="40.64" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="30.48" x2="50.8" y2="33.02" width="0.1524" layer="91"/>
+<junction x="50.8" y="33.02"/>
+<label x="40.64" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
