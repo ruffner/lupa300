@@ -23594,6 +23594,27 @@ Source: http://www.osram.convergy.de/</description>
 <label x="114.3" y="104.14" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="SDA2" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$87"/>
+<wire x1="63.5" y1="40.64" x2="83.82" y2="40.64" width="0.1524" layer="91"/>
+<label x="83.82" y="40.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCL2" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$89"/>
+<wire x1="63.5" y1="38.1" x2="83.82" y2="38.1" width="0.1524" layer="91"/>
+<label x="83.82" y="38.1" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="DET_CONTROL" class="0">
+<segment>
+<pinref part="JX2" gate="G$1" pin="P$83"/>
+<wire x1="63.5" y1="45.72" x2="83.82" y2="45.72" width="0.1524" layer="91"/>
+<label x="83.82" y="45.72" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
