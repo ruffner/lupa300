@@ -23615,6 +23615,20 @@ Source: http://www.osram.convergy.de/</description>
 <label x="83.82" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="SDAC" class="0">
+<segment>
+<pinref part="JX1" gate="G$1" pin="P$17"/>
+<wire x1="170.18" y1="129.54" x2="187.96" y2="129.54" width="0.1524" layer="91"/>
+<label x="187.96" y="129.54" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCLC" class="0">
+<segment>
+<pinref part="JX1" gate="G$1" pin="P$19"/>
+<wire x1="170.18" y1="127" x2="187.96" y2="127" width="0.1524" layer="91"/>
+<label x="187.96" y="127" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -25008,39 +25022,6 @@ Source: http://www.osram.convergy.de/</description>
 <label x="82.55" y="170.18" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="3V3" class="0">
-<segment>
-<pinref part="R22" gate="G$1" pin="2"/>
-<wire x1="82.55" y1="185.42" x2="82.55" y2="190.5" width="0.1524" layer="91"/>
-<label x="82.55" y="189.23" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="PCA9306" gate="G$1" pin="VREF1"/>
-<wire x1="49.53" y1="55.88" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="73.66" x2="15.24" y2="77.47" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="77.47" x2="20.32" y2="77.47" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="77.47" x2="20.32" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="77.47" x2="40.64" y2="77.47" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="77.47" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="RN7" gate="B" pin="1"/>
-<pinref part="RN7" gate="A" pin="1"/>
-<junction x="20.32" y="77.47"/>
-<wire x1="20.32" y1="77.47" x2="20.32" y2="81.28" width="0.1524" layer="91"/>
-<label x="20.32" y="81.28" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R31" gate="G$1" pin="1"/>
-<wire x1="119.38" y1="45.72" x2="119.38" y2="49.53" width="0.1524" layer="91"/>
-<label x="119.38" y="49.53" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$18" gate="G$1" pin="VDD"/>
-<label x="180.34" y="190.5" size="1.778" layer="95"/>
-<wire x1="187.96" y1="190.5" x2="163.83" y2="190.5" width="0.1524" layer="91"/>
-<pinref part="C32" gate="G$1" pin="1"/>
-<wire x1="163.83" y1="190.5" x2="163.83" y2="189.23" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$17" class="0">
 <segment>
 <wire x1="246.38" y1="53.34" x2="246.38" y2="41.91" width="0.1524" layer="91"/>
@@ -25240,12 +25221,44 @@ Source: http://www.osram.convergy.de/</description>
 <label x="219.71" y="187.96" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="VCCIO" class="0">
+<segment>
+<pinref part="U$18" gate="G$1" pin="VDD"/>
+<label x="180.34" y="190.5" size="1.778" layer="95"/>
+<wire x1="187.96" y1="190.5" x2="163.83" y2="190.5" width="0.1524" layer="91"/>
+<pinref part="C32" gate="G$1" pin="1"/>
+<wire x1="163.83" y1="190.5" x2="163.83" y2="189.23" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="PCA9306" gate="G$1" pin="VREF1"/>
+<wire x1="49.53" y1="55.88" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="73.66" x2="15.24" y2="77.47" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="77.47" x2="20.32" y2="77.47" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="77.47" x2="20.32" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="77.47" x2="40.64" y2="77.47" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="77.47" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="RN7" gate="B" pin="1"/>
+<pinref part="RN7" gate="A" pin="1"/>
+<junction x="20.32" y="77.47"/>
+<wire x1="20.32" y1="77.47" x2="20.32" y2="81.28" width="0.1524" layer="91"/>
+<label x="20.32" y="81.28" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R31" gate="G$1" pin="1"/>
+<wire x1="119.38" y1="45.72" x2="119.38" y2="49.53" width="0.1524" layer="91"/>
+<label x="119.38" y="49.53" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R22" gate="G$1" pin="2"/>
+<wire x1="82.55" y1="185.42" x2="82.55" y2="190.5" width="0.1524" layer="91"/>
+<label x="82.55" y="189.23" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
 <errors>
 <approved hash="106,1,63.5,137.16,PG_CARRIER,,,,,"/>
-<approved hash="108,1,73.66,76.2,5V,,,,,"/>
 </errors>
 </schematic>
 </drawing>
