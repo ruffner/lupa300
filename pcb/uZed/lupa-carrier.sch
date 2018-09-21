@@ -22729,6 +22729,90 @@ Source: http://www.osram.convergy.de/</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="inductor-neosid" urn="urn:adsk.eagle:library:241">
+<description>&lt;b&gt;Neosid Chokes and Transformers&lt;/b&gt;&lt;p&gt;
+
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Electronic Component Book, Part 2 : Chokes, Fixed Value Inductors
+&lt;li&gt;Part 3 : Filters, Coil Assemblies, Thermoplastic Parts
+&lt;li&gt;Part 4 : SMD Filters, Coils, Fixed Value Inductors
+&lt;li&gt;www.neosid.de
+&lt;/ul&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="MS85" urn="urn:adsk.eagle:footprint:14565/1" library_version="1">
+<description>SMD &lt;B&gt;POWER INDUCTOR&lt;/B&gt;&lt;p&gt;
+high current</description>
+<wire x1="-0.9" y1="-4.3" x2="0.9" y2="-4.3" width="0.2032" layer="51"/>
+<wire x1="-2.75" y1="2.55" x2="-2.75" y2="-2.55" width="0.2032" layer="21"/>
+<wire x1="-2.75" y1="-2.55" x2="2.75" y2="-2.55" width="0.2032" layer="51"/>
+<wire x1="2.75" y1="2.55" x2="-2.75" y2="2.55" width="0.2032" layer="51"/>
+<wire x1="-0.9" y1="-4.3" x2="-0.7" y2="-2.65" width="0.2032" layer="51"/>
+<wire x1="0.9" y1="-4.3" x2="0.7" y2="-2.65" width="0.2032" layer="51"/>
+<wire x1="0.9" y1="4.3" x2="-0.9" y2="4.3" width="0.2032" layer="51"/>
+<wire x1="0.9" y1="4.3" x2="0.7" y2="2.65" width="0.2032" layer="51"/>
+<wire x1="-0.9" y1="4.3" x2="-0.7" y2="2.65" width="0.2032" layer="51"/>
+<wire x1="-1" y1="-2.5" x2="-1" y2="2.5" width="0.2032" layer="51" curve="-136.397181"/>
+<wire x1="1" y1="2.5" x2="1" y2="-2.5" width="0.2032" layer="51" curve="-136.397181"/>
+<wire x1="-2.5" y1="2.55" x2="-2.75" y2="2.55" width="0.2032" layer="21"/>
+<wire x1="2.5" y1="-2.55" x2="2.75" y2="-2.55" width="0.2032" layer="21"/>
+<wire x1="-2.75" y1="-2.55" x2="-2.5" y2="-2.55" width="0.2032" layer="21"/>
+<wire x1="2.75" y1="2.55" x2="2.5" y2="2.55" width="0.2032" layer="21"/>
+<wire x1="2.75" y1="2.55" x2="2.75" y2="-2.55" width="0.2032" layer="21"/>
+<smd name="1" x="0" y="-3.383" dx="4.5" dy="2.25" layer="1"/>
+<smd name="2" x="0" y="3.383" dx="4.5" dy="2.25" layer="1"/>
+<text x="4.272" y="-2.331" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="-2.968" y="-2.458" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="MS85" urn="urn:adsk.eagle:package:14698/1" type="box" library_version="1">
+<description>SMD POWER INDUCTOR
+high current</description>
+<packageinstances>
+<packageinstance name="MS85"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="L" urn="urn:adsk.eagle:symbol:14504/1" library_version="1">
+<text x="-3.81" y="1.778" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.556" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-3.81" y1="-1.27" x2="3.81" y2="1.27" layer="94"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MS85" urn="urn:adsk.eagle:component:14753/1" prefix="L" uservalue="yes" library_version="1">
+<description>&lt;b&gt;INDUCTOR&lt;/b&gt;&lt;p&gt;
+SMD power inductor</description>
+<gates>
+<gate name="G$1" symbol="L" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MS85">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:14698/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -22829,8 +22913,8 @@ Source: http://www.osram.convergy.de/</description>
 <part name="RN4" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="2R-N" device="EXB34V" package3d_urn="urn:adsk.eagle:package:24930/1" value="51"/>
 <part name="RN5" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="2R-N" device="EXB34V" package3d_urn="urn:adsk.eagle:package:24930/1" value="51"/>
 <part name="RN6" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="2R-N" device="EXB34V" package3d_urn="urn:adsk.eagle:package:24930/1" value="51"/>
-<part name="J5" library="saanlima" deviceset="HDMI-TYPE-A-RECEPTICAL" device="FCI10029449"/>
-<part name="J6" library="saanlima" deviceset="HDMI-TYPE-A-RECEPTICAL" device="FCI10029449"/>
+<part name="HDMI_OUT" library="saanlima" deviceset="HDMI-TYPE-A-RECEPTICAL" device="FCI10029449"/>
+<part name="HDMI_IN" library="saanlima" deviceset="HDMI-TYPE-A-RECEPTICAL" device="FCI10029449"/>
 <part name="R8" library="rcl" deviceset="R-US_" device="R0603" value="100K"/>
 <part name="GND15" library="SparkFun" deviceset="GND" device=""/>
 <part name="C21" library="rcl" deviceset="C-EU" device="C0603K" value=".1uF"/>
@@ -22854,6 +22938,7 @@ Source: http://www.osram.convergy.de/</description>
 <part name="ON" library="adafruit" deviceset="LED" device="CHIPLED_0805"/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="L1" library="inductor-neosid" library_urn="urn:adsk.eagle:library:241" deviceset="MS85" device="" package3d_urn="urn:adsk.eagle:package:14698/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -23671,6 +23756,7 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="ON" gate="G$1" x="50.8" y="142.24" rot="R180"/>
 <instance part="R11" gate="G$1" x="50.8" y="129.54" rot="R90"/>
 <instance part="R12" gate="G$1" x="48.26" y="104.14" rot="R90"/>
+<instance part="L1" gate="G$1" x="60.96" y="119.38"/>
 </instances>
 <busses>
 </busses>
@@ -23716,21 +23802,17 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="5V" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="1"/>
 <pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="43.18" y1="119.38" x2="50.8" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="119.38" x2="68.58" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="116.84" x2="68.58" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="119.38" x2="81.28" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="81.28" y1="119.38" x2="81.28" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="119.38" x2="81.28" y2="121.92" width="0.1524" layer="91"/>
 <label x="81.28" y="121.92" size="1.778" layer="95"/>
-<junction x="68.58" y="119.38"/>
 <junction x="81.28" y="119.38"/>
-<pinref part="R11" gate="G$1" pin="1"/>
-<wire x1="50.8" y1="119.38" x2="50.8" y2="124.46" width="0.1524" layer="91"/>
-<junction x="50.8" y="119.38"/>
+<pinref part="L1" gate="G$1" pin="2"/>
+<wire x1="68.58" y1="119.38" x2="66.04" y2="119.38" width="0.1524" layer="91"/>
+<junction x="68.58" y="119.38"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
@@ -23990,6 +24072,17 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="R11" gate="G$1" pin="2"/>
 <pinref part="ON" gate="G$1" pin="A"/>
 <wire x1="50.8" y1="134.62" x2="50.8" y2="139.7" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<wire x1="50.8" y1="119.38" x2="50.8" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="1"/>
+<wire x1="43.18" y1="119.38" x2="50.8" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+<wire x1="55.88" y1="119.38" x2="50.8" y2="119.38" width="0.1524" layer="91"/>
+<junction x="50.8" y="119.38"/>
 </segment>
 </net>
 </nets>
@@ -24724,8 +24817,8 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="RN5" gate="B" x="93.98" y="162.56" rot="R90"/>
 <instance part="RN6" gate="A" x="109.22" y="162.56" rot="R90"/>
 <instance part="RN6" gate="B" x="116.84" y="162.56" rot="R90"/>
-<instance part="J5" gate="G$1" x="265.43" y="104.14"/>
-<instance part="J6" gate="G$1" x="163.83" y="104.14"/>
+<instance part="HDMI_OUT" gate="G$1" x="265.43" y="104.14"/>
+<instance part="HDMI_IN" gate="G$1" x="163.83" y="104.14"/>
 <instance part="R8" gate="G$1" x="163.83" y="26.67" rot="R90"/>
 <instance part="GND15" gate="1" x="163.83" y="15.24"/>
 <instance part="C21" gate="G$1" x="172.72" y="31.75"/>
@@ -24777,18 +24870,18 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="265.43" y="19.05"/>
 </segment>
 <segment>
-<pinref part="J6" gate="G$1" pin="DATA2SHIELD"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA2SHIELD"/>
 <wire x1="148.59" y1="139.7" x2="137.16" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="139.7" x2="137.16" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="J6" gate="G$1" pin="DATA1SHIELD"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA1SHIELD"/>
 <wire x1="137.16" y1="124.46" x2="148.59" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="124.46" x2="137.16" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="J6" gate="G$1" pin="DATA0SHIELD"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA0SHIELD"/>
 <wire x1="137.16" y1="109.22" x2="148.59" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="J6" gate="G$1" pin="CLOCKSHIELD"/>
+<pinref part="HDMI_IN" gate="G$1" pin="CLOCKSHIELD"/>
 <wire x1="137.16" y1="109.22" x2="137.16" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="93.98" x2="148.59" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="J6" gate="G$1" pin="DDC/CEC-GRND"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DDC/CEC-GRND"/>
 <wire x1="148.59" y1="63.5" x2="137.16" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="63.5" x2="137.16" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="78.74" x2="137.16" y2="93.98" width="0.1524" layer="91"/>
@@ -24798,7 +24891,7 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="137.16" y="93.98"/>
 <junction x="137.16" y="109.22"/>
 <junction x="137.16" y="124.46"/>
-<pinref part="J6" gate="G$1" pin="RES"/>
+<pinref part="HDMI_IN" gate="G$1" pin="RES"/>
 <wire x1="137.16" y1="26.67" x2="137.16" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="148.59" y1="78.74" x2="137.16" y2="78.74" width="0.1524" layer="91"/>
 <junction x="137.16" y="78.74"/>
@@ -24808,21 +24901,21 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="137.16" y="26.67"/>
 </segment>
 <segment>
-<pinref part="J5" gate="G$1" pin="DATA2SHIELD"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA2SHIELD"/>
 <wire x1="250.19" y1="139.7" x2="241.3" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="J5" gate="G$1" pin="DATA1SHIELD"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA1SHIELD"/>
 <wire x1="241.3" y1="139.7" x2="241.3" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="124.46" x2="250.19" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="J5" gate="G$1" pin="DATA0SHIELD"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA0SHIELD"/>
 <wire x1="250.19" y1="109.22" x2="241.3" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="109.22" x2="241.3" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="J5" gate="G$1" pin="CLOCKSHIELD"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="CLOCKSHIELD"/>
 <wire x1="250.19" y1="93.98" x2="241.3" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="93.98" x2="241.3" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="J5" gate="G$1" pin="RES"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="RES"/>
 <wire x1="250.19" y1="78.74" x2="241.3" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="78.74" x2="241.3" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="J5" gate="G$1" pin="DDC/CEC-GRND"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DDC/CEC-GRND"/>
 <wire x1="241.3" y1="78.74" x2="241.3" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="63.5" x2="250.19" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="63.5" x2="241.3" y2="21.59" width="0.1524" layer="91"/>
@@ -24868,10 +24961,10 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="168.91" y="34.29"/>
 <pinref part="C21" gate="G$1" pin="1"/>
 <junction x="172.72" y="34.29"/>
-<pinref part="J6" gate="G$1" pin="SH1"/>
-<pinref part="J6" gate="G$1" pin="SH2"/>
-<pinref part="J6" gate="G$1" pin="SH3"/>
-<pinref part="J6" gate="G$1" pin="SH4"/>
+<pinref part="HDMI_IN" gate="G$1" pin="SH1"/>
+<pinref part="HDMI_IN" gate="G$1" pin="SH2"/>
+<pinref part="HDMI_IN" gate="G$1" pin="SH3"/>
+<pinref part="HDMI_IN" gate="G$1" pin="SH4"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -24890,15 +24983,15 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="270.51" y="33.02"/>
 <pinref part="C28" gate="G$1" pin="1"/>
 <junction x="274.32" y="33.02"/>
-<pinref part="J5" gate="G$1" pin="SH1"/>
-<pinref part="J5" gate="G$1" pin="SH2"/>
-<pinref part="J5" gate="G$1" pin="SH3"/>
-<pinref part="J5" gate="G$1" pin="SH4"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="SH1"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="SH2"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="SH3"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="SH4"/>
 </segment>
 </net>
 <net name="P1_DATA2+" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="DATA2+"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA2+"/>
 <label x="30.48" y="144.78" size="1.778" layer="95"/>
 <wire x1="148.59" y1="144.78" x2="116.84" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="RN6" gate="B" pin="1"/>
@@ -24909,7 +25002,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="P1_DATA2-" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="DATA2-"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA2-"/>
 <wire x1="148.59" y1="134.62" x2="109.22" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="RN6" gate="A" pin="1"/>
 <wire x1="109.22" y1="134.62" x2="39.37" y2="134.62" width="0.1524" layer="91"/>
@@ -24920,7 +25013,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="P1_DATA1+" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="DATA1+"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA1+"/>
 <wire x1="148.59" y1="129.54" x2="93.98" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="RN5" gate="B" pin="1"/>
 <wire x1="93.98" y1="129.54" x2="39.37" y2="129.54" width="0.1524" layer="91"/>
@@ -24931,7 +25024,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="P1_DATA1-" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="DATA1-"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA1-"/>
 <wire x1="148.59" y1="119.38" x2="88.9" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="RN5" gate="A" pin="1"/>
 <wire x1="88.9" y1="119.38" x2="39.37" y2="119.38" width="0.1524" layer="91"/>
@@ -24942,7 +25035,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="P1_DATA0+" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="DATA0+"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA0+"/>
 <wire x1="148.59" y1="114.3" x2="76.2" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="RN4" gate="B" pin="1"/>
 <wire x1="76.2" y1="114.3" x2="39.37" y2="114.3" width="0.1524" layer="91"/>
@@ -24953,7 +25046,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="P1_DATA0-" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="DATA0-"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DATA0-"/>
 <wire x1="148.59" y1="104.14" x2="71.12" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="RN4" gate="A" pin="1"/>
 <wire x1="71.12" y1="104.14" x2="39.37" y2="104.14" width="0.1524" layer="91"/>
@@ -24964,7 +25057,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="P1_CLOCK+" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="CLOCK+"/>
+<pinref part="HDMI_IN" gate="G$1" pin="CLOCK+"/>
 <wire x1="148.59" y1="99.06" x2="55.88" y2="99.06" width="0.1524" layer="91"/>
 <label x="30.48" y="99.06" size="1.778" layer="95"/>
 <pinref part="RN3" gate="B" pin="1"/>
@@ -24975,7 +25068,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="P1_CLOCK-" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="CLOCK-"/>
+<pinref part="HDMI_IN" gate="G$1" pin="CLOCK-"/>
 <wire x1="148.59" y1="88.9" x2="50.8" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="RN3" gate="A" pin="1"/>
 <wire x1="50.8" y1="88.9" x2="39.37" y2="88.9" width="0.1524" layer="91"/>
@@ -25026,13 +25119,13 @@ Source: http://www.osram.convergy.de/</description>
 <segment>
 <wire x1="246.38" y1="53.34" x2="246.38" y2="41.91" width="0.1524" layer="91"/>
 <pinref part="R29" gate="G$1" pin="2"/>
-<pinref part="J5" gate="G$1" pin="DETECT"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DETECT"/>
 <wire x1="250.19" y1="53.34" x2="246.38" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="DETECT"/>
+<pinref part="HDMI_IN" gate="G$1" pin="DETECT"/>
 <wire x1="148.59" y1="53.34" x2="147.32" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="53.34" x2="147.32" y2="41.91" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="41.91" x2="142.24" y2="41.91" width="0.1524" layer="91"/>
@@ -25046,7 +25139,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$19" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="SDA"/>
+<pinref part="HDMI_IN" gate="G$1" pin="SDA"/>
 <wire x1="148.59" y1="68.58" x2="106.68" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="68.58" x2="106.68" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="PCA9306" gate="G$1" pin="SDA2"/>
@@ -25059,7 +25152,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$20" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="SCL"/>
+<pinref part="HDMI_IN" gate="G$1" pin="SCL"/>
 <wire x1="148.59" y1="73.66" x2="102.87" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="102.87" y1="73.66" x2="102.87" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="PCA9306" gate="G$1" pin="SCL2"/>
@@ -25094,56 +25187,56 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="P2_DATA2+" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="DATA2+"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA2+"/>
 <wire x1="250.19" y1="144.78" x2="218.44" y2="144.78" width="0.1524" layer="91"/>
 <label x="218.44" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="P2_DATA2-" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="DATA2-"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA2-"/>
 <wire x1="250.19" y1="134.62" x2="218.44" y2="134.62" width="0.1524" layer="91"/>
 <label x="218.44" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="P2_DATA1+" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="DATA1+"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA1+"/>
 <wire x1="250.19" y1="129.54" x2="218.44" y2="129.54" width="0.1524" layer="91"/>
 <label x="218.44" y="129.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="P2_DATA1-" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="DATA1-"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA1-"/>
 <wire x1="250.19" y1="119.38" x2="218.44" y2="119.38" width="0.1524" layer="91"/>
 <label x="218.44" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="P2_DATA0+" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="DATA0+"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA0+"/>
 <wire x1="250.19" y1="114.3" x2="218.44" y2="114.3" width="0.1524" layer="91"/>
 <label x="218.44" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="P2_DATA0-" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="DATA0-"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="DATA0-"/>
 <wire x1="250.19" y1="104.14" x2="218.44" y2="104.14" width="0.1524" layer="91"/>
 <label x="218.44" y="104.14" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="P2_CLOCK+" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="CLOCK+"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="CLOCK+"/>
 <wire x1="250.19" y1="99.06" x2="218.44" y2="99.06" width="0.1524" layer="91"/>
 <label x="218.44" y="99.06" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="P2_CLOCK-" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="CLOCK-"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="CLOCK-"/>
 <wire x1="250.19" y1="88.9" x2="218.44" y2="88.9" width="0.1524" layer="91"/>
 <label x="218.44" y="88.9" size="1.778" layer="95"/>
 </segment>
@@ -25161,7 +25254,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$21" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="+5V"/>
+<pinref part="HDMI_OUT" gate="G$1" pin="+5V"/>
 <wire x1="250.19" y1="58.42" x2="218.44" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="218.44" y1="58.42" x2="218.44" y2="62.23" width="0.1524" layer="91"/>
 <pinref part="R32" gate="G$1" pin="2"/>
@@ -25174,7 +25267,7 @@ Source: http://www.osram.convergy.de/</description>
 <label x="218.44" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J6" gate="G$1" pin="+5V"/>
+<pinref part="HDMI_IN" gate="G$1" pin="+5V"/>
 <wire x1="148.59" y1="58.42" x2="142.24" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="R30" gate="G$1" pin="2"/>
 <wire x1="142.24" y1="58.42" x2="142.24" y2="53.34" width="0.1524" layer="91"/>
