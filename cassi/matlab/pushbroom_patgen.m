@@ -6,7 +6,7 @@ rows = 1140;
 cols = 912;
 for n=1:32
     x = ones(rows, cols, 3, 'uint8')*255;
-    for m=n:32:cols
+    for m=n+8:32:cols-8
         x(:,m,:)=repmat(rem(1:rows,2)'*255,1,3);
     end
     if (n<10)
