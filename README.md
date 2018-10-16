@@ -35,6 +35,6 @@ These are two example images from the LUPA300 sensor, both before and after FPN 
 
 ### Previous Designs
 **Before HDMI Integration**
-<img src="pcb/images/lupa_carrier_front.jpg" width="400px"/>
+<img src="pcb/images/lupa_carrier_front.jpg" width="200px"/>
 <img src="pcb/images/lupa_carrier_back.jpg" width="400px"/>
 
