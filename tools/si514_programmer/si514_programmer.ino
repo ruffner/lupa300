@@ -20,7 +20,7 @@ void setup() {
   readSi514Regs();
 
 
-  Serial.println("changing to 73.25 MHz");
+  Serial.println("changing to 80.00 MHz");
   // program a large freq change in the Si514
   // values calculated with the following formula
   // F_out = (F_xo * M) / (HS_DIV * 2^LS_DIV)
@@ -36,8 +36,8 @@ void setup() {
   //         m_int, m_frac, hs_div, ls_div, lp1, lp2
   // Si514SetFreq(68, 0x16DFD1E4, 30, 0, 3, 3);
 
-  // 73.25 MHz
-  Si514SetFreq(73250000);
+  // 80.00  MHz
+  Si514SetFreq(80000000);
 
   // show current reg status
   delay(10);
@@ -62,36 +62,6 @@ void loop() {
     Serial.println("Hz");
   }
 }
-
-
-// calculates reg values for frequencies where hs_div=30 is valid
-// around 71Mhz to 75Mhz
-void Si514SetFreq(double freq)
-{
-  unsigned char m_int;
-  unsigned long m_frac;
-  unsigned short hs_div = 30;
-  unsigned char ls_div;
-  unsigned char lp1;
-  unsigned char lp2;
-
-  double M = (freq*hs_div)/31980000.0;
-  m_int = floor(M);
-  m_frac = (float)(M-m_int)*pow(2,29);
-  ls_div = 0;
-  lp1 = 3;
-  lp2 = 3;
-
-  Serial.println("setting regs");
-  Serial.println(M);
-  Serial.println(m_int, DEC);
-  Serial.println(m_frac, HEX);
-  Serial.println(hs_div, DEC);
-  
-  
-  Si514SetFreq(m_int,m_frac,hs_div,ls_div,lp1,lp2);
-}
-
 
 // write Si514 registers in order to program a 'large' frequency change
 // can also be used for small frequency changes
@@ -138,6 +108,34 @@ void Si514SetFreq(unsigned char m_int,
   // 11: output enable
   writeReg(0x84, 0x04);
 
+}
+
+// calculates reg values for frequencies where hs_div=30 is valid
+// around 71Mhz to 75Mhz
+void Si514SetFreq(double freq)
+{
+  unsigned char m_int;
+  unsigned long m_frac;
+  unsigned short hs_div = 30;
+  unsigned char ls_div;
+  unsigned char lp1;
+  unsigned char lp2;
+
+  double M = (freq*hs_div)/31980000.0;
+  m_int = floor(M);
+  m_frac = (float)(M-m_int)*pow(2,29);
+  ls_div = 0;
+  lp1 = 3;
+  lp2 = 3;
+
+  Serial.println("setting regs");
+  Serial.println(M);
+  Serial.println(m_int, DEC);
+  Serial.println(m_frac, HEX);
+  Serial.println(hs_div, DEC);
+  
+  
+  Si514SetFreq(m_int,m_frac,hs_div,ls_div,lp1,lp2);
 }
 
 // arduino utility for reading Si514 reg values.
