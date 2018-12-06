@@ -14,20 +14,25 @@ gCols = floor(cols / 16);   % number of tiles horizontally
 rowActual = gRows*tSize;
 colActual = gCols*tSize;
 
-for n=1:gRows
-    x = ones(rows, cols, 3, 'uint8')*255;
-    
-    for m=n+8:32:cols-8
-        x(:,m,:)=repmat(rem(1:rows,2)'*255,1,3);
-    end
-    
-    
-    if (n<10)
-        imwrite(x, ['pattern0' num2str(n) '.bmp']);
-    else
-        imwrite(x, ['pattern' num2str(n) '.bmp']);
-    end
+imageCount = 0; % for file naming
 
+ for tr=1:tSize
+    for tc=1:tSize
+        pat = repmat(ones(tSize,tSize)*255,1); % generate the 16x16 tile
+        pat(tr,tc)=0;
+        I=repmat(pat,gRows,gCols); % create full size image
+        I=[I;ones(4,912)*255]; % pad with 4 rows at bottom
+        
+        % write to disk
+        if imageCount<10
+            imwrite(I, ['gridpat/pattern00' num2str(imageCount) '.bmp']);
+        elseif imageCount>=10 && imageCount<100
+            imwrite(I, ['gridpat/pattern0' num2str(imageCount) '.bmp']);
+        else
+            imwrite(I, ['gridpat/pattern' num2str(imageCount) '.bmp']);
+        end
+        
+        imageCount=imageCount+1
+   end
 end
-
 
