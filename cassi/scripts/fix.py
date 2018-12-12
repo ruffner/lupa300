@@ -1,3 +1,6 @@
+# ajile filer v1.0
+# Matt Ruffner Dec 2018
+#
 # since ajile stores the -full- project working directory
 # this script changes the working paths of all parts of an
 # ajile project to the currect folder on the system
@@ -5,6 +8,8 @@
 # for example if you copy an ajile project to a new computer
 # you should first run this to update the ajile xml file to reflect
 # the full working path as it is on the new system
+#
+# todo: optimize
 
 import xml.etree.ElementTree as ET
 import os
