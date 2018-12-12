@@ -22,6 +22,8 @@ imageCount = 0; % for file naming
         pat(tr,tc)=0;
         I=repmat(pat,gRows,gCols); % create full size image
         I=[I;ones(4,912)*255]; % pad with 4 rows at bottom
+      
+        I=repmat(I,[1,1,3]);
         
         % write to disk
         if imageCount<10
