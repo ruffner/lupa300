@@ -6,32 +6,55 @@
 
 rows = 1140;    % rows in DMD
 cols = 912;     % columns in DMD
-tSize = 16;      % grid tile size in pixels
+tSize = 14;      % grid tile size in pixels
 
-gRows = floor(rows / 16);   % number of tiles vertically
-gCols = floor(cols / 16);   % number of tiles horizontally
+gRows = floor(rows / tSize);   % number of tiles vertically
+gCols = floor(cols / tSize);   % number of tiles horizontally
 
 rowActual = gRows*tSize;
 colActual = gCols*tSize;
 
+% now build pyramid + all black and all white patterns
+% and prepend them to the shifting grid patterns
+P=buildPatterns(6,0);
+
 imageCount = 0; % for file naming
+
+for imageCount=1:size(P,3)
+    % write to disk
+    I=P(:,:,imageCount);
+    I=repmat(I,[1,1,3]);
+    if imageCount<10
+        imwrite(I, ['pyramidpat/pattern00' num2str(imageCount) '.bmp']);
+    elseif imageCount>=10 && imageCount<100
+        imwrite(I, ['pyramidpat/pattern0' num2str(imageCount) '.bmp']);
+    else
+        imwrite(I, ['pyramidpat/pattern' num2str(imageCount) '.bmp']);
+    end
+
+    imageCount=imageCount+1
+end
 
  for tr=1:tSize
     for tc=1:tSize
-        pat = repmat(ones(tSize,tSize)*255,1); % generate the 16x16 tile
-        pat(tr,tc)=0;
+        pat = repmat(zeros(tSize,tSize),1); % generate the 16x16 tile
+        pat(tr,tc)=255;
         I=repmat(pat,gRows,gCols); % create full size image
-        I=[I;ones(4,912)*255]; % pad with 4 rows at bottom
+        
+        I=[I;zeros(rows-rowActual,colActual)]; % pad with 4 rows at bottom
+        if colActual ~= cols
+            I=[I zeros(rows,cols-colActual)]; % pad with 4 rows at right
+        end
       
         I=repmat(I,[1,1,3]);
         
         % write to disk
         if imageCount<10
-            imwrite(I, ['gridpat/pattern00' num2str(imageCount) '.bmp']);
+            imwrite(I, ['pyramidpat/pattern00' num2str(imageCount) '.bmp']);
         elseif imageCount>=10 && imageCount<100
-            imwrite(I, ['gridpat/pattern0' num2str(imageCount) '.bmp']);
+            imwrite(I, ['pyramidpat/pattern0' num2str(imageCount) '.bmp']);
         else
-            imwrite(I, ['gridpat/pattern' num2str(imageCount) '.bmp']);
+            imwrite(I, ['pyramidpat/pattern' num2str(imageCount) '.bmp']);
         end
         
         imageCount=imageCount+1
