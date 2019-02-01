@@ -1,4 +1,4 @@
-function X = buildPatterns(lvl, offset)
+function [X,M,N] = buildPatterns(lvl, offset)
 
 if (nargin < 2)
     offset = 0;
@@ -45,9 +45,7 @@ while (size(M,1) > 1)
     %%% generate the new mirror grid pattern
     Y = zeros(1140, 912);
     Y(M(:),N(:)) = 1;
-
-
-
+    
     %%% concatenate the new pattern to the previous grid patterns
     X = cat(3, Y, X);
 end;

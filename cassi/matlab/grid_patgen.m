@@ -16,8 +16,8 @@ colActual = gCols*tSize;
 
 % now build pyramid + all black and all white patterns
 % and prepend them to the shifting grid patterns
-P=buildPatterns(6,0);
-
+[P,M,N]=buildPatterns(6,0);
+    
 imageCount = 0; % for file naming
 
 for imageCount=1:size(P,3)
@@ -31,8 +31,6 @@ for imageCount=1:size(P,3)
     else
         imwrite(I, ['pyramidpat/pattern' num2str(imageCount) '.bmp']);
     end
-
-    imageCount=imageCount+1
 end
 
  for tr=1:tSize
